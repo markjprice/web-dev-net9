@@ -1,6 +1,6 @@
 **Common Mistakes and How to Fix Them** (7 items)
 
-If you have suggestions for other common mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs13net9/issues) or email me at markjprice (at) gmail.com.
+If you have suggestions for other common mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
 - [Missing property setter in entity model](#missing-property-setter-in-entity-model)
 - [MSB3026/MSB3027 Cannot rebuild/compile a project](#msb3026msb3027-cannot-rebuildcompile-a-project)
