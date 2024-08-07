@@ -27,8 +27,6 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 **ASP.NET Core shared functionality**
 - Chapter 5 Authentication and Authorization
 - Chapter 6 Performance Optimization Using Caching
-
-**Testing and Deployment**
 - Chapter 7 Web User Interface Testing Using Playwright: [code/MatureWeb/Northwind.UITests](code/MatureWeb/Northwind.UITests)
 - Chapter 8 Configuring and Containerizing ASP.NET Core Projects
 
