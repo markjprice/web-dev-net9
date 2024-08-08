@@ -1,5 +1,5 @@
 # Code Editors
-- [Visual Studio 2022 for Windows](vs.md)
+- [Visual Studio for Windows](vs.md)
 - [Visual Studio Code](code.md)
 - [JetBrains Rider](rider.md)
 
