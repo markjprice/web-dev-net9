@@ -1,0 +1,35 @@
+﻿@model Northwind.Mvc.Models.HomeSuppliersViewModel
+<div class="row">
+  <h1 class="display-2">Suppliers</h1>
+  <a class="btn btn-outline-primary"
+    asp-controller="Home" asp-action="AddSupplier">Add New Supplier</a>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Company Name</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model.Suppliers is not null)
+      {
+        @foreach (Supplier s in Model.Suppliers)
+        {
+          <tr>
+            <td>@s.CompanyName</td>
+            <td>@s.Country</td>
+            <td>@s.Phone</td>
+            <td>
+              <a asp-controller="Home" asp-action="EditSupplier"
+                 asp-route-id="@s.SupplierId">Edit</a>
+              <a asp-controller="Home" asp-action="DeleteSupplier"
+                 asp-route-id="@s.SupplierId">Delete</a>
+            </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>

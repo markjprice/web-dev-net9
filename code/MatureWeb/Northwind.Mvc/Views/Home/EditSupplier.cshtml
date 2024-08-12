@@ -1,0 +1,19 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model HomeSupplierViewModel
+<div class="row">
+  <p>Enter details for this supplier:</p>
+  <form method="post">
+    @Html.AntiForgeryToken()
+    <div><input asp-for="Supplier.SupplierId" hidden /></div>
+    <div><input asp-for="Supplier.CompanyName" /></div>
+    <div><input asp-for="Supplier.Country" /></div>
+    <div><input asp-for="Supplier.Phone" /></div>
+    <input type="submit" value="Save Changes" class="btn btn-outline-primary" />
+    <a href="/Home/Suppliers" class="btn btn-outline-secondary">Cancel</a>
+  </form>
+</div>
+@section Scripts {
+  @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+  }
+}
