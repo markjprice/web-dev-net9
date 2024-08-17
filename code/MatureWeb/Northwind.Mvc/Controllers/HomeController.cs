@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc; // To use Controller, IActionResult.
 using Northwind.Mvc.Models; // To use ErrorViewModel.
 using Northwind.EntityModels; // To use NorthwindContext.
 using Microsoft.EntityFrameworkCore; // To use Include method.
+using Microsoft.AspNetCore.Authorization; // To use [Authorize].
+using Microsoft.Extensions.Caching.Memory; // To use IMemoryCache.
+using Microsoft.Extensions.Caching.Distributed; // To use IDistributedCache.
+using System.Text.Json; // To use JsonSerializer.
 
 namespace Northwind.Mvc.Controllers;
 
@@ -11,25 +15,80 @@ public class HomeController : Controller
   private readonly ILogger<HomeController> _logger;
   private readonly NorthwindContext _db;
 
+  private readonly IMemoryCache _memoryCache;
+  private const string ProductKey = "PROD";
+
+  private readonly IDistributedCache _distributedCache;
+  private const string CategoriesKey = "CATEGORIES";
+
   public HomeController(ILogger<HomeController> logger,
-    NorthwindContext db
-)
+    NorthwindContext db, IMemoryCache memoryCache,
+  IDistributedCache distributedCache)
   {
     _logger = logger;
     _db = db;
+    _memoryCache = memoryCache;
+    _distributedCache = distributedCache;
   }
 
+  private async Task<List<Category>> GetCategoriesFromDatabaseAsync()
+  {
+    List<Category> cachedValue = await _db.Categories.ToListAsync();
+
+    DistributedCacheEntryOptions cacheEntryOptions = new()
+    {
+      // Allow readers to reset the cache entry's lifetime.
+      SlidingExpiration = TimeSpan.FromMinutes(1),
+
+      // Set an absolute expiration time for the cache entry.
+      AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(20),
+    };
+
+    byte[]? cachedValueBytes =
+      JsonSerializer.SerializeToUtf8Bytes(cachedValue);
+
+    await _distributedCache.SetAsync(CategoriesKey,
+      cachedValueBytes, cacheEntryOptions);
+
+    return cachedValue;
+  }
+
+  [ResponseCache(Duration = DurationInSeconds.TenSeconds,
+    Location = ResponseCacheLocation.Any)]
   public async Task<IActionResult> Index()
   {
+    /*
     _logger.LogError("This is a serious error (not really!)");
     _logger.LogWarning("This is your first warning!");
     _logger.LogWarning("Second warning!");
     _logger.LogInformation("I am in the Index method of the HomeController.");
+    */
+
+    // Try to get the cached value.
+    List<Category>? cachedValue = null;
+
+    byte[]? cachedValueBytes = 
+      await _distributedCache.GetAsync(CategoriesKey);
+
+    if (cachedValueBytes is null)
+    {
+      cachedValue = await GetCategoriesFromDatabaseAsync();
+    }
+    else
+    {
+      cachedValue = JsonSerializer
+        .Deserialize<List<Category>>(cachedValueBytes);
+
+      if (cachedValue is null)
+      {
+        cachedValue = await GetCategoriesFromDatabaseAsync();
+      }
+    }
 
     HomeIndexViewModel model = new
     (
       VisitorCount: Random.Shared.Next(1, 1001),
-      Categories: await _db.Categories.ToListAsync(),
+      Categories: cachedValue ?? new List<Category>(),
       Products: await _db.Products.ToListAsync()
     );
 
@@ -72,32 +131,55 @@ public class HomeController : Controller
     });
   }
 
-  public async Task<IActionResult> ProductDetail(int? id)
+  public async Task<IActionResult> ProductDetail(int? id,
+    string alertstyle = "success")
   {
+    ViewData["alertstyle"] = alertstyle;
+
     if (!id.HasValue)
     {
       return BadRequest("You must pass a product ID in the route, for example, /Home/ProductDetail/21");
     }
 
-    Product? model = await _db.Products.Include(p => p.Category)
-      .SingleOrDefaultAsync(p => p.ProductId == id);
-
-    if (model is null)
+    // Try to get the cached product.
+    if (!_memoryCache.TryGetValue($"{ProductKey}{id}",
+      out Product? model))
     {
-      return NotFound($"ProductId {id} not found.");
+      // If the cached value is not found, get the value from the database.
+      model = await _db.Products.Include(p => p.Category)
+        .SingleOrDefaultAsync(p => p.ProductId == id);
+
+      if (model is null)
+      {
+        return NotFound($"ProductId {id} not found.");
+      }
+
+      MemoryCacheEntryOptions cacheEntryOptions = new()
+      {
+        SlidingExpiration = TimeSpan.FromSeconds(5),
+        Size = 1 // product
+      };
+
+      _memoryCache.Set($"{ProductKey}{id}", model, cacheEntryOptions);
     }
+
+    MemoryCacheStatistics? stats = _memoryCache.GetCurrentStatistics();
+
+    _logger.LogInformation($"Memory cache. Total hits: {stats?
+      .TotalHits}. Estimated size: {stats?.CurrentEstimatedSize}.");
 
     return View(model); // Pass model to view and then return result.
   }
 
   // This action method will handle GET and other requests except POST.
+  [Authorize(Roles = "Administrators")]
   public IActionResult ModelBinding()
   {
     return View(); // The page with a form to submit.
   }
 
   // This action method will handle POST requests.
-  [HttpPost] 
+  [HttpPost]
   public IActionResult ModelBinding(Thing thing)
   {
     HomeModelBindingViewModel model = new(

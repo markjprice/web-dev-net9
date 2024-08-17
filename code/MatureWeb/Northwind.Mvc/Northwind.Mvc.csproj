@@ -17,10 +17,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Hybrid" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Northwind.DataContext\Northwind.DataContext.csproj" />
+    <ProjectReference Include="..\Northwind.Repositories\Northwind.Repositories.csproj" />
   </ItemGroup>
 
   <ItemGroup>
