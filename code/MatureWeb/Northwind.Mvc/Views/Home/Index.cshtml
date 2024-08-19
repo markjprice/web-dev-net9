@@ -29,8 +29,8 @@
   <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
   <h3>Query products by price</h3>
   <form asp-action="ProductsThatCostMoreThan" method="GET">
-    <input name="price" placeholder="Enter a product price" />
-    <input type="submit" />
+    <input name="price" placeholder="Enter a product price" data-testid="price" />
+    <input type="submit" data-testid="submit_price" />
   </form>
 </div>
 
@@ -97,7 +97,7 @@
   <div class="col-md-12">
     <h1>Northwind</h1>
     <p class="lead">
-      We have had @Model?.VisitorCount visitors this month.
+      We have had <span data-testid="visitor_count">@Model?.VisitorCount</span> visitors this month.
     </p>
     @if (Model is not null)
     {
