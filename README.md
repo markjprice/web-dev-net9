@@ -31,9 +31,9 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 - Chapter 8 Configuring and Containerizing ASP.NET Core Projects
 
 **Web Services**
-- Chapter 9 Building Services Using ASP.NET Core Web API: [code/MatureWeb/Northwind.WebApi](code/MatureWeb/Northwind.WebApi)
-- Chapter 10 Building Services Using ASP.NET Core OData: [code/MatureWeb/Northwind.Odata](code/MatureWeb/Northwind.Odata)
-- Chapter 11 Building Services Using FastEndpoints: [code/MatureWeb/Northwind.FastEndpoints](code/MatureWeb/Northwind.FastEndpoints)
+- Chapter 9 Building Web Services Using ASP.NET Core Web API: [code/MatureWeb/Northwind.WebApi](code/MatureWeb/Northwind.WebApi)
+- Chapter 10 Building Web Services Using ASP.NET Core OData: [code/MatureWeb/Northwind.Odata](code/MatureWeb/Northwind.Odata)
+- Chapter 11 Building Web Services Using FastEndpoints: [code/MatureWeb/Northwind.FastEndpoints](code/MatureWeb/Northwind.FastEndpoints)
 - Chapter 12 Web Service Integration Testing: [code/MatureWeb/Northwind.IntegrationTests](code/MatureWeb/Northwind.IntegrationTests)
 
 **Web Content Management Systems** [code/MatureWeb/Northwind.Cms](code/MatureWeb/Northwind.Cms)
