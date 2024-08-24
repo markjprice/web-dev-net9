@@ -17,27 +17,37 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 ## Chapters and code solutions
 
 **Introduction**
-- Chapter 1 Introducing Web Development with Controllers [code/MatureWeb](code/MatureWeb)
+- Chapter 1 Introducing Web Development with Controllers
+  - [code/MatureWeb/Northwind.EntityModels](code/MatureWeb/Northwind.EntityModels)
+  - [code/MatureWeb/Northwind.DataContext](code/MatureWeb/Northwind.DataContext)
+  - [code/MatureWeb/Northwind.UnitTests](code/MatureWeb/Northwind.UnitTests)
 
-**ASP.NET Core MVC** [code/MatureWeb/Northwind.Mvc](code/MatureWeb/Northwind.Mvc)
+**ASP.NET Core MVC**
 - Chapter 2 Building Websites Using ASP.NET Core MVC
+  - [code/MatureWeb/Northwind.Mvc](code/MatureWeb/Northwind.Mvc)
 - Chapter 3 Model Binding, Validation, and Data Using EF Core
 - Chapter 4 Tag Helpers, Partial Views, and View Components
 
 **ASP.NET Core shared functionality**
 - Chapter 5 Authentication and Authorization
 - Chapter 6 Performance Optimization Using Caching
-- Chapter 7 Web User Interface Testing Using Playwright: [code/MatureWeb/Northwind.UITests](code/MatureWeb/Northwind.UITests)
+- Chapter 7 Web User Interface Testing Using Playwright
+  - [code/MatureWeb/Northwind.WebUITests](code/MatureWeb/Northwind.WebUITests)
 - Chapter 8 Configuring and Containerizing ASP.NET Core Projects
 
 **Web Services**
-- Chapter 9 Building Web Services Using ASP.NET Core Web API: [code/MatureWeb/Northwind.WebApi](code/MatureWeb/Northwind.WebApi)
-- Chapter 10 Building Web Services Using ASP.NET Core OData: [code/MatureWeb/Northwind.Odata](code/MatureWeb/Northwind.Odata)
-- Chapter 11 Building Web Services Using FastEndpoints: [code/MatureWeb/Northwind.FastEndpoints](code/MatureWeb/Northwind.FastEndpoints)
-- Chapter 12 Web Service Integration Testing: [code/MatureWeb/Northwind.IntegrationTests](code/MatureWeb/Northwind.IntegrationTests)
+- Chapter 9 Building Web Services Using ASP.NET Core Web API
+  - [code/MatureWeb/Northwind.WebApi](code/MatureWeb/Northwind.WebApi)
+- Chapter 10 Building Web Services Using ASP.NET Core OData
+  - [code/MatureWeb/Northwind.Odata](code/MatureWeb/Northwind.Odata)
+- Chapter 11 Building Web Services Using FastEndpoints
+  - [code/MatureWeb/Northwind.FastEndpoints](code/MatureWeb/Northwind.FastEndpoints)
+- Chapter 12 Web Service Integration Testing
+  - [code/MatureWeb/Northwind.IntegrationTests](code/MatureWeb/Northwind.IntegrationTests)
 
 **Web Content Management Systems** [code/MatureWeb/Northwind.Cms](code/MatureWeb/Northwind.Cms)
 - Chapter 13 Web Content Management Using Umbraco
+  - [code/MatureWeb/Northwind.Cms](code/MatureWeb/Northwind.Cms)
 - Chapter 14 Customizing and Extending Umbraco
 
 **Appendix and online chapter**
