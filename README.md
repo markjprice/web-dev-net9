@@ -1,13 +1,14 @@
 > **IMPORTANT!** [Common Mistakes, Improvements, and Errata aka list of corrections](docs/errata/README.md)
 
-**Real-World Web Development with .NET 9, First Edition**
+# Real-World Web Development with .NET 9, First Edition
 
 Repository for the Packt Publishing book titled "Real-World Web Development with .NET 9" by Mark J. Price
 
+- [Real-World Web Development with .NET 9, First Edition](#real-world-web-development-with-net-9-first-edition)
 - [Free PDF of the book and how to contact the publisher Packt](#free-pdf-of-the-book-and-how-to-contact-the-publisher-packt)
 - [Author's books](#authors-books)
 - [Chapters and code projects](#chapters-and-code-projects)
-- [Code solution for Visual Studio, VS Code, and Rider](#code-solution-for-visual-studio-vs-code-and-rider)
+- [Code solutions for Visual Studio, VS Code, and Rider](#code-solutions-for-visual-studio-vs-code-and-rider)
 - [Online content](#online-content)
 - [Microsoft Certifications](#microsoft-certifications)
 - [Microsoft .NET community support](#microsoft-net-community-support)
@@ -67,13 +68,18 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 **Appendix and online chapter**
 - [Appendix, Answers to the Test Your Knowledge Questions](docs/B31470_Appendix.pdf).
 
-# Code solution for Visual Studio, VS Code, and Rider
+# Code solutions for Visual Studio, VS Code, and Rider
 
-Visual Studio, VS Code + C# Dev Kit, and JetBrains Rider can use the same code solution files and projects for each chapter, found here: [/code](/code). 
+Visual Studio, VS Code + C# Dev Kit, and JetBrains Rider can use the same code solution file and projects. 
 
-To use the solution file with VS Code, install the **C# Dev Kit** extension, then in VS Code, open the *folder* that contains a `.sln` solution file and wait for the **SOLUTION EXPLORER** pane to appear in the **EXPLORER**. 
+To use the solution file with VS Code:
+1. Install the **C# Dev Kit** extension.
+2. In VS Code, open the *folder* that contains a `.sln` solution file.
+3. Wait for the **SOLUTION EXPLORER** pane to appear in the **EXPLORER**. 
 
-> **Warning!** If you use both Visual Studio and VS Code to open a solution, be aware that the build process can conflict. This is because Visual Studio has its own non-standard build server that is different from the standard build server used by .NET SDK CLI. My recommendation is to only have a solution open in one code editor at any time. You can also clean the solutions between opening in different code editors. For example, after closing the solution in one code editor, I often delete the `bin` and `obj` folders before then opening in a different code editor.
+> **Warning!** If you use multiple code editors to open the same solution, be aware that the build process can conflict. This is because Visual Studio has its own non-standard build server that is different from the standard build server used by .NET SDK CLI. My recommendation is to only have a solution open in one code editor at any time. 
+ 
+You can "clean" a solution between opening it in different code editors, either using the `dotnet clean` command or manually. For example, after closing the solution in one code editor, I often delete the `bin` and `obj` folders before then opening in a different code editor.
 
 # Online content
 
