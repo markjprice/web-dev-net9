@@ -1,16 +1,26 @@
 > **IMPORTANT!** [Common Mistakes, Improvements, and Errata aka list of corrections](docs/errata/README.md)
 
-# Real-World Web Development with .NET 9, First Edition
+**Real-World Web Development with .NET 9, First Edition**
 
 Repository for the Packt Publishing book titled "Real-World Web Development with .NET 9" by Mark J. Price
 
-## Free PDF of the book and how to contact the publisher Packt
+- [Free PDF of the book and how to contact the publisher Packt](#free-pdf-of-the-book-and-how-to-contact-the-publisher-packt)
+- [Author's books](#authors-books)
+- [Chapters and code projects](#chapters-and-code-projects)
+- [Code solution for Visual Studio, VS Code, and Rider](#code-solution-for-visual-studio-vs-code-and-rider)
+- [Online content](#online-content)
+- [Microsoft Certifications](#microsoft-certifications)
+- [Microsoft .NET community support](#microsoft-net-community-support)
+- [Interviews with me](#interviews-with-me)
+
+
+# Free PDF of the book and how to contact the publisher Packt
 
 If you have purchased the paperback or Kindle edition, then you can request a free PDF copy at the following link: https://www.packtpub.com/page/free-ebook.
 
 For questions about book pricing, distribution, and so on, please contact the publisher Packt at the following email address: customercare@packt.com
 
-## Author's books
+# Author's books
 
 My author page on Amazon: https://www.amazon.com/Mark-J-Price/e/B071DW3QGN/ 
 
@@ -18,7 +28,7 @@ All of my books on Packt's website: https://subscription.packtpub.com/search?que
 
 My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark_J_Price
 
-## Chapters and code projects
+# Chapters and code projects
 
 **Introduction**
 - Chapter 1 Introducing Web Development with Controllers
@@ -57,38 +67,36 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 **Appendix and online chapter**
 - [Appendix, Answers to the Test Your Knowledge Questions](docs/B31470_Appendix.pdf).
 
-## Code solutions for Visual Studio and Visual Studio Code
+# Code solution for Visual Studio, VS Code, and Rider
 
-Visual Studio Code now has an extension named **C# Dev Kit** that includes a solution explorer so it can better work with Visual Studio solution files. Visual Studio for Windows, Visual Studio for Mac, and Visual Studio Code + C# Dev Kit can now use the same code solution files and projects for each chapter, found here: [/code](/code). 
+Visual Studio, VS Code + C# Dev Kit, and JetBrains Rider can use the same code solution files and projects for each chapter, found here: [/code](/code). 
 
-> **For Visual Studio Code:** To use the chapter solution files with Visual Studio Code, install the **C# Dev Kit** extension. Then in Visual Studio Code, open the `ChapterNN` folder that contains a `ChapterNN.sln` solution file and wait for the **SOLUTION EXPLORER** pane to appear at the bottom of the **EXPLORER**. You can drag and drop to reorder the panes to put **SOLUTION EXPLORER** at the top. Learn more about C# Dev Kit at the following link: https://devblogs.microsoft.com/visualstudio/announcing-csharp-dev-kit-for-visual-studio-code/
+To use the solution file with VS Code, install the **C# Dev Kit** extension, then in VS Code, open the *folder* that contains a `.sln` solution file and wait for the **SOLUTION EXPLORER** pane to appear in the **EXPLORER**. 
 
-> **Warning!** If you use both Visual Studio and Visual Studio Code to open these solutions, be aware that the build process can conflict. This is because Visual Studio has its own non-standard build server that is different from the standard build server used by .NET SDK CLI. My recommendation is to only have a solution open in one code editor at any time. You should also clean the solutions between opening in different code editors. For example, after closing the solution in one code editor, I delete the `bin` and `obj` folders before then opening in a different code editor.
+> **Warning!** If you use both Visual Studio and VS Code to open a solution, be aware that the build process can conflict. This is because Visual Studio has its own non-standard build server that is different from the standard build server used by .NET SDK CLI. My recommendation is to only have a solution open in one code editor at any time. You can also clean the solutions between opening in different code editors. For example, after closing the solution in one code editor, I often delete the `bin` and `obj` folders before then opening in a different code editor.
 
-## Bonus content
+# Online content
 
 The appendix and color figures are available to download as PDFs:
 
 - [Appendix, Answers to the Test Your Knowledge Questions](docs/B31470_Appendix.pdf).
 - Color images of the screenshots/diagrams used in this book (coming November 2024).
 
-## Important
+More content to support the book: 
 
-Corrections for typos and other mistakes and improvements like refactoring code. Useful links to other related material. 
-
+- [Common Mistakes, Improvements, and Errata aka list of corrections](docs/errata/README.md)
+- [Book support for .NET 10](docs/dotnet10.md)
 - [Command-Lines](docs/command-lines.md) page lists all commands as a single line that can be copied and pasted to make it easier to enter commands at the prompt.
 - [Book Links](docs/book-links.md)
-- [Common Mistakes, Improvements, and Errata aka list of corrections](docs/errata/README.md)
-- [Ninth edition's support for .NET 10](docs/dotnet10.md)
 
-## Microsoft Certifications
+# Microsoft Certifications
 
 Announcing the New Foundational C# Certification with freeCodeCamp:
 https://devblogs.microsoft.com/dotnet/announcing-foundational-csharp-certification/
 
 Microsoft used to have professional exams and certifications for developers that covered skills like C# and ASP.NET. Sadly, they have retired them all. These days, the only developer-adjacent exams and certifications are for Azure or Power Platform, as you can see from the certification poster: https://aka.ms/traincertposter
 
-## Microsoft .NET community support
+# Microsoft .NET community support
 
 - [.NET Developer Community](https://dotnet.microsoft.com/platform/community)
 - [.NET Tech Community Forums for topic discussions](https://techcommunity.microsoft.com/t5/net/ct-p/dotnet)
@@ -96,7 +104,7 @@ Microsoft used to have professional exams and certifications for developers that
 - [Technical questions about the C# programming language](https://learn.microsoft.com/en-us/answers/topics/dotnet-csharp.html)
 - [If you'd like to apply to be a reviewer](https://authors.packtpub.com/reviewers/)
 
-## Interviews with me
+# Interviews with me
 
 Podcast interviews with me:
 
