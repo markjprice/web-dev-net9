@@ -19,6 +19,10 @@ builder.Services.AddControllers()
     .AddRouteComponents(routePrefix: "ordersystem",
       model: GetEdmModelForOrderSystem())
 
+    // GET /catalog/v1, /catalog/v2, and so on.
+    .AddRouteComponents(routePrefix: "catalog/v{version}",
+      model: GetEdmModelForCatalog())
+
     // Enable query options:
     .Select()       // $select for projection
     .Expand()       // $expand to navigate to related entities
