@@ -51,10 +51,7 @@ Let's now download and install VS Code, the .NET SDK, and the C# Dev Kit extensi
 
 > **More Information**: If you need more help installing VS Code, you can read the official setup guide at the following link: https://code.visualstudio.com/docs/setup/setup-overview.
 
-2.	Download and install the .NET SDK for version 9.0 and version 8.0 from the following link: https://www.microsoft.com/net/download.
-
-> In real life, you are extremely unlikely to only have one .NET SDK version installed on your computer. To learn how to control which .NET SDK version is used to build a project, we need multiple versions installed. .NET 8 and .NET 9 are the only supported versions at the time of publishing in November 2024. You can safely install multiple SDKs side by side. The most recent SDK will be used to build your projects.
-
+2.	Download and install the .NET SDK for version 9.0 from the following link: https://www.microsoft.com/net/download.
 3.	To install the **C# Dev Kit** extension using a user interface, you must first launch the VS Code application.
 4.	In VS Code, click the **Extensions** icon or navigate to **View** | **Extensions**.
 5.	C# Dev Kit is one of the most popular extensions available, so you should see it at the top of the list, or you can enter `C#` in the search box.
