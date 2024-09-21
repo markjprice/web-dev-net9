@@ -29,7 +29,7 @@ Since October 2014, Microsoft has made a professional-quality edition of Visual 
 
 1.	Download the latest version of Visual Studio  from the following link: https://visualstudio.microsoft.com/downloads/.
 
-> **Visual Studio vNext**: At the time of writing, Visual Studio is version 17.12 and branded as Visual Studio 2022. I expect the next major version of Visual Studio to be version 18.0 and be branded as Visual Studio 2025. It is likely to be released in the first half of 2024, either February or May during the Build conference. Visual Studio 2025 will have mostly the same features as the 2022 edition although the user interface might move things around a bit.
+> **Visual Studio vNext**: At the time of writing, Visual Studio is version 17.12 and branded as Visual Studio 2022. I expect the next major version of Visual Studio to be version 18.0 and be branded as Visual Studio 2025. It is likely to be released in the first half of 2025, either February or May during the Build conference. Visual Studio 2025 will have mostly the same features as the 2022 edition although the user interface might move things around a bit.
 
 2.	Run the installer to start the installation.
 3.	On the **Workloads** tab, select the following:
