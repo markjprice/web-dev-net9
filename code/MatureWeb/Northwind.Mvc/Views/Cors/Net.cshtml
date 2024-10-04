@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Customer>?
+@{
+  ViewData["Title"] = "Customers using .NET";
+}
+<div class="text-center">
+  <h1 class="display-4">@ViewData["Title"]</h1>
+  <div>
+    Go to <a href="/cors/javascript">Customers using JavaScript</a>
+  </div>
+  <form action="/cors/net">
+    <input name="country" placeholder="Enter a country" />
+    <input type="submit" value="Get Customers" />
+  </form>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Company Name</th>
+          <th scope="col">City</th>
+          <th scope="col">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (Model is not null)
+        {
+          @foreach (Customer c in Model)
+          {
+            <tr>
+              <td>
+                <a href="@(ViewData["baseaddress"])api/customers/@c.CustomerId">@c.CompanyName</a>
+              </td>
+              <td>@c.City</td>
+              <td>@c.Country</td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -32,6 +32,11 @@
     <input name="price" placeholder="Enter a product price" data-testid="price" />
     <input type="submit" data-testid="submit_price" />
   </form>
+  <h3>Query customers from a service</h3>
+  <form asp-action="Customers" method="get">
+    <input name="country" placeholder="Enter a country" />
+    <input type="submit" />
+  </form>
 </div>
 
 @if (Model is not null)

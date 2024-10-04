@@ -9,12 +9,16 @@ using Microsoft.Extensions.Caching.Memory; // To use IMemoryCache and so on.
 using Northwind.Mvc; // To use DurationInSeconds.
 using Microsoft.Extensions.Caching.Hybrid; // To use HybridCacheEntryOptions.
 using Northwind.Repositories; // To use ICustomerRepository.
+using System.Net.Http.Headers; // To use MediaTypeWithQualityHeaderValue.
 
 #endregion
 
 #region Configure the host web server including services.
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<NorthwindOptions>(builder
+  .Configuration.GetSection("Northwind"));
 
 builder.Services.AddDistributedMemoryCache();
 
@@ -87,6 +91,24 @@ builder.Services.AddHybridCache(options =>
 builder.Services.AddScoped<ICustomerRepository,
   CustomerRepository>();
 
+builder.Services.AddHttpClient(name: "Northwind.WebApi",
+  configureClient: options =>
+  {
+    options.BaseAddress = new Uri("https://localhost:5091/");
+    options.DefaultRequestHeaders.Accept.Add(
+      new MediaTypeWithQualityHeaderValue(
+      mediaType: "application/json", quality: 1.0));
+  });
+
+builder.Services.AddHttpClient(name: "Northwind.OData",
+  configureClient: options =>
+  {
+    options.BaseAddress = new Uri("https://localhost:5101/");
+    options.DefaultRequestHeaders.Accept.Add(
+      new MediaTypeWithQualityHeaderValue(
+      "application/json", 1.0));
+  });
+
 var app = builder.Build();
 
 #endregion
@@ -122,6 +144,37 @@ else
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
+// Implementing an anonymous inline delegate as middleware
+// to intercept HTTP requests and responses.
+app.Use(async (HttpContext context, Func<Task> next) =>
+{
+  WriteLine($"Request: {context.Request.Method} {context.Request.Path}");
+
+  RouteEndpoint? rep = context.GetEndpoint() as RouteEndpoint;
+
+  if (rep is not null)
+  {
+    WriteLine($"Endpoint: {rep.DisplayName}");
+    WriteLine($"Route: {rep.RoutePattern.RawText}");
+  }
+
+  if (context.Request.Path == "/bonjour")
+  {
+    // In the case of a match on URL path, this becomes a terminating
+    // delegate that returns so does not call the next delegate.
+    await context.Response.WriteAsync("Bonjour Monde!");
+    return;
+  }
+
+  // We could modify the request before calling the next delegate.
+
+  // Call the next delegate in the pipeline.
+  await next();
+
+  // The HTTP response is now being sent back through the pipeline.
+  // We could modify the response at this point before it continues.
+});
 
 app.UseAuthorization();
 

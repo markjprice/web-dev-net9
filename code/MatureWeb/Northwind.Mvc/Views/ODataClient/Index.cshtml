@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Product>?
+@{
+  ViewData["Title"] = "OData Products";
+}
+<div class="text-center">
+  <h1 class="display-4">@ViewData["Title"]</h1>
+  @if (Model is not null)
+  {
+    <h2>Products that start with '@ViewData["startsWith"]' using OData</h2>
+    <p>
+      @if (!Model.Any())
+      {
+        <span class="badge rounded-pill bg-danger">No products found.</span>
+      }
+      else
+      {
+        @foreach (Product p in Model)
+        {
+          <span class="badge rounded-pill bg-info text-dark">
+            @p.ProductId
+            @p.ProductName
+            @(p.UnitPrice is null ? "" : p.UnitPrice.Value.ToString("c"))
+          </span>
+        }
+      }
+    </p>
+  }
+  <form method="get">
+    Product name starts with:
+    <input name="startsWith" value="@ViewData["startsWith"]" />
+    Press ENTER to search.
+  </form>
+</div>

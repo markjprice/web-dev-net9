@@ -7,6 +7,10 @@
     <UserSecretsId>aspnet-Northwind.Mvc-5e247820-48b3-4206-8e9d-02fd01d27e73</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup Label="To simplify use of WriteLine.">
+    <Using Include="System.Console" Static="true" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>

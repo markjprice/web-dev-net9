@@ -21,14 +21,18 @@ public class HomeController : Controller
   private readonly IDistributedCache _distributedCache;
   private const string CategoriesKey = "CATEGORIES";
 
+  private readonly IHttpClientFactory _clientFactory;
+
   public HomeController(ILogger<HomeController> logger,
     NorthwindContext db, IMemoryCache memoryCache,
-  IDistributedCache distributedCache)
+    IDistributedCache distributedCache,
+    IHttpClientFactory httpClientFactory)
   {
     _logger = logger;
     _db = db;
     _memoryCache = memoryCache;
     _distributedCache = distributedCache;
+    _clientFactory = httpClientFactory;
   }
 
   private async Task<List<Category>> GetCategoriesFromDatabaseAsync()
@@ -276,9 +280,10 @@ public class HomeController : Controller
 
   // POST: /home/deletesupplier/{id}
   // Removes an existing supplier.
-  [HttpPost]
+  [HttpPost("/home/deletesupplier/{id:int?}")]
   [ValidateAntiForgeryToken]
-  public IActionResult DeleteSupplier(int? id, bool dummy = true)
+  // C# won't allow two methods with the same name and signature.
+  public IActionResult DeleteSupplierX(int? id)
   {
     int affected = 0;
 
@@ -405,5 +410,34 @@ public class HomeController : Controller
   public IActionResult ProcessShipper(Shipper shipper)
   {
     return Json(shipper);
+  }
+
+  public async Task<IActionResult> Customers(string country)
+  {
+    string uri;
+
+    if (string.IsNullOrEmpty(country))
+    {
+      ViewData["Title"] = "All Customers Worldwide";
+      uri = "api/customers";
+    }
+    else
+    {
+      ViewData["Title"] = $"Customers in {country}";
+      uri = $"api/customers/?country={country}";
+    }
+
+    HttpClient client = _clientFactory.CreateClient(
+      name: "Northwind.WebApi");
+
+    HttpRequestMessage request = new(
+      method: HttpMethod.Get, requestUri: uri);
+
+    HttpResponseMessage response = await client.SendAsync(request);
+
+    IEnumerable<Customer>? model = await response.Content
+      .ReadFromJsonAsync<IEnumerable<Customer>>();
+
+    return View(model);
   }
 }

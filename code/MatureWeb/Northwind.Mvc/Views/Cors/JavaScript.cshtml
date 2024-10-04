@@ -1,0 +1,60 @@
+﻿@{
+  ViewData["Title"] = "Customers using JavaScript";
+}
+<div class="text-center">
+  <h1 class="display-4">@ViewData["Title"]</h1>
+  <div>
+    Go to <a href="/cors/net">Customers using .NET</a>
+  </div>
+  <div>
+    <input id="country" placeholder="Enter a country" />
+    <input id="getCustomersButton" type="button" value="Get Customers" />
+  </div>
+  <div>
+    <table id="customersTable" class="table">
+      <thead>
+        <tr>
+          <th scope="col">Company Name</th>
+          <th scope="col">City</th>
+          <th scope="col">Country</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- This will be populated from the web service. -->
+      </tbody>
+    </table>
+  </div>
+  <script>
+    var baseaddress = "https://localhost:5091/";
+
+    function xhr_load() {
+        console.log(this.responseText);
+
+        var customers = JSON.parse(this.responseText);
+
+        var out = "";
+        var i;
+        for (i = 0; i < customers.length; i++) {
+            out += '<tr><td><a href="' + baseaddress + 'api/customers/' +
+                customers[i].customerId + '">' +
+                customers[i].companyName + '</a></td><td>' +
+                customers[i].city + '</td><td>' +
+                customers[i].country + '</td></tr>';
+        }
+        document.getElementById("tableBody").innerHTML = out;
+    }
+
+    function getCustomersButton_click() {
+        xhr.open("GET", baseaddress + "api/customers/?country=" +
+          document.getElementById("country").value);
+
+        xhr.send();
+    }
+
+    document.getElementById("getCustomersButton")
+        .addEventListener("click", getCustomersButton_click);
+
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", xhr_load);
+  </script>
+</div>
