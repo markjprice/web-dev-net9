@@ -8,14 +8,13 @@
 - [Chapter 2 - Building Websites Using ASP.NET Core MVC](#chapter-2---building-websites-using-aspnet-core-mvc)
   - [General web development](#general-web-development)
   - [ASP.NET Core](#aspnet-core)
-  - [Razor syntax and layouts](#razor-syntax-and-layouts)
-  - [MVC Controllers](#mvc-controllers)
-  - [MVC Models](#mvc-models)
-  - [MVC Views](#mvc-views)
 - [Chapter 3 - Model Binding, Validation, and Data Using EF Core](#chapter-3---model-binding-validation-and-data-using-ef-core)
-- [Chapter 4 - Tag Helpers, Partial Views, and View Components](#chapter-4---tag-helpers-partial-views-and-view-components)
+  - [MVC Models](#mvc-models)
+  - [EF Core and ASP.NET Core](#ef-core-and-aspnet-core)
+- [Chapter 4 - Building and Localizing Web User Interfaces](#chapter-4---building-and-localizing-web-user-interfaces)
+  - [ASP.NET Core MVC views](#aspnet-core-mvc-views)
+  - [Razor syntax and layouts](#razor-syntax-and-layouts)
 - [Chapter 5 - Authentication and Authorization](#chapter-5---authentication-and-authorization)
-  - [Security and privacy](#security-and-privacy)
 - [Chapter 6 - Performance Optimization Using Caching](#chapter-6---performance-optimization-using-caching)
 - [Chapter 7 - Web User Interface Testing Using Playwright](#chapter-7---web-user-interface-testing-using-playwright)
   - [Miscellaneous](#miscellaneous)
@@ -93,13 +92,8 @@ The official announcement links are useful because they describe the most import
 # Chapter 2 - Building Websites Using ASP.NET Core MVC
 
 ## General web development
-- [Responsive Web Design with HTML5 and CSS - Third Edition](https://www.packtpub.com/product/responsive-web-design-with-html5-and-css-third-edition/9781839211560)
 - [Bootstrap](https://getbootstrap.com/)
-- [WebSocket](https://en.wikipedia.org/wiki/WebSocket)
-- [MessagePack](https://msgpack.org)
-- [WebAssembly](https://webassembly.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Content Delivery Network (CDN)](https://en.wikipedia.org/wiki/Content_delivery_network)
+- [Free TLS/SSL certificates](https://letsencrypt.org)
 
 ## ASP.NET Core
 - [ASP.NET Core fundamentals](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/)
@@ -107,43 +101,38 @@ The official announcement links are useful because they describe the most import
 - [HttpContext class](https://learn.microsoft.com/en-us/dotnet/api/system.web.httpcontext)
 - [Kestrel web server](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel)
 - [ASP.NET Core hosting environments](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments)
-- [Free TLS/SSL certificates](https://letsencrypt.org)
 - [Performance Improvements in ASP.NET Core 8](https://devblogs.microsoft.com/dotnet/performance-improvements-in-aspnet-core-8/)
-
-## Razor syntax and layouts
-- [Razor syntax reference for ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor)
-- [Layout in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/layout)
-- [Tag Helpers in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro)
-- [DbContext Lifetime, Configuration, and Initialization](https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/#dbcontext-in-dependency-injection-for-aspnet-core)
-- [The `<partial>` tag helper](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/partial-tag-helper)
-- [Visual Studio Code Compact Folders feature](https://github.com/microsoft/vscode-docs/blob/vnext/release-notes/v1_41.md#compact-folders-in-explorer)
-
-## MVC Controllers
 - [Handle requests with controllers in ASP.NET Core MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/actions)
-- [Response caching](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response)
-- [Microsoft.AspNetCore.OutputCaching Namespace](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.outputcaching)
-- [How cache busting using query strings works](https://stackoverflow.com/questions/9692665/cache-busting-via-params)
+
+# Chapter 3 - Model Binding, Validation, and Data Using EF Core
 
 ## MVC Models
 - [Model Binding in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding)
 - [Create your own model binders by implementing the IModelBinder interface](https://learn.microsoft.com/en-us/aspnet/core/mvc/advanced/custom-model-binding)
 - [Model validation](https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation)
-- [Tutorial: Get started with EF Core in an ASP.NET MVC web app](https://learn.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro)
 
-## MVC Views
-- [HtmlHelper class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.htmlhelper)
+## EF Core and ASP.NET Core
+- [Tutorial: Get started with EF Core in an ASP.NET MVC web app](https://learn.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro)
+- [DbContext Lifetime, Configuration, and Initialization](https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/#dbcontext-in-dependency-injection-for-aspnet-core)
+
+
+# Chapter 4 - Building and Localizing Web User Interfaces
+
+## ASP.NET Core MVC views
 - [Views in ASP.NET Core MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/overview)
 - [Why it is good to put <script> elements at the bottom of the <body>](https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup)
+- [HtmlHelper class](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.htmlhelper)
 
-# Chapter 3 - Model Binding, Validation, and Data Using EF Core
-
-
-# Chapter 4 - Tag Helpers, Partial Views, and View Components
+## Razor syntax and layouts
+- [Razor syntax reference for ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor)
+- [Layout in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/layout)
+- [Tag Helpers in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro)
+- [The `<partial>` tag helper](https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/partial-tag-helper)
+- [VS Code Compact Folders feature](https://github.com/microsoft/vscode-docs/blob/vnext/release-notes/v1_41.md#compact-folders-in-explorer)
 
 
 # Chapter 5 - Authentication and Authorization
 
-## Security and privacy
 - [What’s new with identity in .NET 8](https://devblogs.microsoft.com/dotnet/whats-new-with-identity-in-dotnet-8/)
 - [Built-in features for compliance with modern privacy requirements like GDPR](https://learn.microsoft.com/en-us/aspnet/core/security/gdpr)
 - [Enable QR code generation for TOTP authenticator apps in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity-enable-qrcodes)
@@ -153,7 +142,10 @@ The official announcement links are useful because they describe the most import
 
 
 # Chapter 6 - Performance Optimization Using Caching
-
+- [Content Delivery Network (CDN)](https://en.wikipedia.org/wiki/Content_delivery_network)
+- [Response caching](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response)
+- [Microsoft.AspNetCore.OutputCaching Namespace](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.outputcaching)
+- [How cache busting using query strings works](https://stackoverflow.com/questions/9692665/cache-busting-via-params)
 
 # Chapter 7 - Web User Interface Testing Using Playwright
 
