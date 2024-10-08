@@ -41,7 +41,7 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 - Chapter 2 Building Websites Using ASP.NET Core MVC
   - [code/MatureWeb/Northwind.Mvc](code/MatureWeb/Northwind.Mvc)
 - Chapter 3 Model Binding, Validation, and Data Using EF Core
-- Chapter 4 Tag Helpers, Partial Views, and View Components
+- Chapter 4 Building and Localizing Web User Interfaces
 
 **ASP.NET Core shared functionality**
 - Chapter 5 Authentication and Authorization
