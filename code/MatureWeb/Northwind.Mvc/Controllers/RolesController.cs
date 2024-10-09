@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity; // To use RoleManager, UserManager.
 using Microsoft.AspNetCore.Mvc; // To use Controller, IActionResult.
 
-using static System.Console;
-
 namespace Northwind.Mvc.Controllers;
 
 public class RolesController : Controller
@@ -11,10 +9,13 @@ public class RolesController : Controller
   private string UserEmail = "test@example.com";
   private readonly RoleManager<IdentityRole> _roleManager;
   private readonly UserManager<IdentityUser> _userManager;
+  private readonly ILogger<HomeController> _logger;
 
-  public RolesController(RoleManager<IdentityRole> roleManager,
+  public RolesController(ILogger<HomeController> logger, 
+    RoleManager<IdentityRole> roleManager,
     UserManager<IdentityUser> userManager)
   {
+    _logger = logger;
     _roleManager = roleManager;
     _userManager = userManager;
   }
@@ -38,13 +39,13 @@ public class RolesController : Controller
 
       if (result.Succeeded)
       {
-        WriteLine($"User {user.UserName} created successfully.");
+        _logger.LogInformation($"User {user.UserName} created successfully.");
       }
       else
       {
         foreach (IdentityError error in result.Errors)
         {
-          WriteLine(error.Description);
+          _logger.LogError(error.Description);
         }
       }
     }
@@ -59,13 +60,13 @@ public class RolesController : Controller
 
       if (result.Succeeded)
       {
-        WriteLine($"User {user.UserName} email confirmed successfully.");
+        _logger.LogInformation($"User {user.UserName} email confirmed successfully.");
       }
       else
       {
         foreach (IdentityError error in result.Errors)
         {
-          WriteLine(error.Description);
+          _logger.LogError(error.Description);
         }
       }
     }
@@ -77,13 +78,13 @@ public class RolesController : Controller
 
       if (result.Succeeded)
       {
-        WriteLine($"User {user.UserName} added to {AdminRole} successfully.");
+        _logger.LogInformation($"User {user.UserName} added to {AdminRole} successfully.");
       }
       else
       {
         foreach (IdentityError error in result.Errors)
         {
-          WriteLine(error.Description);
+          _logger.LogError(error.Description);
         }
       }
     }
