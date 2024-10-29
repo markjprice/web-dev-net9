@@ -54,6 +54,7 @@
 
 ## Other C# code editors and platforms
 - [GitHub Codespaces](https://docs.github.com/en/codespaces/overview)
+- [WebStorm and Rider Are Now Free for Non-Commercial Use](https://blog.jetbrains.com/blog/2024/10/24/webstorm-and-rider-are-now-free-for-non-commercial-use/)
 - [JetBrains Rider](https://www.jetbrains.com/rider/)
 - [Rider documentation](https://www.jetbrains.com/help/rider/Introduction.html)
 
