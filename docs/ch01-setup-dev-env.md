@@ -9,11 +9,13 @@
 Before you start programming, you'll need a code editor for C#, either from Microsoft or a third-party. 
 
 Microsoft has a family of code editors and **Integrated Development Environments (IDEs)**, which include:
-- Visual Studio for Windows
-- VS Code for Windows, Mac, or Linux
-- VS Code for the Web or GitHub Codespaces
+- Visual Studio for Windows (Community Edition is free, others have a cost)
+- VS Code for Windows, Mac, or Linux (free)
+- VS Code for the Web (free) or GitHub Codespaces (cost)
 
-Third parties have created their own C# code editors, for example, JetBrains has the cross-platform Rider, which is available for Windows, Mac, or Linux but does have a license cost. Rider is popular with more experienced .NET developers.
+Third parties have created their own C# code editors. For example, JetBrains has the cross-platform Rider, which is available for Windows, Mac, or Linux. Rider is popular with more experienced .NET developers.
+
+> **Since October 2024, Rider is now free for non-commercial use!** You can learn more about this at the following link: https://blog.jetbrains.com/blog/2024/10/24/webstorm-and-rider-are-now-free-for-non-commercial-use/.
 
 > **Warning!** Although JetBrains is a fantastic company with great products, both Rider and the ReSharper extension for Visual Studio are software, and all software have bugs and quirky behavior. For example, they might show errors like `Cannot resolve symbol` in your Razor Pages, Razor views, and Blazor components. Yet you can build and run those files because there is no actual problem. If you have installed the Unity Support plugin, then it will complain about boxing operations (which are a genuine problem for Unity game developers), but in projects that are not Unity, hence the warning does not apply.
 
