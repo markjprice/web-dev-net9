@@ -60,17 +60,17 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 - Chapter 12 Web Service Integration Testing
   - [code/MatureWeb/Northwind.IntegrationTests](code/MatureWeb/Northwind.IntegrationTests)
 
-**Web Content Management Systems** [code/MatureWeb/Northwind.Cms](code/MatureWeb/Northwind.Cms)
+**Web Content Management Systems**
 - Chapter 13 Web Content Management Using Umbraco
   - [code/MatureWeb/Northwind.Cms](code/MatureWeb/Northwind.Cms)
 - Chapter 14 Customizing and Extending Umbraco
 
-**Appendix and online chapter**
+**Appendix**
 - [Appendix, Answers to the Test Your Knowledge Questions](docs/B31470_Appendix.pdf).
 
 # Code solutions for Visual Studio, VS Code, and Rider
 
-Visual Studio, VS Code + C# Dev Kit, and JetBrains Rider can use the same code solution file and projects. 
+Visual Studio, VS Code + C# Dev Kit, and Rider can use the same code solution file and projects. 
 
 To use the solution file with VS Code:
 1. Install the **C# Dev Kit** extension.
@@ -86,7 +86,7 @@ You can "clean" a solution between opening it in different code editors, either 
 The appendix and color figures are available to download as PDFs:
 
 - [Appendix, Answers to the Test Your Knowledge Questions](docs/B31470_Appendix.pdf).
-- Color images of the screenshots/diagrams used in this book (coming November 2024).
+- Color images of the screenshots/diagrams used in this book (coming January 2025).
 
 More content to support the book: 
 
