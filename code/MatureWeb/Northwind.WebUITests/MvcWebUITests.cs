@@ -29,6 +29,11 @@ public class MvcWebUITests
     using IPlaywright? playwright = await Playwright.CreateAsync();
     await GotoHomePage(playwright);
 
+    if (_page is null)
+    {
+      throw new NullReferenceException("Home page not found.");
+    }
+
     string actualTitle = await _page.TitleAsync();
 
     // Assert: Navigating to home page worked and its title is as expected.
@@ -46,8 +51,8 @@ public class MvcWebUITests
     await _page.ScreenshotAsync(new PageScreenshotOptions
     {
       Path = Path.Combine(Environment.GetFolderPath(
-        Environment.SpecialFolder.Desktop),
-        $"homepage-{timestamp}.png")
+      Environment.SpecialFolder.Desktop),
+      $"homepage-{timestamp}.png")
     });
   }
 
@@ -59,11 +64,15 @@ public class MvcWebUITests
     await GotoHomePage(playwright);
 
     // The best way to select the element is to use its data-testid.
-    ILocator element = _page.GetByTestId("visitor_count");
+    ILocator? element = _page?.GetByTestId("visitor_count");
 
-    // The text content might contain whitespace like \n so we 
-    // must trim that away.
-    string? countText = (await element.TextContentAsync())?.Trim();
+    string? countText = null;
+    if (element is not null)
+    {
+      // The text content might contain whitespace like \n so we 
+      // must trim that away.
+      countText = (await element.TextContentAsync())?.Trim();
+    }
 
     bool isInteger = int.TryParse(countText, out int count);
 
@@ -79,6 +88,11 @@ public class MvcWebUITests
     // Arrange: Launch Chrome browser and navigate to home page.
     using IPlaywright? playwright = await Playwright.CreateAsync();
     await GotoHomePage(playwright);
+
+    if (_page is null)
+    {
+      throw new NullReferenceException("Home page not found.");
+    }
 
     // Set the price input box to 60.
     ILocator price = _page.GetByTestId("price");
