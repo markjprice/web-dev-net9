@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>6c71dfb4-0298-442f-b72a-698a2abe5024</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Hybrid" />
+    <PackageReference Include="NSwag.MSBuild">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer " />
+  </ItemGroup>
+
+  <ItemGroup Label="To use the Northwind entity models.">
+    <ProjectReference Include="..\Northwind.DataContext\Northwind.DataContext.csproj" />
+    <ProjectReference Include="..\Northwind.Repositories\Northwind.Repositories.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Label="To simplify use of WriteLine.">
+    <Using Include="System.Console" Static="true" />
+  </ItemGroup>
+
+</Project>

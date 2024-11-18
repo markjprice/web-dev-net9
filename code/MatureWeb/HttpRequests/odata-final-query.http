@@ -1,0 +1,9 @@
+### Configure a variable for the web service base address.
+@base_address = https://localhost:5101/catalog/
+
+### Make a complex GET request for two products.
+GET {{base_address}}products
+  ?$filter=contains(ProductName, 'ch') and UnitPrice lt 44.95
+  &$orderby=Supplier/Country,UnitPrice
+  &$select=ProductName,UnitPrice
+  &$expand=Supplier

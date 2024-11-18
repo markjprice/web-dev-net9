@@ -1,0 +1,41 @@
+### Configure a variable for the web service base address.
+@base_address = https://localhost:5101/catalog/
+
+### Insert a new product.
+POST {{base_address}}products
+Content-Type: application/json
+
+{
+  "ProductName": "Impossible Burger",
+  "SupplierId": 7,
+  "CategoryId": 6,
+  "QuantityPerUnit": "Pack of 4",
+  "UnitPrice": 40.25,
+  "UnitsInStock": 50,
+  "UnitsOnOrder": 0,
+  "ReorderLevel": 30,
+  "Discontinued": false
+}
+
+### Update an existing product.
+PUT {{base_address}}products
+Content-Type: application/json
+
+{
+  "ProductId": 78,
+  "ProductName": "Impossible Burger",
+  "SupplierId": 7,
+  "CategoryId": 6,
+  "QuantityPerUnit": "Pack of 4",
+  "UnitPrice": 40.25,
+  "UnitsInStock": 50,
+  "UnitsOnOrder": 0,
+  "ReorderLevel": 30,
+  "Discontinued": false
+}
+
+### Get an existing product.
+GET {{base_address}}products/78
+
+### Delete an existing product.
+DELETE {{base_address}}products/78

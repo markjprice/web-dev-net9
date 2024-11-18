@@ -1,0 +1,36 @@
+### Configure a variable for the web service base address.
+@base_address = https://localhost:5101/catalog/
+
+### Make a GET request for two columns for categories.
+GET {{base_address}}categories/?$select=CategoryId,CategoryName
+
+### Make a GET request for products that start with Ch or cost more than $50.
+GET {{base_address}}products/?$select=ProductName,UnitPrice&$filter=startswith(ProductName,'Ch')%20or%20(UnitPrice%20gt%2050)
+
+### Make a GET request for products sorted by price.
+GET {{base_address}}products/
+  ?$orderby=UnitPrice desc,ProductName
+  &$select=ProductId,ProductName,UnitPrice
+
+### Make a GET request for a subset of properties for product 77.
+GET {{base_address}}products(77)/
+  ?$select=ProductId,ProductName,UnitPrice
+
+### Make a GET request for categories and their related products.
+GET {{base_address}}categories/
+  ?$select=CategoryId,CategoryName
+  &$expand=Products
+
+### Make a GET request for category 8 and its related products.
+GET {{base_address}}categories(8)/
+  ?$select=CategoryId,CategoryName
+  &$expand=Products
+
+### GET product 50 using version 2 of the implementation.
+GET {{base_address}}v2/products(50)
+
+### GET product 50 using the default version 1 of the implementation.
+GET {{base_address}}products(50)
+
+### GET product 50 using version 1 of the implementation.
+GET {{base_address}}v1/products(50)

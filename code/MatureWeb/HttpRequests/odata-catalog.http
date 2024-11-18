@@ -1,0 +1,36 @@
+### Configure a variable for the web service base address.
+@base_address = https://localhost:5101/catalog/
+
+### Make a GET request to the base address.
+GET {{base_address}}
+
+### Make a GET request to the base address for metadata.
+GET {{base_address}}$metadata
+
+### Make a GET request to get all categories.
+GET {{base_address}}categories
+
+### Make a GET request to get all products.
+GET {{base_address}}products
+
+### Make a GET request to get all suppliers.
+GET {{base_address}}suppliers
+
+### Make a GET request to get category 3.
+{{base_address}}categories(3)
+
+### Make a GET request to get category 3.
+{{base_address}}categories/3
+
+### Make a GET request to get the number of categories.
+{{base_address}}categories/$count
+
+### Make a GET request to get the number of products.
+{{base_address}}products/$count
+
+### Make a GET request to get the number of suppliers.
+{{base_address}}suppliers/$count
+
+### Make a GET request to get product 77.
+{{base_address}}products(77)
+

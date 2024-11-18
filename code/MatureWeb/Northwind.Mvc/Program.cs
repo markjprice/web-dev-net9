@@ -17,6 +17,8 @@ using System.Net.Http.Headers; // To use MediaTypeWithQualityHeaderValue.
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 builder.Services.Configure<NorthwindOptions>(builder
   .Configuration.GetSection("Northwind"));
 
@@ -79,6 +81,7 @@ builder.Services.AddOutputCache(options =>
   options.AddPolicy("views", p => p.SetVaryByQuery("alertstyle"));
 });
 
+#pragma warning disable EXTEXP0018 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 builder.Services.AddHybridCache(options =>
 {
   options.DefaultEntryOptions = new HybridCacheEntryOptions
@@ -87,6 +90,7 @@ builder.Services.AddHybridCache(options =>
     LocalCacheExpiration = TimeSpan.FromSeconds(30)
   };
 });
+#pragma warning restore EXTEXP0018 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
 builder.Services.AddScoped<ICustomerRepository,
   CustomerRepository>();
@@ -110,6 +114,8 @@ builder.Services.AddHttpClient(name: "Northwind.OData",
   });
 
 var app = builder.Build();
+
+app.MapDefaultEndpoints();
 
 #endregion
 
