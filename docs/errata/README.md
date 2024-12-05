@@ -8,4 +8,4 @@ If you find any mistakes in the first edition, *Real-World Web Development with 
 
 [**Common Mistakes** (7 items)](common-mistakes.md): These are some of the most common mistakes that a reader might encounter when trying to get code in book tasks to work, or when trying to write your own code. 
 
-All errata and improvements will be included in the second edition, *Real-World Web Development with .NET 10*, planned for publishing in November 2025. To be included they must be submitted by mid-September 2025.
+All errata and improvements will be included in the second edition, *Real-World Web Development with .NET 10*, planned for publishing in February 2026. To be included they must be submitted by mid-October 2025.
