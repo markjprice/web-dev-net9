@@ -9,9 +9,9 @@ public class RolesController : Controller
   private string UserEmail = "test@example.com";
   private readonly RoleManager<IdentityRole> _roleManager;
   private readonly UserManager<IdentityUser> _userManager;
-  private readonly ILogger<HomeController> _logger;
+  private readonly ILogger<RolesController> _logger;
 
-  public RolesController(ILogger<HomeController> logger, 
+  public RolesController(ILogger<RolesController> logger, 
     RoleManager<IdentityRole> roleManager,
     UserManager<IdentityUser> userManager)
   {
