@@ -13,6 +13,7 @@ Repository for the Packt Publishing book titled "Real-World Web Development with
 - [Microsoft Certifications](#microsoft-certifications)
 - [Microsoft .NET community support](#microsoft-net-community-support)
 - [Interviews with me](#interviews-with-me)
+- [Book Cover](#book-cover)
 
 
 # Free PDF of the book and how to contact the publisher Packt
@@ -127,4 +128,6 @@ Written interviews with me:
 - [C# 9 and .NET 5: Book Review and Q&A](https://www.infoq.com/articles/book-interview-mark-price/?itm_source=infoq&itm_campaign=user_page&itm_medium=link)
 - [Q&A with Episerver's Mark J. Price, author of C# 9 and .NET 5 - Modern Cross-Platform Development](https://www.episerver.com/articles/q-and-a-with-mark-price)
 
-![Book Cover](docs\assets\B31470_Cover.png)
+# Book Cover
+
+![Book Cover](docs/assets/B31470_Cover.png)
