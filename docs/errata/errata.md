@@ -1,10 +1,11 @@
-**Errata** (3 items)
+**Errata** (4 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 15 - Central Package Management](#page-15---central-package-management)
 - [Page 23 - Installing Docker and the Azure SQL Edge container image](#page-23---installing-docker-and-the-azure-sql-edge-container-image)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
+- [Page x - What does UseMigrationsEndPoint do?](#page-x---what-does-usemigrationsendpoint-do)
 
 
 # Page 15 - Central Package Management
@@ -54,3 +55,12 @@ In the **Good Practice** box, I use the phrase "data context". In other places, 
 
 The Microsoft official documentation just uses the word "context" when referring to this class but I feel that loses some meaning. In future editions, I will try to consistently use the phrase "database context".
 
+# Page x - What does UseMigrationsEndPoint do?
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 3, 2025](https://github.com/markjprice/web-dev-net9/issues/8).
+
+In the fourth paragraph, I wrote, "You can find the source code for the `UseMigrationsEndPoint` extension method at the following link: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Diagnostics.EntityFrameworkCore/src/MigrationsEndPointOptions.cs#L18."
+
+But we do not care about the source code for the `UseMigrationsEndPoint` extension method itself. We just want to know the relative path that it uses. 
+
+So the link is correct, because it shows us what the path is defined by a property on the `MigrationsEndPointOptions` class named `DefaultPath`. But the description is misleading, so in the next edition I will write, "You can find the source code for the relative path used by the `UseMigrationsEndPoint` extension method at the following link: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Diagnostics.EntityFrameworkCore/src/MigrationsEndPointOptions.cs#L18."
