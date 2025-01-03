@@ -87,7 +87,7 @@ The path in the `<script>` element has an extra space, as shown in the following
 script>
 ```
 
-Delete the extra space, as shown in the following markup:
+In the next edition, I will delete the extra space, as shown in the following markup:
 ```html
 <script src="~/js/site.js?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM"></
 script>
