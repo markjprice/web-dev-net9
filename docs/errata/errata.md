@@ -59,8 +59,10 @@ The Microsoft official documentation just uses the word "context" when referring
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 3, 2025](https://github.com/markjprice/web-dev-net9/issues/8).
 
+This section is about trying to find out what path is configured as an endpoint when you call the `UseMigrationsEndPoint` extension method. We already know what calling the `UseMigrationsEndPoint` extension method does conceptually: it configures a route that if called, triggers a database migration. What we don't know is what the relative path is for that route. 
+
 In the fourth paragraph, I wrote, "You can find the source code for the `UseMigrationsEndPoint` extension method at the following link: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Diagnostics.EntityFrameworkCore/src/MigrationsEndPointOptions.cs#L18."
 
-But we do not care about the source code for the `UseMigrationsEndPoint` extension method itself. We just want to know the relative path that it uses. 
+But we do not care about the source code for the `UseMigrationsEndPoint` extension method itself. We just want to know the relative path that it uses for its endpoint. 
 
-So the link is correct, because it shows us what the path is defined by a property on the `MigrationsEndPointOptions` class named `DefaultPath`. But the description is misleading, so in the next edition I will write, "You can find the source code for the relative path used by the `UseMigrationsEndPoint` extension method at the following link: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Diagnostics.EntityFrameworkCore/src/MigrationsEndPointOptions.cs#L18."
+So the link is correct, because it shows us what the path is defined by a property on the `MigrationsEndPointOptions` class named `DefaultPath`. But the description is misleading. In the next edition I will write, "You can find the source code for the relative path used by the `UseMigrationsEndPoint` extension method at the following link: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Diagnostics.EntityFrameworkCore/src/MigrationsEndPointOptions.cs#L18."
