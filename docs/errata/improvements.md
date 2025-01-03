@@ -1,8 +1,9 @@
-**Improvements** (2 items)
+**Improvements** (3 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
+- [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Chapter 13 - Installing Umbraco CMS](#chapter-13---installing-umbraco-cms)
 
 # Page 33 - Creating a class library for entity models
@@ -12,6 +13,14 @@ If you have suggestions for improvements, then please [raise an issue in this re
 At the end of Step 1, there is a note that says, "You can target either .NET 8 (LTS) or .NET 9 (STS) for all the projects in this book but you should be consistent. If you choose .NET 9 for the class libraries, then choose .NET 9 for later MVC and Web API projects."
 
 This does not mean that you can download or clone the solution projects and then only change the target framework from `net9.0` to `net8.0` and it will work. What I meant is that you can choose to target .NET 8 when you create all the projects. Some of the project templates have changed between .NET 8 and .NET 9, especially the Aspire templates. Just changing the target version after project creation won't be enough. In the next edition, I will remove this note since every reader should want to target `net10.0` anyway.
+
+# Page 36 - Creating a class library for a database context
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 2, 2025](https://github.com/markjprice/web-dev-net9/issues/6).
+
+In Step 9, I tell the reader to "add statements to dynamically build a database connection string for SQL Edge in Docker". In Step 10, I tell the reader to "add a class named `NorthwindContextExtensions.cs`. Modify its contents to define an extension method that adds the Northwind database context to a collection of dependency services". There is duplicate code in these classes because the `NorthwindContext` class and its extensions are written to allow developers to instantiate the context class directly as well as via the extension method. They can also override the connection string or choose to accept defaults. 
+
+In all the .NET 10 editions of all four of my books, I will review this code and explain it more in the books, perhaps with a flow diagram showing the different ways to use the `NorthwindContext` class.
 
 # Chapter 13 - Installing Umbraco CMS
 
@@ -45,3 +54,4 @@ I recommend that you use version 14.2.0 as I did in the book. If you choose to i
 > **Warning!** You might need to restart Visual Studio to see newly added project templates.
 
 > **Note**: The next edition will use Umbraco CMS version 17.0.0 which will be an LTS release that targets .NET 10.
+
