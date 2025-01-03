@@ -1,4 +1,4 @@
-**Errata** (5 items)
+**Errata** (6 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
 - [Page x - What does UseMigrationsEndPoint do?](#page-x---what-does-usemigrationsendpoint-do)
 - [Page 81 - Implementing views](#page-81---implementing-views)
+- [Page 83 - How cache busting with Tag Helpers works](#page-83---how-cache-busting-with-tag-helpers-works)
 
 
 # Page 15 - Central Package Management
@@ -75,3 +76,19 @@ So the link is correct, because it shows us what the path is defined by a proper
 At the end of Step 9, I wrote, "If you want to navigate to a feature in a Razor class library, like the employees component that you created in the previous chapter, then you use `asp-area` to specify the feature name."
 
 I originally planned to have sections about view components and Razor class libraries but they were postponed to the next edition. If I do add those sections and have a task that creates an employees component, then I will be able to leave this sentence unchanged. Otherwise, I will change it to, "If you want to navigate to a feature in a Razor class library then you use `asp-area` to specify the feature name."
+
+# Page 83 - How cache busting with Tag Helpers works
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 3, 2025](https://github.com/markjprice/web-dev-net9/issues/10).
+
+The path in the `<script>` element has an extra space, as shown in the following markup:
+```html
+<script src="~/js/site.js? v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM"></
+script>
+```
+
+Delete the extra space, as shown in the following markup:
+```html
+<script src="~/js/site.js?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM"></
+script>
+```
