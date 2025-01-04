@@ -1,4 +1,4 @@
-**Errata** (6 items)
+**Errata** (7 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page x - What does UseMigrationsEndPoint do?](#page-x---what-does-usemigrationsendpoint-do)
 - [Page 81 - Implementing views](#page-81---implementing-views)
 - [Page 83 - How cache busting with Tag Helpers works](#page-83---how-cache-busting-with-tag-helpers-works)
+- [Page 97 - Temporarily storing data](#page-97---temporarily-storing-data)
 
 
 # Page 15 - Central Package Management
@@ -92,3 +93,9 @@ In the next edition, I will delete the extra space, as shown in the following ma
 <script src="~/js/site.js?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM"></
 script>
 ```
+
+# Page 97 - Temporarily storing data
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 3, 2025](https://github.com/markjprice/web-dev-net9/issues/11).
+
+In Step 2, I wrote, "(You will learn more about middleware later in this chapter.)" But during final drafts of the book, I moved this section from Chapter 8 to Chapter 2, so this note is no longer true. In the next edition, I will delete the note, and I will add a new section briefly introducing middleware and other terminology to Chapter 1.
