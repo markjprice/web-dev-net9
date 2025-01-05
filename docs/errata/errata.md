@@ -1,4 +1,4 @@
-**Errata** (7 items)
+**Errata** (8 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -9,6 +9,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 81 - Implementing views](#page-81---implementing-views)
 - [Page 83 - How cache busting with Tag Helpers works](#page-83---how-cache-busting-with-tag-helpers-works)
 - [Page 97 - Temporarily storing data](#page-97---temporarily-storing-data)
+- [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 
 
 # Page 15 - Central Package Management
@@ -99,3 +100,19 @@ script>
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 3, 2025](https://github.com/markjprice/web-dev-net9/issues/11).
 
 In Step 2, I wrote, "(You will learn more about middleware later in this chapter.)" But during final drafts of the book, I moved this section from Chapter 8 to Chapter 2, so this note is no longer true. In the next edition, I will delete the note, and I will add a new section briefly introducing middleware and other terminology to Chapter 1.
+
+# Page 118 - Inserting, updating, and deleting suppliers
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 4, 2025](https://github.com/markjprice/web-dev-net9/issues/12).
+
+In Step 5, the first bullet says, "The `<form>` element with a `PUT` method is ordinary HTML, so an `<input type="submit" />` element inside it will make an HTTP `PUT` request back to the current path with values of any other elements inside that form."
+
+But HTML forms inherently support only two HTTP methods: `GET` and `POST`. They do not natively support `PUT`, `DELETE`, or other HTTP methods. This limitation means that when you need to use `PUT` or `DELETE`, you cannot specify these methods directly in the `<form>` element. 
+
+A convention in ASP.NET Core MVC is to simulate these methods using `POST`, often with the help of a hidden input field called `_method` or specifying the action in the path, like `/home/editsupplier` and `/home/deletesupplier`.
+
+In the next edition, I will change `PUT` to `POST` in that sentence, and I will add a note at the start of this section to explain why we do not use `PUT` or `DELETE` methods, despite in a RESTful API design:
+- `POST` is typically used for creating resources.
+- `PUT` is used for updating resources.
+- `DELETE` is used for deleting resources.
+
