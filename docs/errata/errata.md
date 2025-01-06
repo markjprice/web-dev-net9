@@ -1,4 +1,4 @@
-**Errata** (14 items)
+**Errata** (15 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,6 +16,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 159 - If you are using Visual Studio](#page-159---if-you-are-using-visual-studio)
 - [Page 161 - If you are using VS Code](#page-161---if-you-are-using-vs-code)
 - [Page 162 - If you are using VS Code](#page-162---if-you-are-using-vs-code)
+- [Page 163 - Other resource file tools](#page-163---other-resource-file-tools)
 
 
 # Page 15 - Central Package Management
@@ -195,3 +196,8 @@ This should be, "In `Resources\Views\Home`, add a new file named `Orders.resx`."
 
 In Step 6, I wrote, "modify the `value` column", when I should have written, "modify the `value` element".
 
+# Page 163 - Other resource file tools
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/19).
+
+I wrote, "...without needing to recompile the original console app." I should have written, "...without needing to recompile the original project."
