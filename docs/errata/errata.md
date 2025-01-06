@@ -1,4 +1,4 @@
-**Errata** (12 items)
+**Errata** (13 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
 - [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
 - [Page 159 - If you are using Visual Studio](#page-159---if-you-are-using-visual-studio)
+- [Page 161 - If you are using VS Code](#page-161---if-you-are-using-vs-code)
 
 
 # Page 15 - Central Package Management
@@ -178,4 +179,12 @@ I should have written, "In the coding task, you will add resources to the ASP.NE
 In the next edition, I will retake or edit the screenshots to show the correct folder name `Home`.
 
 Also, in Step 1, the path says `Resource\Views\Home` when it should be `Resources\Views\Home`.
+
+# Page 161 - If you are using VS Code
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/17).
+
+In Step 1, I wrote, "In `Resources\Views\Orders`, add a new file named `Index.resx`."
+
+This should be, "In `Resources\Views\Home`, add a new file named `Orders.resx`."
 
