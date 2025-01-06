@@ -1,4 +1,4 @@
-**Errata** (13 items)
+**Errata** (14 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -15,6 +15,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
 - [Page 159 - If you are using Visual Studio](#page-159---if-you-are-using-visual-studio)
 - [Page 161 - If you are using VS Code](#page-161---if-you-are-using-vs-code)
+- [Page 162 - If you are using VS Code](#page-162---if-you-are-using-vs-code)
 
 
 # Page 15 - Central Package Management
@@ -187,4 +188,10 @@ Also, in Step 1, the path says `Resource\Views\Home` when it should be `Resource
 In Step 1, I wrote, "In `Resources\Views\Orders`, add a new file named `Index.resx`."
 
 This should be, "In `Resources\Views\Home`, add a new file named `Orders.resx`."
+
+# Page 162 - If you are using VS Code
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/18).
+
+In Step 6, I wrote, "modify the `value` column", when I should have written, "modify the `value` element".
 
