@@ -1,4 +1,4 @@
-**Errata** (9 items)
+**Errata** (10 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -11,6 +11,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 97 - Temporarily storing data](#page-97---temporarily-storing-data)
 - [Page 117 - Displaying Northwind suppliers](#page-117---displaying-northwind-suppliers)
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
+- [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
 
 
 # Page 15 - Central Package Management
@@ -137,4 +138,24 @@ In the next edition, I will change `PUT` to `POST` in that sentence, and I will 
 - `POST` is typically used for creating resources.
 - `PUT` is used for updating resources.
 - `DELETE` is used for deleting resources.
+
+# Page 143 - Comparing HTML Helpers and Tag Helpers
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/14).
+
+I showed to examples of rendering a hyperlink:
+```cs
+@Html.ActionLink("View our privacy policy.", "Privacy", "Index")
+
+@Html.ActionLink(linkText: "View our privacy policy.",
+  action: "Privacy", controller: "Index")
+```
+
+But the controller name is `Home`, not `Index`, so the markup should be:
+```cs
+@Html.ActionLink("View our privacy policy.", "Privacy", "Home")
+
+@Html.ActionLink(linkText: "View our privacy policy.",
+  action: "Privacy", controller: "Home")
+```
 
