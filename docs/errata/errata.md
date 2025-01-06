@@ -1,4 +1,4 @@
-**Errata** (11 items)
+**Errata** (12 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -13,6 +13,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
 - [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
+- [Page 159 - If you are using Visual Studio](#page-159---if-you-are-using-visual-studio)
 
 
 # Page 15 - Central Package Management
@@ -167,4 +168,14 @@ But the controller name is `Home`, not `Index`, so the markup should be:
 I wrote, "In the coding task, you will create a console app with an embedded invariant culture and satellite assemblies for Danish, French, French-Canadian, Polish, and Iranian (Persian)."
 
 I should have written, "In the coding task, you will add resources to the ASP.NET Core MVC project that compile to an embedded invariant culture (English) and satellite assemblies for French (Neutral), French (France), and English (British)."
+
+# Page 159 - If you are using Visual Studio
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/16).
+
+*Figure 4.6* to *Figure 4.9* all show the `Orders.resx` file in a folder structure: `Resources\Views\Orders` but they should be `Resources\Views\Home`.
+
+In the next edition, I will retake or edit the screenshots to show the correct folder name `Home`.
+
+Also, in Step 1, the path says `Resource\Views\Home` when it should be `Resources\Views\Home`.
 
