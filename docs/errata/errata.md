@@ -143,7 +143,7 @@ In the next edition, I will change `PUT` to `POST` in that sentence, and I will 
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/14).
 
-I showed to examples of rendering a hyperlink:
+I showed two examples of rendering a hyperlink:
 ```cs
 @Html.ActionLink("View our privacy policy.", "Privacy", "Index")
 
