@@ -1,4 +1,4 @@
-**Errata** (10 items)
+**Errata** (11 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -12,6 +12,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 117 - Displaying Northwind suppliers](#page-117---displaying-northwind-suppliers)
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
+- [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
 
 
 # Page 15 - Central Package Management
@@ -158,4 +159,12 @@ But the controller name is `Home`, not `Index`, so the markup should be:
 @Html.ActionLink(linkText: "View our privacy policy.",
   action: "Privacy", controller: "Home")
 ```
+
+# Page 158 - Localizing your user interface
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/15).
+
+I wrote, "In the coding task, you will create a console app with an embedded invariant culture and satellite assemblies for Danish, French, French-Canadian, Polish, and Iranian (Persian)."
+
+I should have written, "In the coding task, you will add resources to the ASP.NET Core MVC project that compile to an embedded invariant culture (English) and satellite assemblies for French (Neutral), French (France), and English (British)."
 
