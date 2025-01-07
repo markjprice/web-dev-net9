@@ -1,4 +1,4 @@
-**Errata** (15 items)
+**Errata** (16 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -17,6 +17,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 161 - If you are using VS Code](#page-161---if-you-are-using-vs-code)
 - [Page 162 - If you are using VS Code](#page-162---if-you-are-using-vs-code)
 - [Page 163 - Other resource file tools](#page-163---other-resource-file-tools)
+- [Page 209 - Exploring in-memory object caching](#page-209---exploring-in-memory-object-caching)
 
 
 # Page 15 - Central Package Management
@@ -201,3 +202,17 @@ In Step 6, I wrote, "modify the `value` column", when I should have written, "mo
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/19).
 
 I wrote, "...without needing to recompile the original console app." I should have written, "...without needing to recompile the original project."
+
+# Page 209 - Exploring in-memory object caching
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 6, 2025](https://github.com/markjprice/web-dev-net9/issues/20).
+
+In Step 5, I wrote, "add statements to try to get the product from the cache, and if it is not cached, get it from the database and set it in the cache, using a sliding expiration of one hour". The sliding expiration should be five seconds, to match the code: `SlidingExpiration = TimeSpan.FromSeconds(5)`.
+
+In Step 9, I wrote, "Click **Reload this page** within 30 seconds", but this should be "5 seconds". 
+
+In Step 10, I wrote, "Wait at least 30 seconds", but this should be "5 seconds". 
+
+In Step 11, I wrote, "within the 30-second sliding expiration window", but this should be "5-second".
+
+In the next edition, I might change the duration to ten seconds to give readers more time to review the console output and click reload.
