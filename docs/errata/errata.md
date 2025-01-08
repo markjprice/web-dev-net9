@@ -1,4 +1,4 @@
-**Errata** (16 items)
+**Errata** (17 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -18,6 +18,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 162 - If you are using VS Code](#page-162---if-you-are-using-vs-code)
 - [Page 163 - Other resource file tools](#page-163---other-resource-file-tools)
 - [Page 209 - Exploring in-memory object caching](#page-209---exploring-in-memory-object-caching)
+- [Chapter 8 - When you cannot use constructor injection](#chapter-8---when-you-cannot-use-constructor-injection)
 
 
 # Page 15 - Central Package Management
@@ -216,3 +217,11 @@ In Step 10, I wrote, "Wait at least 30 seconds", but this should be "5 seconds".
 In Step 11, I wrote, "within the 30-second sliding expiration window", but this should be "5-second".
 
 In the next edition, I might change the duration to ten seconds to give readers more time to review the console output and click reload.
+
+# Chapter 8 - When you cannot use constructor injection
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 7, 2025](https://github.com/markjprice/web-dev-net9/issues/21).
+
+For the **Background services** bullet, I ended with the sentence, "The solution is to use method injection by resolving services within the `ExecuteAsync` method." 
+
+I should have written, "The solution is to create a scope with the `IServiceScopeFactory.CreateScope()` API, as described in the following link: https://learn.microsoft.com/en-us/dotnet/core/extensions/scoped-service."
