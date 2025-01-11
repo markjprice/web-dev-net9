@@ -1,4 +1,4 @@
-**Errata** (19 items)
+**Errata** (20 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -21,6 +21,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Chapter 8 - When you cannot use constructor injection](#chapter-8---when-you-cannot-use-constructor-injection)
 - [Page 295 - Configuration validation](#page-295---configuration-validation)
 - [Page 307 - Adding Aspire to an existing solution](#page-307---adding-aspire-to-an-existing-solution)
+- [Page 308 - Adding Aspire to an existing solution](#page-308---adding-aspire-to-an-existing-solution)
 
 
 # Page 15 - Central Package Management
@@ -262,3 +263,10 @@ IResourceBuilder<ContainerResource> sqlServer = builder
 
 And the following additional method call after adding the project: `.WaitFor(sqlServer)`.
 
+# Page 308 - Adding Aspire to an existing solution
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 9, 2025](https://github.com/markjprice/web-dev-net9/issues/24).
+
+In Step 14, the output shown is from a different project solution. You can tell because: (1) the version of Aspire is 8.0, (2) the host directory is the Microsoft eShop sample web project, and (3) the port number is different. 
+
+In the next edition, I will replace this output with the correct output for the `MatureWeb` solution.
