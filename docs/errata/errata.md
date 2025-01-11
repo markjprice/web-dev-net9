@@ -1,4 +1,4 @@
-**Errata** (18 items)
+**Errata** (19 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -20,6 +20,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 209 - Exploring in-memory object caching](#page-209---exploring-in-memory-object-caching)
 - [Chapter 8 - When you cannot use constructor injection](#chapter-8---when-you-cannot-use-constructor-injection)
 - [Page 295 - Configuration validation](#page-295---configuration-validation)
+- [Page 307 - Adding Aspire to an existing solution](#page-307---adding-aspire-to-an-existing-solution)
 
 
 # Page 15 - Central Package Management
@@ -246,4 +247,18 @@ builder.Services
   .Validate(settings => settings.PagerSize > 0,
   "PagerSize must be greater than zero.");
 ```
+
+# Page 307 - Adding Aspire to an existing solution
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 9, 2025](https://github.com/markjprice/web-dev-net9/issues/23).
+
+In Step 11, I wrote that I had highlighted the code but the highlight is missing. In the next edition, I will highlight the following code statement:
+```cs
+IResourceBuilder<ContainerResource> sqlServer = builder
+  .AddContainer(name: "azuresqledge",
+  image: "mcr.microsoft.com/azure-sql-edge")
+  .WithLifetime(ContainerLifetime.Persistent);
+```
+
+And the following additional method call after adding the project: `.WaitFor(sqlServer)`.
 
