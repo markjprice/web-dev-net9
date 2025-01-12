@@ -298,4 +298,4 @@ https://github.com/markjprice/web-dev-net9/blob/main/code/MatureWeb/Northwind.We
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/27).
 
-In Step 4, in *Table 10.2*, the last row has a column value of `products(77)` for the **Relative request**. It should be `products(77)` because the **Response** column value is product 77.
+In Step 4, in *Table 10.2*, the last row has a column value of `products(2)` for the **Relative request**. It should be `products(77)` because the **Response** column value is product 77.
