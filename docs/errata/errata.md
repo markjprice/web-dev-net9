@@ -1,4 +1,4 @@
-**Errata** (22 items)
+**Errata** (23 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -24,6 +24,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 308 - Adding Aspire to an existing solution](#page-308---adding-aspire-to-an-existing-solution)
 - [Page 337 - Configuring the customer repository and Web API controller](#page-337---configuring-the-customer-repository-and-web-api-controller)
 - [Page 399 - Creating an HTTP file for making requests](#page-399---creating-an-http-file-for-making-requests)
+- [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
 
 
 # Page 15 - Central Package Management
@@ -299,3 +300,12 @@ https://github.com/markjprice/web-dev-net9/blob/main/code/MatureWeb/Northwind.We
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/27).
 
 In Step 4, in *Table 10.2*, the last row has a column value of `products(2)` for the **Relative request**. It should be `products(77)` because the **Response** column value is product 77.
+
+# Page 411 - Calling services in the Northwind MVC website
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/28).
+
+In Step 1, I wrote, "add a navigation menu item to go to a CORS controller with a JavaScript action method". 
+
+I should have written, "add a navigation menu item to go to a `ODataClient` controller with an `Index` action method".
+
