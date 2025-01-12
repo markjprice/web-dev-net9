@@ -290,3 +290,6 @@ public async Task<IActionResult> GetCustomer(string id)
   Customer? c = await _repo.RetrieveAsync(id, default);
 ```
 
+The code was already correct in the GitHub respository:
+https://github.com/markjprice/web-dev-net9/blob/main/code/MatureWeb/Northwind.WebApi/Controllers/CustomersController.cs#L47
+

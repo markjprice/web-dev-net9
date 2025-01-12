@@ -1,4 +1,4 @@
-**Improvements** (4 items)
+**Improvements** (5 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -6,6 +6,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
 - [Chapter 13 - Installing Umbraco CMS](#chapter-13---installing-umbraco-cms)
+- [Page 381 - Configuring the customer repository and Web API controller](#page-381---configuring-the-customer-repository-and-web-api-controller)
 
 # Page 33 - Creating a class library for entity models
 
@@ -69,4 +70,14 @@ I recommend that you use version 14.2.0 as I did in the book. If you choose to i
 > **Warning!** You might need to restart Visual Studio to see newly added project templates.
 
 > **Note**: The next edition will use Umbraco CMS version 17.0.0 which will be an LTS release that targets .NET 10.
+
+# Page 381 - Configuring the customer repository and Web API controller
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/26).
+
+In the **Summary** section, in the second bullet, I wrote, "How to try out and document web service APIs with Swagger."
+
+In casual conversation, people sometimes say "Swagger" when they mean "OpenAPI," but this is technically inaccurate, especially since Swagger is tied to a particular set of tools. Initially, Swagger defined its own specification for APIs, called the Swagger Specification. In 2016, the Swagger Specification was donated to the OpenAPI Initiative, becoming the basis for the OpenAPI Specification. Swagger is now more of a toolset for working with OpenAPI-compliant APIs, including tools for API design, documentation, and testing.
+
+In the next edition, I will write, "How to try out and document web service APIs with OpenAPI." And I will add a note about terminology, as shown above.
 
