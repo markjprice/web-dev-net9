@@ -1,4 +1,4 @@
-**Improvements** (5 items)
+**Improvements** (6 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
 - [Chapter 13 - Installing Umbraco CMS](#chapter-13---installing-umbraco-cms)
 - [Page 381 - Configuring the customer repository and Web API controller](#page-381---configuring-the-customer-repository-and-web-api-controller)
+- [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
 
 # Page 33 - Creating a class library for entity models
 
@@ -81,3 +82,12 @@ In casual conversation, people sometimes say "Swagger" when they mean "OpenAPI,"
 
 In the next edition, I will write, "How to try out and document web service APIs with OpenAPI." And I will add a note about terminology, as shown above.
 
+# Page 413 - Calling services in the Northwind MVC website
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/29).
+
+In Step 7, I wrote, "Optionally, start the `Northwind.WebApi` project using the `https` profile without debugging." 
+
+If the reader only clicks the OData menu item to try it out, and not any of the features that call the `Northwind.WebApi` web service, then they do not need that project running. 
+
+In the next edition, I will either delete that step, or explain why I've put it in and list the features that require it, or if I encourage the use of Aspire from the very beginning of the book as I plan to do, then all projects will start automatically without needing to have a manual step. 
