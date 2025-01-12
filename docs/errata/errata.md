@@ -1,4 +1,4 @@
-**Errata** (20 items)
+**Errata** (21 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -22,6 +22,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 295 - Configuration validation](#page-295---configuration-validation)
 - [Page 307 - Adding Aspire to an existing solution](#page-307---adding-aspire-to-an-existing-solution)
 - [Page 308 - Adding Aspire to an existing solution](#page-308---adding-aspire-to-an-existing-solution)
+- [Page 337 - Configuring the customer repository and Web API controller](#page-337---configuring-the-customer-repository-and-web-api-controller)
 
 
 # Page 15 - Central Package Management
@@ -270,3 +271,22 @@ And the following additional method call after adding the project: `.WaitFor(sql
 In Step 14, the output shown is from a different project solution. You can tell because: (1) the version of Aspire is 8.0, (2) the host directory is the Microsoft eShop sample web project, and (3) the port number is different. 
 
 In the next edition, I will replace this output with the correct output for the `MatureWeb` solution.
+
+# Page 337 - Configuring the customer repository and Web API controller
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/25).
+
+In Step 9, the `RetrieveAsync` method should have the `default` value passed to it, but instead I accidently put that in the `GetCustomer` method declaration, as shown in the following code: 
+```cs
+public async Task<IActionResult> GetCustomer(string id, default)
+{
+  Customer? c = await _repo.RetrieveAsync(id);
+```
+
+It should be as shown in the following code:
+```cs
+public async Task<IActionResult> GetCustomer(string id)
+{
+  Customer? c = await _repo.RetrieveAsync(id, default);
+```
+
