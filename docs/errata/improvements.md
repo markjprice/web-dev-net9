@@ -104,11 +104,14 @@ In the next edition, I will add rows to *Table 11.5* to explain what these two m
 Extension method|Description
 ---|---
 `When`|Used to specify a condition or an action you want to monitor or react to. It's often used when you don't just want to return a specific value from a method but want to perform additional behavior when a method is called.
-`Do`|Used to define the custom behavior that should be executed when the specified condition (in the When method) is met. This is where you write the logic that the mock should perform.
+`Do`|Used to define the custom behavior that should be executed when the specified condition (in the `When` method) is met. This is where you write the logic that the mock should perform.
 
 And I will show some example code:
 ```cs
-substitute.When(x => x.SomeMethod(Arg.Any<int>())).Do(x => {
-  Console.WriteLine($"SomeMethod called with argument: {x[0]}");
-});
+substitute.When(x => x.SomeMethod(Arg.Any<int>()))
+  .Do((CallInfo info) => 
+  {
+    // Could also use info.Args(0)
+    Console.WriteLine($"SomeMethod called with argument: {info[0]}");
+  });
 ```
