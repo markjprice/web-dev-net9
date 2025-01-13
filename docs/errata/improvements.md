@@ -1,4 +1,4 @@
-**Improvements** (6 items)
+**Improvements** (7 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Chapter 13 - Installing Umbraco CMS](#chapter-13---installing-umbraco-cms)
 - [Page 381 - Configuring the customer repository and Web API controller](#page-381---configuring-the-customer-repository-and-web-api-controller)
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
+- [Page 458 - Using NSubstitute to create test doubles](#page-458---using-nsubstitute-to-create-test-doubles)
 
 # Page 33 - Creating a class library for entity models
 
@@ -91,3 +92,23 @@ In Step 7, I wrote, "Optionally, start the `Northwind.WebApi` project using the 
 If the reader only clicks the OData menu item to try it out, and not any of the features that call the `Northwind.WebApi` web service, then they do not need that project running. 
 
 In the next edition, I will either delete that step, or explain why I've put it in and list the features that require it, or if I encourage the use of Aspire from the very beginning of the book as I plan to do, then all projects will start automatically without needing to have a manual step. 
+
+# Page 458 - Using NSubstitute to create test doubles
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 13, 2025](https://github.com/markjprice/web-dev-net9/issues/30).
+
+In the code on page 461, I use the `When` and `Do` methods but I have not explained how they work. 
+
+In the next edition, I will add rows to *Table 11.5* to explain what these two methods do, as shown below:
+
+Extension method|Description
+---|---
+`When`|Used to specify a condition or an action you want to monitor or react to. It's often used when you don't just want to return a specific value from a method but want to perform additional behavior when a method is called.
+`Do`|Used to define the custom behavior that should be executed when the specified condition (in the When method) is met. This is where you write the logic that the mock should perform.
+
+And I will show some example code:
+```cs
+substitute.When(x => x.SomeMethod(Arg.Any<int>())).Do(x => {
+  Console.WriteLine($"SomeMethod called with argument: {x[0]}");
+});
+```
