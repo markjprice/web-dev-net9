@@ -1,4 +1,4 @@
-**Errata** (23 items)
+**Errata** (24 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -25,6 +25,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 337 - Configuring the customer repository and Web API controller](#page-337---configuring-the-customer-repository-and-web-api-controller)
 - [Page 399 - Creating an HTTP file for making requests](#page-399---creating-an-http-file-for-making-requests)
 - [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
+- [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
 
 
 # Page 15 - Central Package Management
@@ -309,3 +310,16 @@ In Step 1, I wrote, "add a navigation menu item to go to a CORS controller with 
 
 I should have written, "add a navigation menu item to go to a `ODataClient` controller with an `Index` action method".
 
+# Page 460 - Mocking with NSubstitute example
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 13, 2025](https://github.com/markjprice/web-dev-net9/issues/31).
+
+In Step 11, I wrote, "In the `BusinessLogicUnitTests` project, add a package reference for `NSubstitute`, as shown in the following markup:
+```xml
+<PackageReference Include="NSubstitute" Version="5.1.0" />
+```
+
+But we are using CPM, so you should not specify the version number, as shown in the following markup:
+```xml
+<PackageReference Include="NSubstitute" />
+```
