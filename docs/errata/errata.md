@@ -1,4 +1,4 @@
-**Errata** (24 items)
+**Errata** (25 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -26,6 +26,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 399 - Creating an HTTP file for making requests](#page-399---creating-an-http-file-for-making-requests)
 - [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
+- [Page 485 - Creating and initializing a new Umbraco project](#page-485---creating-and-initializing-a-new-umbraco-project)
 
 
 # Page 15 - Central Package Management
@@ -323,3 +324,16 @@ But we are using CPM, so you should not specify the version number, as shown in 
 ```xml
 <PackageReference Include="NSubstitute" />
 ```
+
+# Page 485 - Creating and initializing a new Umbraco project
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 14, 2025](https://github.com/markjprice/web-dev-net9/issues/32).
+
+In the note box at the end of this section, I wrote, "The relative path to the Umbraco backoffice for your website is `\umbraco`. So, the absolute link to the website will be `https:\\localhost:5131\` and the absolute link to the website will be `https:\\localhost:5131\umbraco`."
+
+I mistakenly repeated, "the absolute link to the website", so I should have written, "The relative path to the Umbraco backoffice for your website is `\umbraco`. So, the absolute link to the website will be `https:\\localhost:5131\` and the absolute link to the Umbraco backoffice will be `https:\\localhost:5131\umbraco`."
+
+And I had previously written a note box before Step 17, "The Umbraco backoffice is accessed through the `/umbraco` relative path, so for our
+project, it is at the following link: https://localhost:5131/umbraco."
+
+In the next edition, I will remove one of these note boxes.
