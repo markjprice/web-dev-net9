@@ -1,4 +1,4 @@
-**Improvements** (7 items)
+**Improvements** (8 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -9,6 +9,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 381 - Configuring the customer repository and Web API controller](#page-381---configuring-the-customer-repository-and-web-api-controller)
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
 - [Page 458 - Using NSubstitute to create test doubles](#page-458---using-nsubstitute-to-create-test-doubles)
+- [Page 500 - Good media practices, Page 502 - Uploading images to Umbraco CMS](#page-500---good-media-practices-page-502---uploading-images-to-umbraco-cms)
 
 # Page 33 - Creating a class library for entity models
 
@@ -115,3 +116,13 @@ substitute.When(x => x.SomeMethod(Arg.Any<int>()))
     Console.WriteLine($"SomeMethod called with argument: {info[0]}");
   });
 ```
+
+# Page 500 - Good media practices, Page 502 - Uploading images to Umbraco CMS
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 14, 2025](https://github.com/markjprice/web-dev-net9/issues/33).
+
+I wrote, "Editors should name media files descriptively before uploading, for example, `team-photo-john-doe.jpg` instead of `IMG_1234.jpg`." 
+
+But in the next task, I tell the reader to upload sample images `category1.jpeg` to `category8.jpeg`. These images are not named descriptively because they were used earlier in the book to render categories programmtically based on `CategoryId` primary key value. 
+
+In the next edition, I will provide some other images with meaningful names for the reader to upload instead. 
