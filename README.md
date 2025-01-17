@@ -18,7 +18,7 @@ Repository for the Packt Publishing book titled "Real-World Web Development with
 
 # Free PDF of the book and how to contact the publisher Packt
 
-If you have purchased the paperback or Kindle edition, then you can request a free PDF copy at the following link: https://www.packtpub.com/page/companion-ebook.
+If you have purchased the paperback or Kindle edition, then you can request a free PDF copy and its supplementary content (like Appendix - Answers to the Test Your Knowledge Questions and Graphics Bundle PDF) at the following link: https://packt.link/supplementary-content-9781835880388. 
 
 For questions about book pricing, distribution, and so on, please contact the publisher Packt at the following email address: customercare@packt.com
 
