@@ -18,6 +18,10 @@ If you have suggestions for improvements, then please [raise an issue in this re
 
 For readers who fail to connect, I will add a [troubleshooting guide](sql-container-issues.md) with suggestions of how to fix their issues.
 
+I will also add a warning about making sure command lines are entered all in one line:
+
+> **Warning!** The preceding command must be entered all on one line, or the container will not be started up correctly. All command lines used in this book can be found and copied from the following link: https://github.com/markjprice/web-dev-net9/blob/main/docs/command-lines.md
+
 # Page 33 - Creating a class library for entity models
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 2, 2025](https://github.com/markjprice/web-dev-net9/issues/5).
