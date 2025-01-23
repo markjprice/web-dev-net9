@@ -86,12 +86,16 @@ To set the two environment variables at the command prompt or terminal.
 On Windows:
 ```shell
 setx MY_SQL_USR <your_user_name>
+```
+```shell
 setx MY_SQL_PWD <your_password>
 ```
 
 On macOS and Linux:
 ```shell
 export MY_SQL_USR=<your_user_name>
+```
+```shell
 export MY_SQL_PWD=<your_password>
 ```
 
@@ -122,6 +126,8 @@ dotnet test -- Playwright.BrowserName=chromium Playwright.LaunchOptions.Channel=
 To add a new **xUnit Test Project [C#]** / `xunit` project named `Northwind.WebUITests` to the `MatureWeb` solution. In the `MatureWeb` folder, enter the following commands:
 ```shell
 dotnet new xunit -o Northwind.WebUITests
+```
+```shell
 dotnet sln add Northwind.WebUITests
 ```
 
@@ -172,6 +178,8 @@ docker run --rm -it -p 8000:8080 mcr.microsoft.com/dotnet/samples:aspnetapp
 In the `MatureWeb` directory:
 ```shell
 dotnet new webapi --use-controllers -o Northwind.WebApi
+```
+```shell
 dotnet sln add Northwind.WebApi
 ```
 
@@ -195,6 +203,8 @@ dotnet user-jwts print f2d14dfa --show-all
 In the `MatureWeb` directory:
 ```shell
 dotnet new webapi --use-controllers -o Northwind.OData
+```
+```shell
 dotnet sln add Northwind.OData
 ```
 
@@ -203,6 +213,8 @@ dotnet sln add Northwind.OData
 In the `MatureWeb` directory:
 ```shell
 dotnet new web -o Northwind.FastEndpoints
+```
+```shell
 dotnet sln add Northwind.FastEndpoints
 ```
 
@@ -231,6 +243,8 @@ dotnet ef database update 0
 To add a new xUnit project to the `MatureWeb` solution:
 ```shell
 dotnet new xunit -o BusinessLogicUnitTests
+```
+```shell
 dotnet sln add BusinessLogicUnitTests
 ```
 To install the dev tunnel CLI...
