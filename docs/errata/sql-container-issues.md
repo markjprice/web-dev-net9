@@ -58,7 +58,7 @@ docker start azuresqledge
 
 Verify that the connection string you're using is correct. It should look like this:
 ```
-Server=127.0.0.1,1433;Database=master;User Id=SA;Password=YourPassword123!;Encrypt=true;
+Server=127.0.0.1,1433;Database=master;User Id=SA;Password=YourPassword123!;Encrypt=true;TrustServerCertificate=True;
 ```
 
 Common mistakes:
