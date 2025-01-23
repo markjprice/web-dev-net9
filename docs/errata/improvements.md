@@ -1,7 +1,8 @@
-**Improvements** (8 items)
+**Improvements** (9 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 27 - Connecting to Azure SQL Edge in a Docker container](#page-27---connecting-to-azure-sql-edge-in-a-docker-container)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
@@ -10,6 +11,12 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
 - [Page 458 - Using NSubstitute to create test doubles](#page-458---using-nsubstitute-to-create-test-doubles)
 - [Page 500 - Good media practices, Page 502 - Uploading images to Umbraco CMS](#page-500---good-media-practices-page-502---uploading-images-to-umbraco-cms)
+
+# Page 27 - Connecting to Azure SQL Edge in a Docker container
+
+> Thanks to [ghlouwho](https://github.com/ghlouwho) for raising [this issue on January 22, 2025](https://github.com/markjprice/web-dev-net9/issues/34).
+
+For readers who fail to connect, I will add a [troubleshooting guide](sql-container-issues.md) with suggestions of how to fix their issues.
 
 # Page 33 - Creating a class library for entity models
 
@@ -57,7 +64,7 @@ Umbraco Package RCL  umbracopackage-rcl  [C#]
 Umbraco Package      umbracopackage      [C#]
 ```
 
-If you do not explicitly specify the version, then the latest version will be installed. At the time of writing in December 2024, that is version 15.0.0. This installs three project templates, as shown in the following output:
+If you do not explicitly specify the version, then the latest version will be installed. At the time of writing in December 2024, that is version `15.0.0`. This installs three project templates, as shown in the following output:
 ```
 Templates               Short Name         Language
 ---------------------------------------------------
@@ -68,11 +75,11 @@ Umbraco Project         umbraco            [C#]
 
 Since we are only using the **Umbraco Project** / `umbraco` project template, the other project templates don't matter.
 
-I recommend that you use version 14.2.0 as I did in the book. If you choose to install a later version like 15.0.0 then be prepared for changes to behavior.
+I recommend that you use version `14.2.0` as I did in the book. If you choose to install a later version like `15.0.0` then be prepared for changes to behavior.
 
 > **Warning!** You might need to restart Visual Studio to see newly added project templates.
 
-> **Note**: The next edition will use Umbraco CMS version 17.0.0 which will be an LTS release that targets .NET 10.
+> **Note**: The next edition will use Umbraco CMS version `17.0.0` which will be an LTS release that targets .NET 10.
 
 # Page 381 - Configuring the customer repository and Web API controller
 
