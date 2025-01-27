@@ -1,4 +1,4 @@
-**Improvements** (9 items)
+**Improvements** (10 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -6,6 +6,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
+- [Page x - Using entity and view models](#page-x---using-entity-and-view-models)
 - [Chapter 13 - Installing Umbraco CMS](#chapter-13---installing-umbraco-cms)
 - [Page 381 - Configuring the customer repository and Web API controller](#page-381---configuring-the-customer-repository-and-web-api-controller)
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
@@ -51,6 +52,23 @@ I made up both initialisms so neither is more correct than the other. They both 
 2. The order of the letters in MVC says nothing about the order of processing an HTTP request. 
 
 In the next edition, I will pick one and remove the other, since it is redundant to include both. 
+
+# Page x - Using entity and view models
+
+A reader emailed Packt customer service with the following question: "In a application web ASP.NET Core Mvc if I have in my Model two classes for example: User and Module and User have a property like a collection generics List usermodule; How I can do for what in the various razor pages pass in a object TempData or Session a object of the class User what for inner encapsulate a collection of objects Module. I want pass it TempData or Session of the object User of one razor page to other razor page."
+
+First, this type of question is best asked in the Discord channels because then other readers can answer it too. 
+
+Second, how to store any object graph is the same as storing anything else in `TempData` or `Session`.  The types used just need to be serializable to JSON. Types like `string`, `int`, `float`, and other simple types do not require any additional setup as they are inherently serializable.
+
+In Chapter 2, I explain about models, including, "View models should be immutable, so they are commonly defined using records."
+
+A `record` can easily define an object graph like a `User` combined with multiple `Modules`, as shown in the following code:
+```cs
+record Module(string ModuleName, [other serializable properties]);
+
+record User(string UserName, List<Module> UserModules, [other serializable properties])
+```
 
 # Chapter 13 - Installing Umbraco CMS
 
