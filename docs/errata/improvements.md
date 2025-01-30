@@ -1,4 +1,4 @@
-**Improvements** (10 items)
+**Improvements** (11 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
 - [Page x - Using entity and view models](#page-x---using-entity-and-view-models)
+- [Chapter 7 - Page navigation and title verification](#chapter-7---page-navigation-and-title-verification)
 - [Chapter 13 - Installing Umbraco CMS](#chapter-13---installing-umbraco-cms)
 - [Page 381 - Configuring the customer repository and Web API controller](#page-381---configuring-the-customer-repository-and-web-api-controller)
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
@@ -69,6 +70,29 @@ record Module(string ModuleName, [other serializable properties]);
 
 record User(string UserName, List<Module> UserModules, [other serializable properties])
 ```
+
+# Chapter 7 - Page navigation and title verification
+
+A reader emailed Packt, "I’m having trouble with chapter 7. The command “pwsh” is not recognized. Have not had any luck googling solutions."
+
+In Step 4, I wrote, "Navigate to `Northwind.WebUITests\bin\Debug\net9.0` and, at the command prompt or terminal, install browsers for Playwright to automate, as shown in the following command:"
+```shell
+pwsh playwright.ps1 install
+```
+
+A note links to the official Playwright guide for installing its custom browsers.
+
+> Playwright needs special versions of browser binaries to operate. You must use the Playwright PowerShell script to install these browsers. If you have issues, you can learn more at the following link: https://playwright.dev/dotnet/docs/browsers.
+
+When Googling solutions, a reader should immediately discover that their most likely problem is that PowerShell is not installed properly on their computer (i.e. not installed at all, or installed but not set up so it is found from the command prompt).
+
+In the next edition, I will add extra links to help readers who struggle with this, for example:
+
+**Install PowerShell on Windows, Linux, and macOS**
+https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell
+
+Some of the answers here might help: **getting started instructions dont work** #1865:
+https://github.com/microsoft/playwright-dotnet/issues/1865 
 
 # Chapter 13 - Installing Umbraco CMS
 
