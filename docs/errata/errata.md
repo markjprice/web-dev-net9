@@ -179,17 +179,17 @@ But the controller name is `Home`, not `Index`, so the markup should be:
 
 > Thanks to a reader who emailed a question about this issue to Packt.
 
-In Step 1, I told the reader to enter markup for two forms. The second form uses the Label Tag Helper, but the `<label>` elements I used were self-closing, as shown in the following markup:
+In Step 1, I told the reader to enter markup for two forms. The second form uses the **Label Tag Helper**, but the `<label>` elements I used were self-closing, as shown in the following markup:
 ```html
 <label asp-for="ShipperId" class="form-label" />
 ```
 
-Self-closing tagas are not supported by the Label Tag Helper. You must use full open and close tags, as shown in the following markup:
+Self-closing tags are not supported by the **Label Tag Helper**. You must use a pair of open and close tags, as shown in the following markup:
 ```html
 <label asp-for="ShipperId" class="form-label"></label>
 ```
 
-The complete form is shown in the following markup:
+The complete corrected second form is shown in the following markup:
 ```html
 <h2>With Form Tag Helper</h2>
 <form asp-controller="Home" asp-action="ProcessShipper"
@@ -214,7 +214,9 @@ The complete form is shown in the following markup:
 </form>
 ```
 
-Also, the Label Tag Helper will use the property names from the model as the labels in the form, so it will use **ShipperId** and **CompanyName** by default. To override these, in the `Northwind.EntityModels` project, in the `Shipper.cs` class, you can decorate the properties with the `[Display]` attribute, as shown in the following code:
+Also, the **Label Tag Helper** will use the property names from the model as the labels in the form, so it will use **ShipperId** and **CompanyName** by default. 
+
+To override these values, in the `Northwind.EntityModels` project, in the `Shipper.cs` class, you can decorate the properties with the `[Display]` attribute, as shown in the following code:
 ```cs
 using System;
 using System.Collections.Generic;
