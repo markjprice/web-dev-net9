@@ -1,4 +1,4 @@
-**Errata** (25 items)
+**Errata** (26 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -12,6 +12,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 117 - Displaying Northwind suppliers](#page-117---displaying-northwind-suppliers)
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
+- [Page x - Exploring Forms-related Tag Helpers](#page-x---exploring-forms-related-tag-helpers)
 - [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
 - [Page 159 - If you are using Visual Studio](#page-159---if-you-are-using-visual-studio)
 - [Page 161 - If you are using VS Code](#page-161---if-you-are-using-vs-code)
@@ -172,6 +173,73 @@ But the controller name is `Home`, not `Index`, so the markup should be:
 
 @Html.ActionLink(linkText: "View our privacy policy.",
   action: "Privacy", controller: "Home")
+```
+
+# Page x - Exploring Forms-related Tag Helpers
+
+> Thanks to a reader who emailed a question about this issue to Packt.
+
+In Step 1, I told the reader to enter markup for two forms. The second form uses the Label Tag Helper, but the `<label>` elements I used were self-closing, as shown in the following markup:
+```html
+<label asp-for="ShipperId" class="form-label" />
+```
+
+Self-closing tagas are not supported by the Label Tag Helper. You must use full open and close tags, as shown in the following markup:
+```html
+<label asp-for="ShipperId" class="form-label"></label>
+```
+
+The complete form is shown in the following markup:
+```html
+<h2>With Form Tag Helper</h2>
+<form asp-controller="Home" asp-action="ProcessShipper"
+      class="form-horizontal" role="form">
+  <div>
+    <div class="mb-3">
+      <label asp-for="ShipperId" class="form-label"></label>
+      <input asp-for="ShipperId" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label asp-for="CompanyName" class="form-label"></label>
+      <input asp-for="CompanyName" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label asp-for="Phone" class="form-label"></label>
+      <input asp-for="Phone" class="form-control">
+    </div>
+    <div class="mb-3">
+      <input type="submit" class="form-control">
+    </div>
+  </div>
+</form>
+```
+
+Also, the Label Tag Helper will use the property names from the model as the labels in the form, so it will use **ShipperId** and **CompanyName** by default. To override these, in the `Northwind.EntityModels` project, in the `Shipper.cs` class, you can decorate the properties with the `[Display]` attribute, as shown in the following code:
+```cs
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
+
+namespace Northwind.EntityModels;
+
+public partial class Shipper
+{
+  [Key]
+  [Display(Name = "Shipper ID")] // Used by the Label Tag Helper.
+  public int ShipperId { get; set; }
+
+  [StringLength(40)]
+  [Display(Name = "Company Name")] // Used by the Label Tag Helper.
+  public string CompanyName { get; set; } = null!;
+
+  [StringLength(24)]
+  public string? Phone { get; set; }
+
+  [InverseProperty("ShipViaNavigation")]
+  public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+}
 ```
 
 # Page 158 - Localizing your user interface

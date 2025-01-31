@@ -1,4 +1,4 @@
-**Improvements** (11 items)
+**Improvements** (12 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,12 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
 - [Page x - Using entity and view models](#page-x---using-entity-and-view-models)
+- [Page 153 - Exploring the Environment Tag Helper](#page-153---exploring-the-environment-tag-helper)
+  - [Static Files Not Being Served in Production](#static-files-not-being-served-in-production)
+  - [Bundling and Minification Issues](#bundling-and-minification-issues)
+  - [Check If Your Static Files Are Published Correctly](#check-if-your-static-files-are-published-correctly)
+  - [Confirm Environment Settings in `_ViewImports.cshtml`](#confirm-environment-settings-in-_viewimportscshtml)
+  - [Enable Developer Exception Page for Debugging](#enable-developer-exception-page-for-debugging)
 - [Chapter 7 - Page navigation and title verification](#chapter-7---page-navigation-and-title-verification)
 - [Chapter 13 - Installing Umbraco CMS](#chapter-13---installing-umbraco-cms)
 - [Page 381 - Configuring the customer repository and Web API controller](#page-381---configuring-the-customer-repository-and-web-api-controller)
@@ -70,6 +76,77 @@ record Module(string ModuleName, [other serializable properties]);
 
 record User(string UserName, List<Module> UserModules, [other serializable properties])
 ```
+
+# Page 153 - Exploring the Environment Tag Helper
+
+A reader emailed Packt, "In the `Properties` folder, in `launchSettings.json`, for the `https` profile, change the environment setting to `Production`, as shown highlighted in the following JSON: `"https": { ... "environmentVariables": { "ASPNETCORE_ENVIRONMENT": "Production" } },` When I do the above the bootstrap formatting goes away. How do I correct this?"
+
+When you change the `ASPNETCORE_ENVIRONMENT` to `Production`, the behavior of your application changes in a few important ways that could affect Bootstrap formatting. Let's review them one-by-one to troubleshoot your issue.
+
+## Static Files Not Being Served in Production
+
+By default, in ASP.NET Core, static files (like CSS and JavaScript) are not automatically served in production unless explicitly enabled. You should make sure that you have static file middleware enabled in your `Program.cs`:
+```cs
+// .NET 9 or later.
+app.MapStaticAssets();
+
+// .NET 8 or earlier.
+app.UseStaticFiles();
+```
+
+If one of these is missing, Bootstrap and other front-end assets may not load in production mode.
+
+## Bundling and Minification Issues
+
+In development mode, ASP.NET Core may serve unminified CSS and JavaScript files. However, in production, it may try to serve minified versions (e.g., `bootstrap.min.css` instead of `bootstrap.css`). If those files are missing or not correctly referenced, formatting will break. Ensure your `_Layout.cshtml` (or equivalent view file) includes Bootstrap correctly, as shown in the following markup:
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-whatever" crossorigin="anonymous">
+```
+Or, if using a local version:
+```html
+<link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true">
+```
+
+If you're using ASP.NET Core’s built-in bundling/minification, check if Bootstrap’s CSS is included in the right bundle.
+
+## Check If Your Static Files Are Published Correctly
+
+When running in Production, ASP.NET Core expects files to be published before deployment. Run the following command in your terminal:
+```shell
+dotnet publish -c Release
+```
+This ensures all static files are included in the published output. Navigate to the `publish/wwwroot/` folder and confirm that Bootstrap’s CSS is there.
+
+## Confirm Environment Settings in `_ViewImports.cshtml`
+
+In some cases, Razor views have conditional rendering based on environment settings. Open `_ViewImports.cshtml` or `_Layout.cshtml` and check if there’s anything like:
+```csharp
+@if (Env.IsDevelopment())
+{
+  <link rel="stylesheet" href="~/css/bootstrap.css" />
+}
+```
+This would prevent Bootstrap from loading in production. Instead, explicitly include the correct Bootstrap file.
+
+## Enable Developer Exception Page for Debugging
+
+Try running your app with detailed errors enabled to see if there are any errors preventing Bootstrap from loading. Modify `appsettings.Production.json`:
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "Microsoft.AspNetCore": "Debug"
+    }
+  }
+}
+```
+Then run:
+```shell
+dotnet run --environment Production
+```
+
+Check the browser’s developer console (*F12*) for any 404 errors related to CSS files.
 
 # Chapter 7 - Page navigation and title verification
 
