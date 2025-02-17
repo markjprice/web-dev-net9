@@ -4,6 +4,8 @@
 
 Repository for the Packt Publishing book titled "Real-World Web Development with .NET 9" by Mark J. Price
 
+> **[FAQs](https://github.com/markjprice/markjprice/blob/main/FAQs.md)**
+
 - [Real-World Web Development with .NET 9, First Edition](#real-world-web-development-with-net-9-first-edition)
 - [Free PDF of the book and how to contact the publisher Packt](#free-pdf-of-the-book-and-how-to-contact-the-publisher-packt)
 - [Author's books](#authors-books)
