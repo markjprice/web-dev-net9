@@ -1,4 +1,4 @@
-**Improvements** (13 items)
+**Improvements** (14 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -6,6 +6,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 27 - Connecting to Azure SQL Edge in a Docker container](#page-27---connecting-to-azure-sql-edge-in-a-docker-container)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
+- [Page 44 - Testing the class libraries using xUnit](#page-44---testing-the-class-libraries-using-xunit)
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
 - [Page x - Using entity and view models](#page-x---using-entity-and-view-models)
 - [Page 153 - Exploring the Environment Tag Helper](#page-153---exploring-the-environment-tag-helper)
@@ -56,6 +57,14 @@ This does not mean that you can download or clone the solution projects and then
 In Step 9, I tell the reader to "add statements to dynamically build a database connection string for SQL Edge in Docker". In Step 10, I tell the reader to "add a class named `NorthwindContextExtensions.cs`. Modify its contents to define an extension method that adds the Northwind database context to a collection of dependency services". There is duplicate code in these classes because the `NorthwindContext` class and its extensions are written to allow developers to instantiate the context class directly as well as via the extension method. They can also override the connection string or choose to accept defaults. 
 
 In all the .NET 10 editions of all four of my books, I will review this code and explain it more in the books, perhaps with a flow diagram showing the different ways to use the `NorthwindContext` class.
+
+# Page 44 - Testing the class libraries using xUnit
+
+At the end of this task, I wrote, "If any of the tests fail, then try to fix the issue." 
+
+In the next edition, I will add an example common error: `System.ArgumentNullException : Value cannot be null. (Parameter 'User ID')` and suggest the reader restart Visual Studio and any command-line terminals so that the environment variables are set and can be read properly.
+
+In the *Setting the user and password for SQL Server authentication* section, in Step 3, after setting the environment variables for username and password, I wrote, "You will need to restart any command prompts, terminal windows, and applications like Visual Studio for this change to take effect." In the next edition, I will make this step more prominent.
 
 # Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions
 
