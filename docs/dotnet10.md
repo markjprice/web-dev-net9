@@ -1,4 +1,4 @@
-**Second Edition's support for .NET 10**
+**First Edition's support for .NET 10**
 
 - [.NET 10 downloads and announcements](#net-10-downloads-and-announcements)
 - [How to switch from .NET 9 to .NET 10](#how-to-switch-from-net-9-to-net-10)
