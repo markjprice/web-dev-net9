@@ -137,6 +137,14 @@ But the links should be rendered using the Anchor Tag Helper to make it clearer,
    asp-route-id="@s.SupplierId">Delete</a>
 ```
 
+I also forgot to add the markup for the **Add New Supplier** button that should appear between the **Suppliers** heading and the table of suppliers, as shown in the following markup:
+```html
+<h1 class="display-2">Suppliers</h1>
+<a class="btn btn-outline-primary"
+   asp-controller="Home" asp-action="AddSupplier">Add New Supplier</a>
+<table class="table">
+```
+
 The markup was already correct in the code solution found here:
 https://github.com/markjprice/web-dev-net9/blob/main/code/MatureWeb/Northwind.Mvc/Views/Home/Suppliers.cshtml
 
