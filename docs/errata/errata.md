@@ -1,4 +1,4 @@
-**Errata** (26 items)
+**Errata** (27 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -11,6 +11,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 97 - Temporarily storing data](#page-97---temporarily-storing-data)
 - [Page 117 - Displaying Northwind suppliers](#page-117---displaying-northwind-suppliers)
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
+- [Page 129 - Querying a database and using display templates](#page-129---querying-a-database-and-using-display-templates)
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
 - [Page x - Exploring Forms-related Tag Helpers](#page-x---exploring-forms-related-tag-helpers)
 - [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
@@ -162,6 +163,42 @@ In the next edition, I will change `PUT` to `POST` in that sentence, and I will 
 - `POST` is typically used for creating resources.
 - `PUT` is used for updating resources.
 - `DELETE` is used for deleting resources.
+
+# Page 129 - Querying a database and using display templates
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on March 3, 2025](https://github.com/markjprice/web-dev-net9/issues/38).
+
+In Step 3, I tell the reader to modify the contents of `CostlyProducts.cshtml`. But two of the column values for category name and supplier company name do not output because of missing `@` before `Html`. The correct statements should be as shown in the following markup:
+```html
+@foreach (Product p in Model)
+{
+  <tr>
+    <td>
+      @if (p.Category is not null) { @Html.DisplayFor(modelItem => p.Category.CategoryName); }
+    </td>
+    <td>
+      @if (p.Supplier is not null) { @Html.DisplayFor(modelItem => p.Supplier.CompanyName); }
+    </td>
+```
+
+Or you can use block style, as I use in the [code solution for this file](https://github.com/markjprice/web-dev-net9/blob/main/code/MatureWeb/Northwind.Mvc/Views/Home/CostlyProducts.cshtml#L29), as shown in the following markup:
+```html
+@foreach (Product p in Model)
+{
+  <tr>
+    <td>
+      @if (p.Category is not null) 
+      { 
+        @Html.DisplayFor(modelItem => p.Category.CategoryName); 
+      }
+    </td>
+    <td>
+      @if (p.Supplier is not null) 
+      { 
+        @Html.DisplayFor(modelItem => p.Supplier.CompanyName); 
+      }
+    </td>
+```
 
 # Page 143 - Comparing HTML Helpers and Tag Helpers
 
