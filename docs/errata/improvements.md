@@ -8,28 +8,28 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Page 44 - Testing the class libraries using xUnit](#page-44---testing-the-class-libraries-using-xunit)
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
-- [Page x - Using entity and view models](#page-x---using-entity-and-view-models)
+- [Page 75 - Using entity and view models](#page-75---using-entity-and-view-models)
 - [Page 153 - Exploring the Environment Tag Helper](#page-153---exploring-the-environment-tag-helper)
   - [Static Files Not Being Served in Production](#static-files-not-being-served-in-production)
   - [Bundling and Minification Issues](#bundling-and-minification-issues)
   - [Check If Your Static Files Are Published Correctly](#check-if-your-static-files-are-published-correctly)
   - [Confirm Environment Settings in `_ViewImports.cshtml`](#confirm-environment-settings-in-_viewimportscshtml)
   - [Enable Developer Exception Page for Debugging](#enable-developer-exception-page-for-debugging)
-- [Chapter 7 - Page navigation and title verification](#chapter-7---page-navigation-and-title-verification)
-- [Chapter 13 - Installing Umbraco CMS](#chapter-13---installing-umbraco-cms)
-- [Page 381 - Configuring the customer repository and Web API controller](#page-381---configuring-the-customer-repository-and-web-api-controller)
+- [Page 243 - Page navigation and title verification](#page-243---page-navigation-and-title-verification)
+- [Page 381 - Summary](#page-381---summary)
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
 - [Page 458 - Using NSubstitute to create test doubles](#page-458---using-nsubstitute-to-create-test-doubles)
+- [Page 478 - Installing Umbraco CMS](#page-478---installing-umbraco-cms)
 - [Page 500 - Good media practices, Page 502 - Uploading images to Umbraco CMS](#page-500---good-media-practices-page-502---uploading-images-to-umbraco-cms)
 
 # Page 3 - History of ASP.NET Core
 
 > Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on February 13, 2025](https://github.com/markjprice/web-dev-net9/issues/35).
 
-In the second bullet, I describe ASP:
+In the second bullet, I describe ASP, as shown in the following bullet:
 - **Active Server Pages (ASP)** was released in 1996 and was Microsoft’s first attempt at a platform for dynamic server-side execution of website code. ASP files contain a mix of HTML and code that executes on the server written in the VBScript language.
 
-Readers do not need to know any details of this 30-year-old technology so I will remove the second sentence in the next edition and add a note to explain why I include the bullet for ASP:
+Readers do not need to know any details of this 30-year-old technology so I will remove the second sentence in the next edition and add a note to explain why I include ASP, as shown in the following bullet:
 - **Active Server Pages (ASP)** was released in 1996 and was Microsoft’s first attempt at a platform for dynamic server-side execution of website code. I include this bullet so that you understand where the **ASP** initialism comes from because it is still used today in modern ASP.NET Core.
 
 # Page 27 - Connecting to Azure SQL Edge in a Docker container
@@ -38,7 +38,7 @@ Readers do not need to know any details of this 30-year-old technology so I will
 
 For readers who fail to connect, I will add a [troubleshooting guide](sql-container-issues.md) with suggestions of how to fix their issues.
 
-I will also add a warning about making sure command lines are entered all in one line:
+I will also add a warning about making sure command lines are entered all in one line as shown in the following box:
 
 > **Warning!** The preceding command must be entered all on one line, or the container will not be started up correctly. All command lines used in this book can be found and copied from the following link: https://github.com/markjprice/web-dev-net9/blob/main/docs/command-lines.md
 
@@ -80,7 +80,7 @@ I made up both initialisms so neither is more correct than the other. They both 
 
 In the next edition, I will pick one and remove the other, since it is redundant to include both. 
 
-# Page x - Using entity and view models
+# Page 75 - Using entity and view models
 
 A reader emailed Packt customer service with the following question: "In a application web ASP.NET Core Mvc if I have in my Model two classes for example: User and Module and User have a property like a collection generics List usermodule; How I can do for what in the various razor pages pass in a object TempData or Session a object of the class User what for inner encapsulate a collection of objects Module. I want pass it TempData or Session of the object User of one razor page to other razor page."
 
@@ -88,7 +88,7 @@ First, this type of question is best asked in the Discord channels because then 
 
 Second, how to store any object graph is the same as storing anything else in `TempData` or `Session`.  The types used just need to be serializable to JSON. Types like `string`, `int`, `float`, and other simple types do not require any additional setup as they are inherently serializable.
 
-In Chapter 2, I explain about models, including, "View models should be immutable, so they are commonly defined using records."
+In *Chapter 2 Building Websites Using ASP.NET Core MVC*, I explain about models, including, "View models should be immutable, so they are commonly defined using records."
 
 A `record` can easily define an object graph like a `User` combined with multiple `Modules`, as shown in the following code:
 ```cs
@@ -168,7 +168,7 @@ dotnet run --environment Production
 
 Check the browser’s developer console (*F12*) for any 404 errors related to CSS files.
 
-# Chapter 7 - Page navigation and title verification
+# Page 243 - Page navigation and title verification
 
 A reader emailed Packt, "I’m having trouble with chapter 7. The command “pwsh” is not recognized. Have not had any luck googling solutions."
 
@@ -191,7 +191,50 @@ https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powers
 Some of the answers here might help: **getting started instructions dont work** #1865:
 https://github.com/microsoft/playwright-dotnet/issues/1865 
 
-# Chapter 13 - Installing Umbraco CMS
+# Page 381 - Summary
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/26).
+
+In the **Summary** section, in the second bullet, I wrote, "How to try out and document web service APIs with Swagger."
+
+In casual conversation, people sometimes say "Swagger" when they mean "OpenAPI," but this is technically inaccurate, especially since Swagger is tied to a particular set of tools. Initially, Swagger defined its own specification for APIs, called the Swagger Specification. In 2016, the Swagger Specification was donated to the OpenAPI Initiative, becoming the basis for the OpenAPI Specification. Swagger is now more of a toolset for working with OpenAPI-compliant APIs, including tools for API design, documentation, and testing.
+
+In the next edition, I will write, "How to try out and document web service APIs with OpenAPI." And I will add a note about terminology, as shown above.
+
+# Page 413 - Calling services in the Northwind MVC website
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/29).
+
+In Step 7, I wrote, "Optionally, start the `Northwind.WebApi` project using the `https` profile without debugging." 
+
+If the reader only clicks the **OData** menu item to try it out, and not any of the features that call the `Northwind.WebApi` web service, then they do not need that project running. 
+
+In the next edition, I will either delete that step, or explain why I've put it in and list the features that require it, or if I encourage the use of Aspire from the very beginning of the book as I plan to do, then all projects will start automatically without needing to have a manual step. 
+
+# Page 458 - Using NSubstitute to create test doubles
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 13, 2025](https://github.com/markjprice/web-dev-net9/issues/30).
+
+In the code on page 461, I use the `When` and `Do` methods but I have not explained how they work. 
+
+In the next edition, I will add rows to *Table 11.5* to explain what these two methods do, as shown below:
+
+Extension method|Description
+---|---
+`When`|Used to specify a condition or an action you want to monitor or react to. It's often used when you don't just want to return a specific value from a method but want to perform additional behavior when a method is called.
+`Do`|Used to define the custom behavior that should be executed when the specified condition (in the `When` method) is met. This is where you write the logic that the mock should perform. `Do` accepts a lambda expression, which provides access to the arguments of the intercepted method call. These arguments are available via the `CallInfo` parameter.
+
+And I will show some example code:
+```cs
+substitute.When(x => x.SomeMethod(Arg.Any<int>()))
+  .Do((CallInfo info) => 
+  {
+    // Could also use info.Args(0)
+    Console.WriteLine($"SomeMethod called with argument: {info[0]}");
+  });
+```
+
+# Page 478 - Installing Umbraco CMS
 
 In Step 1, I wrote the command to install project templates for Umbraco CMS version 14.2, as shown in the following command:
 ```
@@ -222,50 +265,7 @@ I recommend that you use version `14.2.0` as I did in the book. If you choose to
 
 > **Warning!** You might need to restart Visual Studio to see newly added project templates.
 
-> **Note**: The next edition will use Umbraco CMS version `17.0.0` which will be an LTS release that targets .NET 10.
-
-# Page 381 - Configuring the customer repository and Web API controller
-
-> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/26).
-
-In the **Summary** section, in the second bullet, I wrote, "How to try out and document web service APIs with Swagger."
-
-In casual conversation, people sometimes say "Swagger" when they mean "OpenAPI," but this is technically inaccurate, especially since Swagger is tied to a particular set of tools. Initially, Swagger defined its own specification for APIs, called the Swagger Specification. In 2016, the Swagger Specification was donated to the OpenAPI Initiative, becoming the basis for the OpenAPI Specification. Swagger is now more of a toolset for working with OpenAPI-compliant APIs, including tools for API design, documentation, and testing.
-
-In the next edition, I will write, "How to try out and document web service APIs with OpenAPI." And I will add a note about terminology, as shown above.
-
-# Page 413 - Calling services in the Northwind MVC website
-
-> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/29).
-
-In Step 7, I wrote, "Optionally, start the `Northwind.WebApi` project using the `https` profile without debugging." 
-
-If the reader only clicks the OData menu item to try it out, and not any of the features that call the `Northwind.WebApi` web service, then they do not need that project running. 
-
-In the next edition, I will either delete that step, or explain why I've put it in and list the features that require it, or if I encourage the use of Aspire from the very beginning of the book as I plan to do, then all projects will start automatically without needing to have a manual step. 
-
-# Page 458 - Using NSubstitute to create test doubles
-
-> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 13, 2025](https://github.com/markjprice/web-dev-net9/issues/30).
-
-In the code on page 461, I use the `When` and `Do` methods but I have not explained how they work. 
-
-In the next edition, I will add rows to *Table 11.5* to explain what these two methods do, as shown below:
-
-Extension method|Description
----|---
-`When`|Used to specify a condition or an action you want to monitor or react to. It's often used when you don't just want to return a specific value from a method but want to perform additional behavior when a method is called.
-`Do`|Used to define the custom behavior that should be executed when the specified condition (in the `When` method) is met. This is where you write the logic that the mock should perform. `Do` accepts a lambda expression, which provides access to the arguments of the intercepted method call. These arguments are available via the `CallInfo` parameter.
-
-And I will show some example code:
-```cs
-substitute.When(x => x.SomeMethod(Arg.Any<int>()))
-  .Do((CallInfo info) => 
-  {
-    // Could also use info.Args(0)
-    Console.WriteLine($"SomeMethod called with argument: {info[0]}");
-  });
-```
+> **Note**: The next edition of this book (due to be published in December 2025) will use Umbraco CMS version `17.0.0` which will be an LTS release that targets .NET 10. Umbraco CMS 17 will be supported from November 27, 2025 until November 27, 2028 so it will be a good version to target.
 
 # Page 500 - Good media practices, Page 502 - Uploading images to Umbraco CMS
 
@@ -273,6 +273,6 @@ substitute.When(x => x.SomeMethod(Arg.Any<int>()))
 
 I wrote, "Editors should name media files descriptively before uploading, for example, `team-photo-john-doe.jpg` instead of `IMG_1234.jpg`." 
 
-But in the next task, I tell the reader to upload sample images `category1.jpeg` to `category8.jpeg`. These images are not named descriptively because they were used earlier in the book to render categories programmtically based on `CategoryId` primary key value. 
+But in the next task, in Step 3, I tell the reader to upload sample images `category1.jpeg` to `category8.jpeg`. These images are not named descriptively because they were used earlier in the book to render categories programmtically based on `CategoryId` primary key value. 
 
 In the next edition, I will provide some other images with meaningful names for the reader to upload instead. 

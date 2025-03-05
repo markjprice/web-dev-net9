@@ -5,7 +5,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 15 - Central Package Management](#page-15---central-package-management)
 - [Page 23 - Installing Docker and the Azure SQL Edge container image](#page-23---installing-docker-and-the-azure-sql-edge-container-image)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
-- [Page x - What does UseMigrationsEndPoint do?](#page-x---what-does-usemigrationsendpoint-do)
+- [Page 67 - What does UseMigrationsEndPoint do?](#page-67---what-does-usemigrationsendpoint-do)
 - [Page 81 - Implementing views](#page-81---implementing-views)
 - [Page 83 - How cache busting with Tag Helpers works](#page-83---how-cache-busting-with-tag-helpers-works)
 - [Page 97 - Temporarily storing data](#page-97---temporarily-storing-data)
@@ -13,14 +13,14 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 - [Page 129 - Querying a database and using display templates](#page-129---querying-a-database-and-using-display-templates)
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
-- [Page x - Exploring Forms-related Tag Helpers](#page-x---exploring-forms-related-tag-helpers)
+- [Page 154 - Exploring Forms-related Tag Helpers](#page-154---exploring-forms-related-tag-helpers)
 - [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
 - [Page 159 - If you are using Visual Studio](#page-159---if-you-are-using-visual-studio)
 - [Page 161 - If you are using VS Code](#page-161---if-you-are-using-vs-code)
 - [Page 162 - If you are using VS Code](#page-162---if-you-are-using-vs-code)
 - [Page 163 - Other resource file tools](#page-163---other-resource-file-tools)
-- [Page 209 - Exploring in-memory object caching](#page-209---exploring-in-memory-object-caching)
-- [Chapter 8 - When you cannot use constructor injection](#chapter-8---when-you-cannot-use-constructor-injection)
+- [Page 208 - Exploring in-memory object caching](#page-208---exploring-in-memory-object-caching)
+- [Page 267 - When you cannot use constructor injection](#page-267---when-you-cannot-use-constructor-injection)
 - [Page 295 - Configuration validation](#page-295---configuration-validation)
 - [Page 307 - Adding Aspire to an existing solution](#page-307---adding-aspire-to-an-existing-solution)
 - [Page 308 - Adding Aspire to an existing solution](#page-308---adding-aspire-to-an-existing-solution)
@@ -74,11 +74,11 @@ In the next edition, I will simplify that statement to the following, "Azure SQL
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 2, 2025](https://github.com/markjprice/web-dev-net9/issues/4).
 
-In the **Good Practice** box, I use the phrase "data context". In other places, I use the phrase "database context". Both uses refer to a class that derives from `DbContext` that represents a combination of the Unit Of Work and Repository patterns such that it can be used to query from a database and group together changes that will then be written back to the store as a unit. 
+In the **Good Practice** box, I use the phrase "data context". In other places, I use the phrase "database context". Both uses refer to a class that derives from `DbContext` that represents a combination of the **Unit Of Work** and **Repository** patterns such that it can be used to query from a database and group together changes that will then be written back to the store as a unit. 
 
 The Microsoft official documentation just uses the word "context" when referring to this class but I feel that loses some meaning. In future editions, I will try to consistently use the phrase "database context".
 
-# Page x - What does UseMigrationsEndPoint do?
+# Page 67 - What does UseMigrationsEndPoint do?
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 3, 2025](https://github.com/markjprice/web-dev-net9/issues/8).
 
@@ -220,7 +220,7 @@ But the controller name is `Home`, not `Index`, so the markup should be:
   action: "Privacy", controller: "Home")
 ```
 
-# Page x - Exploring Forms-related Tag Helpers
+# Page 154 - Exploring Forms-related Tag Helpers
 
 > Thanks to a reader who emailed a question about this issue to Packt.
 
@@ -327,7 +327,7 @@ In Step 6, I wrote, "modify the `value` column", when I should have written, "mo
 
 I wrote, "...without needing to recompile the original console app." I should have written, "...without needing to recompile the original project."
 
-# Page 209 - Exploring in-memory object caching
+# Page 208 - Exploring in-memory object caching
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 6, 2025](https://github.com/markjprice/web-dev-net9/issues/20).
 
@@ -341,7 +341,7 @@ In Step 11, I wrote, "within the 30-second sliding expiration window", but this 
 
 In the next edition, I might change the duration to ten seconds to give readers more time to review the console output and click reload.
 
-# Chapter 8 - When you cannot use constructor injection
+# Page 267 - When you cannot use constructor injection
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 7, 2025](https://github.com/markjprice/web-dev-net9/issues/21).
 
@@ -451,4 +451,4 @@ I mistakenly repeated, "the absolute link to the website", so I should have writ
 And I had previously written a note box before Step 17, "The Umbraco backoffice is accessed through the `/umbraco` relative path, so for our
 project, it is at the following link: https://localhost:5131/umbraco."
 
-In the next edition, I will remove one of these note boxes.
+In the next edition, I will remove one of these note boxes. I will also add a heading between steps 7 and 8 to break up this long task a bit more. 
