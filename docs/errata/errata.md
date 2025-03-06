@@ -1,4 +1,4 @@
-**Errata** (28 items)
+**Errata** (29 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -20,6 +20,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 161 - If you are using VS Code](#page-161---if-you-are-using-vs-code)
 - [Page 162 - If you are using VS Code](#page-162---if-you-are-using-vs-code)
 - [Page 163 - Other resource file tools](#page-163---other-resource-file-tools)
+- [Page 167 - Understanding the Accept-Language header](#page-167---understanding-the-accept-language-header)
 - [Page 208 - Exploring in-memory object caching](#page-208---exploring-in-memory-object-caching)
 - [Page 267 - When you cannot use constructor injection](#page-267---when-you-cannot-use-constructor-injection)
 - [Page 295 - Configuration validation](#page-295---configuration-validation)
@@ -335,6 +336,14 @@ In Step 6, I wrote, "modify the `value` column", when I should have written, "mo
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/19).
 
 I wrote, "...without needing to recompile the original console app." I should have written, "...without needing to recompile the original project."
+
+# Page 167 - Understanding the Accept-Language header
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on March 5, 2025](https://github.com/markjprice/web-dev-net9/issues/41).
+
+In the third bullet point, I wrote, "`fr-FR;q=0.8`: English language in France ranked at 0.8"
+
+I should have written, "`fr-FR;q=0.8`: French language in France ranked at 0.8"
 
 # Page 208 - Exploring in-memory object caching
 
