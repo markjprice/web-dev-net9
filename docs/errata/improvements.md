@@ -1,4 +1,4 @@
-**Improvements** (14 items)
+**Improvements** (15 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -15,6 +15,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
   - [Check If Your Static Files Are Published Correctly](#check-if-your-static-files-are-published-correctly)
   - [Confirm Environment Settings in `_ViewImports.cshtml`](#confirm-environment-settings-in-_viewimportscshtml)
   - [Enable Developer Exception Page for Debugging](#enable-developer-exception-page-for-debugging)
+- [Page 155 - Exploring Forms-related Tag Helpers](#page-155---exploring-forms-related-tag-helpers)
 - [Page 243 - Page navigation and title verification](#page-243---page-navigation-and-title-verification)
 - [Page 381 - Summary](#page-381---summary)
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
@@ -167,6 +168,47 @@ dotnet run --environment Production
 ```
 
 Check the browser’s developer console (*F12*) for any 404 errors related to CSS files.
+
+# Page 155 - Exploring Forms-related Tag Helpers
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on March 5, 2025](https://github.com/markjprice/web-dev-net9/issues/39).
+
+In Step 1, I layout an HTML form using Bootstrap `form-horizontal` class. In Bootstrap 3, `form-horizontal` was used to create a horizontally-aligned form where labels and inputs were placed in a grid layout using `col-*` classes.
+
+Starting with Bootstrap 4, `form-horizontal` was removed. Instead, they recommend using the grid system (`.row` and `.col-*` classes) to achieve the same effect.
+The idea is that you explicitly structure your form using `.row` and `.col-*` instead of relying on a dedicated class.
+
+Also, the `.form-control` class is meant for text-based inputs (`<input>`, `<textarea>`, `<select>`), ensuring they are styled consistently.
+For buttons, Bootstrap uses `.btn` along with a color class like `.btn-primary`, `.btn-secondary`, and so on.
+
+In the next edition, I will change to use the Bootstrap 4 and 5 way, as shown in the following markup:
+```html
+<h2>With Form Tag Helper</h2>
+<form role="form" asp-controller="Home" asp-action="ProcessShipper">
+  <div class="mb-3 row">
+    <label asp-for="ShipperId" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+      <input asp-for="ShipperId" class="form-control">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label asp-for="CompanyName" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+      <input asp-for="CompanyName" class="form-control">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label asp-for="Phone" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+      <input asp-for="Phone" class="form-control">
+    </div>
+  </div>
+  
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+```
 
 # Page 243 - Page navigation and title verification
 
