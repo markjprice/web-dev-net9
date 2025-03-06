@@ -1,4 +1,4 @@
-**Errata** (27 items)
+**Errata** (28 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,6 +16,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 154 - Exploring Forms-related Tag Helpers](#page-154---exploring-forms-related-tag-helpers)
 - [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
 - [Page 159 - If you are using Visual Studio](#page-159---if-you-are-using-visual-studio)
+- [Page 160 - If you are using Visual Studio](#page-160---if-you-are-using-visual-studio)
 - [Page 161 - If you are using VS Code](#page-161---if-you-are-using-vs-code)
 - [Page 162 - If you are using VS Code](#page-162---if-you-are-using-vs-code)
 - [Page 163 - Other resource file tools](#page-163---other-resource-file-tools)
@@ -307,13 +308,21 @@ In the next edition, I will retake or edit the screenshots to show the correct f
 
 Also, in Step 1, the path says `Resource\Views\Home` when it should be `Resources\Views\Home`.
 
+# Page 160 - If you are using Visual Studio
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on March 5, 2025](https://github.com/markjprice/web-dev-net9/issues/40).
+
+Throughout this section, I repeatedly write `Index` when I should have written `Orders`. For example, in Step 5, I wrote, "Copy and paste the file and rename it `Index.en-GB.resx`." I should have written, "Copy and paste the file and rename it `Orders.en-GB.resx`." 
+
+Similarly in Steps 6, 8, 9, 10, and 11.
+
 # Page 161 - If you are using VS Code
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/17).
 
-In Step 1, I wrote, "In `Resources\Views\Orders`, add a new file named `Index.resx`."
+In Step 1, I wrote, "In `Resources\Views\Orders`, add a new file named `Index.resx`." This should be, "In `Resources\Views\Home`, add a new file named `Orders.resx`."
 
-This should be, "In `Resources\Views\Home`, add a new file named `Orders.resx`."
+Similarly in Steps 3, 4, 5, 6, 7, and 8.
 
 # Page 162 - If you are using VS Code
 
