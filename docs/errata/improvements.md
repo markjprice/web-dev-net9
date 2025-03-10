@@ -3,6 +3,7 @@
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 3 - History of ASP.NET Core](#page-3---history-of-aspnet-core)
+- [Page 24 - Running the Azure SQL Edge container image](#page-24---running-the-azure-sql-edge-container-image)
 - [Page 27 - Connecting to Azure SQL Edge in a Docker container](#page-27---connecting-to-azure-sql-edge-in-a-docker-container)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
@@ -32,6 +33,28 @@ In the second bullet, I describe ASP, as shown in the following bullet:
 
 Readers do not need to know any details of this 30-year-old technology so I will remove the second sentence in the next edition and add a note to explain why I include ASP, as shown in the following bullet:
 - **Active Server Pages (ASP)** was released in 1996 and was Microsoft’s first attempt at a platform for dynamic server-side execution of website code. I include this bullet so that you understand where the **ASP** initialism comes from because it is still used today in modern ASP.NET Core.
+
+# Page 24 - Running the Azure SQL Edge container image
+
+> Thanks to a reader who emailed that was having trouble working with Docker and connecting to Azure SQL Edge in the Docker container.
+
+First, in Step 1, I tell the reader to enter a long command. As also mentioned in the improvement for Page 27, in the next edition, I will add a warning about making sure command lines are entered all in one line as shown in the following box:
+
+> **Warning!** The preceding command must be entered all on one line, or the container will not be started up correctly. In particular, the container might start up but without a password set and therefore later you won't be able to connect to it! All command lines used in this book can be found and copied from the following link: https://github.com/markjprice/web-dev-net9/blob/main/docs/command-lines.md
+
+Second, if a reader is unfamiliar with Docker, then they might assume that after starting the container with SQL Server, in Step 3 that the link in the **Port(s)** column is clickable, as shown in *Figure A*, and will navigate to a working website:
+
+![Link in Docker for SQL Server container](docker-sql-uri.png)
+*Figure A: Link in Docker for SQL Server container*
+
+But that container image only has SQL Edge in it. SQL Edge is listening on that port and can be connected to using that address. There is *no* web server listening on port 1433 so a web browser that makes a request to `http://localhost:1433` will get an error, as shown in *Figure B*:
+
+![Page not working](docker-sql-uri-fail.png)
+*Figure B: Page not working*
+
+This is expected behavior because a database server is not a web server. Many containers in Docker *do* host web server, and in those scenarios having a convenient clickable link is useful. But Docker has no idea which containers have web servers and which do not. It is up to the developer to know if those links are useful.
+
+In the next edition, I will add a warning with the preceding information in the book.
 
 # Page 27 - Connecting to Azure SQL Edge in a Docker container
 
