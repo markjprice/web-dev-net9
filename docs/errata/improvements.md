@@ -47,12 +47,12 @@ Second, if a reader is unfamiliar with Docker, then they might assume that after
 ![Link in Docker for SQL Server container](docker-sql-uri.png)
 *Figure A: Link in Docker for SQL Server container*
 
-But that container image only has SQL Edge in it. SQL Edge is listening on that port and can be connected to using that address. There is *no* web server listening on port 1433 so a web browser that makes a request to `http://localhost:1433` will get an error, as shown in *Figure B*:
+But that container image only has SQL Edge in it. SQL Edge is listening on that port and can be connected to using a TCP address, *not* an HTTP address, so Docker is misleading you!. There is *no* web server listening on port 1433 so a web browser that makes a request to `http://localhost:1433` will get an error, as shown in *Figure B*:
 
 ![Page not working](docker-sql-uri-fail.png)
 *Figure B: Page not working*
 
-This is expected behavior because a database server is not a web server. Many containers in Docker *do* host web server, and in those scenarios having a convenient clickable link is useful. But Docker has no idea which containers have web servers and which do not. It is up to the developer to know if those links are useful.
+This is expected behavior because a database server is not a web server. Many containers in Docker *do* host web server, and in those scenarios having a convenient clickable link is useful. But Docker has no idea which containers have web servers and which do not. All it knows is what ports are mapped from internal ports to external ports. It is up to the developer to know if those links are useful.
 
 In the next edition, I will add a warning with the preceding information in the book.
 
