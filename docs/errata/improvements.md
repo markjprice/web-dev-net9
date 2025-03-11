@@ -43,6 +43,8 @@ First, in Step 1, I tell the reader to enter a long command. As also mentioned i
 
 > **Warning!** The preceding command must be entered all on one line, or the container will not be started up correctly. In particular, the container might start up but without a password set and therefore later you won't be able to connect to it! All command lines used in this book can be found and copied from the following link: https://github.com/markjprice/web-dev-net9/blob/main/docs/command-lines.md
 
+Also, different operating systems may require different quote characters, or none at all. The command line I used on Windows 11 uses single-quotes: '. Note this is not a backtick ` or a double-quote ".
+
 Second, if a reader is unfamiliar with Docker, then they might assume that after starting the container with SQL Server, in Step 3 that the link in the **Port(s)** column is clickable, as shown in *Figure A*, and will navigate to a working website:
 
 ![Link in Docker for SQL Server container](docker-sql-uri.png)
@@ -55,7 +57,9 @@ But that container image only has SQL Edge in it. SQL Edge is listening on that 
 
 This is expected behavior because a database server is not a web server. Many containers in Docker *do* host web server, and in those scenarios having a convenient clickable link is useful. But Docker has no idea which containers have web servers and which do not. All it knows is what ports are mapped from internal ports to external ports. It is up to the developer to know if those links are useful.
 
-In the next edition, I will add a warning with the preceding information in the book.
+Third, if you already have SQL Server installed locally, and it's services are running, then it will be listening to port 1433 and it will take priority over any Docker-hosted SQL Server services that are also trying to listen on port 1433. You will need to stop the local SQL Server before being able to connect to any Docker-hosted SQL Server services. Or change the port number(s) for either the local or Docker-hosted SQL Server services so that they do not conflict.
+
+In the next edition, I will add a warning with the preceding information in all my books.
 
 # Page 27 - Connecting to Azure SQL Edge in a Docker container
 
