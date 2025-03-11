@@ -1,4 +1,4 @@
-**Improvements** (16 items)
+**Improvements** (17 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -18,6 +18,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
   - [Enable Developer Exception Page for Debugging](#enable-developer-exception-page-for-debugging)
 - [Page 155 - Exploring Forms-related Tag Helpers](#page-155---exploring-forms-related-tag-helpers)
 - [Page 243 - Page navigation and title verification](#page-243---page-navigation-and-title-verification)
+- [Page 323 - Creating an ASP.NET Core Web API with controllers project](#page-323---creating-an-aspnet-core-web-api-with-controllers-project)
 - [Page 381 - Summary](#page-381---summary)
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
 - [Page 458 - Using NSubstitute to create test doubles](#page-458---using-nsubstitute-to-create-test-doubles)
@@ -255,6 +256,84 @@ https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powers
 
 Some of the answers here might help: **getting started instructions dont work** #1865:
 https://github.com/microsoft/playwright-dotnet/issues/1865 
+
+# Page 323 - Creating an ASP.NET Core Web API with controllers project
+
+> Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on March 10, 2025](https://github.com/markjprice/cs13net9/issues/39) in the C# and .NET book GitHub repository.
+
+In Step 6, I review the `WeatherForecastController.cs` code. This uses a class-level private field to store a `_logger` that is set in the constructor. This is a common pattern, but it means that to execute any action method within that controller, all DI services used in any of the action methods must be instantiated for every call, as shown in the following code:
+```cs
+using Microsoft.AspNetCore.Mvc;
+
+namespace Northwind.WebApi.Controllers
+{
+  [ApiController]
+  [Route("[controller]")]
+  public class WeatherForecastController : ControllerBase
+  {
+    private static readonly string[] Summaries = new[]
+    {
+      "Freezing", "Bracing", "Chilly", "Cool", "Mild",
+      "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    };
+
+    private readonly ILogger<WeatherForecastController> _logger;
+
+    public WeatherForecastController(
+      ILogger<WeatherForecastController> logger)
+    {
+      _logger = logger;
+    }
+
+    [HttpGet(Name = "GetWeatherForecast")]
+    public IEnumerable<WeatherForecast> Get()
+    {
+      return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+      {
+        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+        TemperatureC = Random.Shared.Next(-20, 55),
+        Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+      })
+      .ToArray();
+    }
+  }
+}
+```
+
+This is a waste of time and resources unless every action method needs all the dependency services. A better practice is to use method injection, as shown in the following code:
+```cs
+using Microsoft.AspNetCore.Mvc;
+
+namespace Northwind.WebApi.Controllers
+{
+  [ApiController]
+  [Route("[controller]")]
+  public class WeatherForecastController : ControllerBase
+  {
+    private static readonly string[] Summaries = new[]
+    {
+      "Freezing", "Bracing", "Chilly", "Cool", "Mild",
+      "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    };
+
+    [HttpGet(Name = "GetWeatherForecast")]
+    public IEnumerable<WeatherForecast> Get(ILogger<WeatherForecastController> _logger)
+    {
+      return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+      {
+        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+        TemperatureC = Random.Shared.Next(-20, 55),
+        Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+      })
+      .ToArray();
+    }
+  }
+}
+```
+
+> **Note**: You can decorate the parameter(s) with `[FromServices]` to explicitly indicate where those parameters will be set from, as shown in the following code: `[FromServices] ILogger<WeatherForecastController> _logger`, but this is optional.
+
+In the next edition, I will add the preceding information. I will also tell the reader to add some calls to `_logger` so that it is actually used in the controller!
 
 # Page 381 - Summary
 
