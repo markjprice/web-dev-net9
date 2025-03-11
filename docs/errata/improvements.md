@@ -57,7 +57,7 @@ But that container image only has SQL Edge in it. SQL Edge is listening on that 
 
 This is expected behavior because a database server is not a web server. Many containers in Docker *do* host web server, and in those scenarios having a convenient clickable link is useful. But Docker has no idea which containers have web servers and which do not. All it knows is what ports are mapped from internal ports to external ports. It is up to the developer to know if those links are useful.
 
-Third, if you already have SQL Server installed locally, and it's services are running, then it will be listening to port 1433 and it will take priority over any Docker-hosted SQL Server services that are also trying to listen on port 1433. You will need to stop the local SQL Server before being able to connect to any Docker-hosted SQL Server services. Or change the port number(s) for either the local or Docker-hosted SQL Server services so that they do not conflict.
+Third, if you already have SQL Server installed locally, and it's services are running, then it will be listening to port 1433 and it might take priority over any Docker-hosted SQL Server services that are also trying to listen on port 1433. You might need to stop the local SQL Server before being able to connect to any Docker-hosted SQL Server services. Or change the port number(s) for either the local or Docker-hosted SQL Server services so that they do not conflict.
 
 In the next edition, I will add a warning with the preceding information in all my books.
 
