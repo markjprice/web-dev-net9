@@ -1,4 +1,4 @@
-**Errata** (29 items)
+**Errata** (30 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -22,6 +22,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 163 - Other resource file tools](#page-163---other-resource-file-tools)
 - [Page 167 - Understanding the Accept-Language header](#page-167---understanding-the-accept-language-header)
 - [Page 208 - Exploring in-memory object caching](#page-208---exploring-in-memory-object-caching)
+- [Page 211 - Caching objects using distributed caching](#page-211---caching-objects-using-distributed-caching)
 - [Page 267 - When you cannot use constructor injection](#page-267---when-you-cannot-use-constructor-injection)
 - [Page 295 - Configuration validation](#page-295---configuration-validation)
 - [Page 307 - Adding Aspire to an existing solution](#page-307---adding-aspire-to-an-existing-solution)
@@ -358,6 +359,20 @@ In Step 10, I wrote, "Wait at least 30 seconds", but this should be "5 seconds".
 In Step 11, I wrote, "within the 30-second sliding expiration window", but this should be "5-second".
 
 In the next edition, I might change the duration to ten seconds to give readers more time to review the console output and click reload.
+
+# Page 211 - Caching objects using distributed caching
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on March 11, 2025](https://github.com/markjprice/web-dev-net9/issues/42).
+
+In Step 3, the code shows a constructor named `ProductsController` with a `logger` parameter of type `ILogger<ProductsController>`, as shown in the following code:
+```cs
+public ProductsController(ILogger<ProductsController> logger,
+```
+
+It should be a constructor named `HomeController` with a `logger` parameter of type `ILogger<HomeController>`, as shown in the following code:
+```cs
+public HomeController(ILogger<HomeController> logger,
+```
 
 # Page 267 - When you cannot use constructor injection
 
