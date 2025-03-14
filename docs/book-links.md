@@ -165,6 +165,7 @@ The official announcement links are useful because they describe the most import
 
 # Chapter 6 - Performance Optimization Using Caching
 
+- [Hello HybridCache! Streamlining Cache Management for ASP.NET Core Applications](https://devblogs.microsoft.com/dotnet/hybrid-cache-is-now-ga/)
 - [Content Delivery Network (CDN)](https://en.wikipedia.org/wiki/Content_delivery_network)
 - [Response caching](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/response)
 - [Microsoft.AspNetCore.OutputCaching Namespace](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.outputcaching)
