@@ -55,7 +55,6 @@ public class Program
 
     builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
-#pragma warning disable EXTEXP0018 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
     builder.Services.AddHybridCache(options =>
     {
       options.DefaultEntryOptions = new HybridCacheEntryOptions
@@ -64,7 +63,6 @@ public class Program
         LocalCacheExpiration = TimeSpan.FromSeconds(30)
       };
     });
-#pragma warning restore EXTEXP0018 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
     builder.Services.AddResponseCaching();
 
