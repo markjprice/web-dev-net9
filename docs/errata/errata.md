@@ -1,4 +1,4 @@
-**Errata** (30 items)
+**Errata** (31 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -28,6 +28,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 307 - Adding Aspire to an existing solution](#page-307---adding-aspire-to-an-existing-solution)
 - [Page 308 - Adding Aspire to an existing solution](#page-308---adding-aspire-to-an-existing-solution)
 - [Page 337 - Configuring the customer repository and Web API controller](#page-337---configuring-the-customer-repository-and-web-api-controller)
+- [Page 346 - Understanding the OpenAPI Specification](#page-346---understanding-the-openapi-specification)
 - [Page 399 - Creating an HTTP file for making requests](#page-399---creating-an-http-file-for-making-requests)
 - [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
@@ -444,6 +445,12 @@ public async Task<IActionResult> GetCustomer(string id)
 
 The code was already correct in the GitHub respository:
 https://github.com/markjprice/web-dev-net9/blob/main/code/MatureWeb/Northwind.WebApi/Controllers/CustomersController.cs#L47
+
+# Page 346 - Understanding the OpenAPI Specification
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on March 31, 2025](https://github.com/markjprice/web-dev-net9/issues/44).
+
+In Step 4, I wrote "using Swagger" when I should have written "mapping an endpoint for an auto-generated OpenAPI document".
 
 # Page 399 - Creating an HTTP file for making requests
 
