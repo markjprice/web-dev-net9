@@ -1,4 +1,4 @@
-**Errata** (32 items)
+**Errata** (34 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -30,6 +30,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 337 - Configuring the customer repository and Web API controller](#page-337---configuring-the-customer-repository-and-web-api-controller)
 - [Page 346 - Understanding the OpenAPI Specification](#page-346---understanding-the-openapi-specification)
 - [Page 350 - Caching HTTP responses for web services](#page-350---caching-http-responses-for-web-services)
+- [Page 366 - Configuring HTTP logging for the web service](#page-366---configuring-http-logging-for-the-web-service)
+- [Page 367 - Configuring HTTP logging for the web service](#page-367---configuring-http-logging-for-the-web-service)
 - [Page 399 - Creating an HTTP file for making requests](#page-399---creating-an-http-file-for-making-requests)
 - [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
@@ -458,6 +460,36 @@ In Step 4, I wrote "using Swagger" when I should have written "mapping an endpoi
 > Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on March 31, 2025](https://github.com/markjprice/web-dev-net9/issues/45).
 
 In *Table 9.5*, in the `no-cache` row, I wrote "A server is telling the client and intermediaries not **the** cache the response." I should have written "A server is telling the client and intermediaries not **to** cache the response."
+
+# Page 366 - Configuring HTTP logging for the web service
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on April 3, 2025](https://github.com/markjprice/web-dev-net9/issues/46).
+
+In Step 5, I wrote, "In the `Views/Tools` folder" when I should have written, "In the `Views/Cors` folder".
+
+# Page 367 - Configuring HTTP logging for the web service
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on April 3, 2025](https://github.com/markjprice/web-dev-net9/issues/47).
+
+In Step 6, the code for the `getCustomersButton_click` event handler function looks in the input box named `companyName`, as shown in the following code:
+```js
+function getCustomersButton_click() { 
+  xhr.open("GET", baseaddress + "api/customers/?country=" + 
+    document.getElementById("companyName").value); 
+    
+  xhr.send(); 
+}
+```
+
+It should look in the input box named `country`, as shown in the following code:
+```js
+function getCustomersButton_click() { 
+  xhr.open("GET", baseaddress + "api/customers/?country=" + 
+    document.getElementById("country").value); 
+    
+  xhr.send(); 
+}
+```
 
 # Page 399 - Creating an HTTP file for making requests
 
