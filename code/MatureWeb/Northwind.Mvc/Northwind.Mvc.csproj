@@ -5,6 +5,10 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-Northwind.Mvc-5e247820-48b3-4206-8e9d-02fd01d27e73</UserSecretsId>
+    
+    <!--To avoid error MSB4018 The "ApplyCompressionNegotiation" task failed unexpectedly.
+        System.InvalidOperationException: Endpoints not found for related asset.-->
+    <CompressionEnabled>false</CompressionEnabled>
   </PropertyGroup>
 
   <ItemGroup Label="To simplify use of WriteLine.">
