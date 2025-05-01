@@ -557,6 +557,8 @@ Content-Type: application/json
 
 > **Warning!**  Change the value of the primary key 78 to match the value of the new product that you previous inserted if necessary.
 
+I will also add more explanation of how conventions are used by the OData system to decide which HTTP methods to allow based on which method signatures are provided by the controller class.
+
 # Page 411 - Calling services in the Northwind MVC website
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/28).
