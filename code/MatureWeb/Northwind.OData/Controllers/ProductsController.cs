@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc; // To use IActionResult.
 using Microsoft.AspNetCore.OData.Query; // To use [EnableQuery].
 using Microsoft.AspNetCore.OData.Routing.Controllers; // ODataController
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Northwind.EntityModels; // To use NorthwindContext.
 
 namespace Northwind.OData.Controllers;
@@ -52,13 +51,13 @@ public class ProductsController : ODataController
     return Created(product);
   }
 
-  public IActionResult Put([FromBody] Product product)
+  public IActionResult Put(int key, [FromBody] Product product)
   {
-    Product? productToUpdate = _db.Products.Find(product.ProductId);
+    Product? productToUpdate = _db.Products.Find(key);
 
     if (productToUpdate is null)
     {
-      return NotFound($"Product with id {product.ProductId} not found.");
+      return NotFound($"Product with id {key} not found.");
     }
 
     productToUpdate.ProductName = product.ProductName;
@@ -72,7 +71,7 @@ public class ProductsController : ODataController
     productToUpdate.Discontinued = product.Discontinued;
 
     _db.SaveChanges();
-    return Ok(product);
+    return Updated(product);
   }
 
   public IActionResult Delete(int key)

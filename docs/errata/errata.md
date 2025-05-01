@@ -1,4 +1,4 @@
-**Errata** (34 items)
+**Errata** (35 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -33,6 +33,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 366 - Configuring HTTP logging for the web service](#page-366---configuring-http-logging-for-the-web-service)
 - [Page 367 - Configuring HTTP logging for the web service](#page-367---configuring-http-logging-for-the-web-service)
 - [Page 399 - Creating an HTTP file for making requests](#page-399---creating-an-http-file-for-making-requests)
+- [Page 410 - Enabling entity inserts, updates, and deletes](#page-410---enabling-entity-inserts-updates-and-deletes)
 - [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
 - [Page 485 - Creating and initializing a new Umbraco project](#page-485---creating-and-initializing-a-new-umbraco-project)
@@ -496,6 +497,65 @@ function getCustomersButton_click() {
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 11, 2025](https://github.com/markjprice/web-dev-net9/issues/27).
 
 In Step 4, in *Table 10.2*, the last row has a column value of `products(2)` for the **Relative request**. It should be `products(77)` because the **Response** column value is product 77.
+
+# Page 410 - Enabling entity inserts, updates, and deletes
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on April 28, 2025](https://github.com/markjprice/web-dev-net9/issues/48).
+
+In Step 9, I wrote, "Optionally, implement two more methods to enable updates using an HTTP `PUT` request and deletes using an HTTP `DELETE` request." Although the solution code for the delete method works, the code for the update method fails with an error message: `405 Method Not Allowed`.
+
+This is because the method signature I provided does not match the required signature. Here's the failing solution method signature:
+```cs
+public IActionResult Put([FromBody] Product product)
+```
+
+The preceding method is missing a parameter that must be named `key` and that has the data type of the primary key. For the `Products` table, this must be `int`, and then that value should be used to find the existing `Product` entity to update, as shown in the following code:
+```cs
+public IActionResult Put(int key, [FromBody] Product product)
+{
+  Product? productToUpdate = _db.Products.Find(key);
+
+  if (productToUpdate is null)
+  {
+    return NotFound($"Product with id {key} not found.");
+  }
+
+  productToUpdate.ProductName = product.ProductName;
+  productToUpdate.SupplierId = product.SupplierId;
+  productToUpdate.CategoryId = product.CategoryId;
+  productToUpdate.QuantityPerUnit = product.QuantityPerUnit;
+  productToUpdate.UnitPrice = product.UnitPrice;
+  productToUpdate.UnitsInStock = product.UnitsInStock;
+  productToUpdate.UnitsOnOrder = product.UnitsOnOrder;
+  productToUpdate.ReorderLevel = product.ReorderLevel;
+  productToUpdate.Discontinued = product.Discontinued;
+
+  _db.SaveChanges();
+  return Updated(product);
+}
+```
+
+You will also need to pass the key value when you call the service, using either `products/78` or `products(78)`, as shown in the following code:
+```http
+### Update an existing product.
+PUT {{base_address}}products/78
+Content-Type: application/json
+
+{
+  "ProductId": 78,
+  "ProductName": "Impossible Burger",
+  "SupplierId": 7,
+  "CategoryId": 6,
+  "QuantityPerUnit": "Pack of 4",
+  "UnitPrice": 50.25,
+  "UnitsInStock": 50,
+  "UnitsOnOrder": 0,
+  "ReorderLevel": 30,
+  "Discontinued": false
+}
+```
+
+> **Warning!**  Change the value of the primary key 78 to match the value of the new product that you previous inserted if necessary.
 
 # Page 411 - Calling services in the Northwind MVC website
 

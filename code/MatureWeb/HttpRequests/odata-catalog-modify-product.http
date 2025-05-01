@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ### Update an existing product.
-PUT {{base_address}}products
+PUT {{base_address}}products/78
 Content-Type: application/json
 
 {
@@ -27,7 +27,7 @@ Content-Type: application/json
   "SupplierId": 7,
   "CategoryId": 6,
   "QuantityPerUnit": "Pack of 4",
-  "UnitPrice": 40.25,
+  "UnitPrice": 50.25,
   "UnitsInStock": 50,
   "UnitsOnOrder": 0,
   "ReorderLevel": 30,
