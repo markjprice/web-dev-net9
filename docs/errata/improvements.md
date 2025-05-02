@@ -426,10 +426,10 @@ public IActionResult Patch(int key, [FromBody] Delta<Product> delta)
     Product? productToUpdate = _context.Products.Find(key);
     if (productToUpdate is null) return NotFound();
 
-    delta.Patch(existing);
+    delta.Patch(productToUpdate);
     _context.SaveChanges();
 
-    return Updated(existing);
+    return Updated(productToUpdate);
 }
 ```
 
