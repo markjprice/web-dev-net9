@@ -363,7 +363,7 @@ In the next edition, I will add a section before implementing the code to explai
 
 ## Matching HTTP requests to controller action methods
 
-In ASP.NET Core OData, the framework determines which HTTP methods are supported by a controller class primarily by inspecting the presence of action methods whose names and parameters match expected OData patterns. It does not use attributes like `[HttpGet]` or `[HttpPost]`** in the same way that traditional Web API controllers might.
+In ASP.NET Core OData, the framework determines which HTTP methods are supported by a controller class primarily by inspecting the presence of action methods whose names and parameters match expected OData patterns. It does not use attributes like `[HttpGet]` or `[HttpPost]` in the same way that traditional Web API controllers might.
 
 ### **Routing conventions**
 
@@ -385,7 +385,7 @@ For example:
 
 The supported HTTP methods depend entirely on which matching methods are implemented in your controller.
 
-If you make a call like `PUT /Products(78)` and your OData controller does not define a method with a matching name and signature (`Put(int key, Product product)`), then ASP.NET Core OData returns `HTTP 405 Method Not Allowed`. The framework concludes that rhe resource exists, but that HTTP method is not allowed on it. The HTTP response also includes an `Allow` header that explicitly lists the HTTP methods supported for the requested resource based on the routes the framework has matched, as shown in the following HTTP response:
+If you make a call like `PUT /Products(78)` and your OData controller does not define a method with a matching name and signature (`Put(int key, Product product)`), then ASP.NET Core OData returns `HTTP 405 Method Not Allowed`. The framework concludes that the resource exists, but that HTTP method is not allowed on it. The HTTP response also includes an `Allow` header that explicitly lists the HTTP methods supported for the requested resource based on the routes the framework has matched, as shown in the following HTTP response:
 ```
 HTTP/1.1 405 Method Not Allowed
 Allow: GET, DELETE
@@ -405,7 +405,7 @@ The framework uses convention-based method names, so you do not have to decorate
 | PATCH       | `Patch([key], Delta<T>)`    | Partial update                    |
 | DELETE      | `Delete([key])`             | Deletes an entity                 |
 
-You can decorate action method parameters with `[FromRoute]`, `[FromODataUri]`, `[FromBody]`, and other **parameter binding attributes**, but they do not determine HTTP support. They just clarify how parameters should be resolved.
+You can decorate action method parameters with `[FromRoute]`, `[FromODataUri]`, `[FromBody]`, and other parameter binding attributes, but they do not determine HTTP support. They just clarify how parameters should be resolved.
 
 ### **Delta<T> and partial updates**
 
@@ -433,10 +433,11 @@ public IActionResult Patch(int key, [FromBody] Delta<Product> delta)
 }
 ```
 
-In the HTTP PATCH request, you only include the properties you want to change (any omitted properties remain unchanged on the server):
+In the HTTP `PATCH` request, you only include the properties you want to change (any omitted properties remain unchanged on the server):
 ```
 ### Update an existing product unit price and units in stock.
 PATCH {{base_address}}products/78
+Content-Type: application/json
 
 {
   "UnitPrice": 60.25,
