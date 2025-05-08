@@ -1,4 +1,4 @@
-**Errata** (35 items)
+**Errata** (36 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -35,6 +35,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 399 - Creating an HTTP file for making requests](#page-399---creating-an-http-file-for-making-requests)
 - [Page 410 - Enabling entity inserts, updates, and deletes](#page-410---enabling-entity-inserts-updates-and-deletes)
 - [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
+- [Page 458 - Mocking with NSubstitute example](#page-458---mocking-with-nsubstitute-example)
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
 - [Page 485 - Creating and initializing a new Umbraco project](#page-485---creating-and-initializing-a-new-umbraco-project)
 
@@ -566,6 +567,12 @@ I will also add more explanation of how conventions are used by the OData system
 In Step 1, I wrote, "add a navigation menu item to go to a CORS controller with a JavaScript action method". 
 
 I should have written, "add a navigation menu item to go to a `ODataClient` controller with an `Index` action method".
+
+# Page 458 - Mocking with NSubstitute example
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on May 7, 2025](https://github.com/markjprice/web-dev-net9/issues/50).
+
+In Step 2, I wrote "treat errors as errors" when I should have written "treat warnings as errors".
 
 # Page 460 - Mocking with NSubstitute example
 
