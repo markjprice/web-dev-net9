@@ -1,4 +1,4 @@
-**Errata** (36 items)
+**Errata** (37 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -6,6 +6,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 23 - Installing Docker and the Azure SQL Edge container image](#page-23---installing-docker-and-the-azure-sql-edge-container-image)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
 - [Page 67 - What does UseMigrationsEndPoint do?](#page-67---what-does-usemigrationsendpoint-do)
+- [Page 76 - View model example, Page 274 - Reviewing the default endpoint routing configuration](#page-76---view-model-example-page-274---reviewing-the-default-endpoint-routing-configuration)
 - [Page 81 - Implementing views](#page-81---implementing-views)
 - [Page 83 - How cache busting with Tag Helpers works](#page-83---how-cache-busting-with-tag-helpers-works)
 - [Page 97 - Temporarily storing data](#page-97---temporarily-storing-data)
@@ -98,6 +99,14 @@ In the fourth paragraph, I wrote, "You can find the source code for the `UseMigr
 But we do not care about the source code for the `UseMigrationsEndPoint` extension method itself. We just want to know the relative path that it uses for its endpoint. 
 
 So the link is correct, because it shows us what the path is defined by a property on the `MigrationsEndPointOptions` class named `DefaultPath`. But the description is misleading. In the next edition I will write, "You can find the source code for the relative path used by the `UseMigrationsEndPoint` extension method at the following link: https://github.com/dotnet/aspnetcore/blob/main/src/Middleware/Diagnostics.EntityFrameworkCore/src/MigrationsEndPointOptions.cs#L18."
+
+# Page 76 - View model example, Page 274 - Reviewing the default endpoint routing configuration
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on May 14, 2025](https://github.com/markjprice/web-dev-net9/issues/52).
+
+In the third paragraph, I wrote, "The code in the GitHub repository solution and below uses SQLite, but you can easily use SQL Server if you prefer." I should have written, "The code in the GitHub repository solution and below uses SQL Server."
+
+In *Table 8.1*, in the last row for the `AddNorthwindContext` entry, I wrote, "A custom extension method we created to make it easier to register the `NorthwindContext` class for either SQLite or SQL Server based on the project referenced." I should have written, "A custom extension method we created to make it easier to register the `NorthwindContext` class for SQL Server."
 
 # Page 81 - Implementing views
 
