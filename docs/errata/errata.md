@@ -602,9 +602,9 @@ But we are using CPM, so you should not specify the version number, as shown in 
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 14, 2025](https://github.com/markjprice/web-dev-net9/issues/32).
 
-In the note box at the end of this section, I wrote, "The relative path to the Umbraco backoffice for your website is `\umbraco`. So, the absolute link to the website will be `https:\\localhost:5131\` and the absolute link to the website will be `https:\\localhost:5131\umbraco`."
+In the note box at the end of this section, I wrote, "The relative path to the Umbraco backoffice for your website is `/umbraco`. So, the absolute link to the website will be `https://localhost:5131/` and the absolute link to the website will be `https://localhost:5131/umbraco`."
 
-I mistakenly repeated, "the absolute link to the website", so I should have written, "The relative path to the Umbraco backoffice for your website is `\umbraco`. So, the absolute link to the website will be `https:\\localhost:5131\` and the absolute link to the Umbraco backoffice will be `https:\\localhost:5131\umbraco`."
+I mistakenly repeated, "the absolute link to the website", so I should have written, "The relative path to the Umbraco backoffice for your website is `/umbraco`. So, the absolute link to the website will be `https://localhost:5131/` and the absolute link to the Umbraco backoffice will be `https://localhost:5131/umbraco`."
 
 And I had previously written a note box before Step 17, "The Umbraco backoffice is accessed through the `/umbraco` relative path, so for our
 project, it is at the following link: https://localhost:5131/umbraco."
