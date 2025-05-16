@@ -1,4 +1,4 @@
-**Errata** (37 items)
+**Errata** (38 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -39,6 +39,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 458 - Mocking with NSubstitute example](#page-458---mocking-with-nsubstitute-example)
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
 - [Page 485 - Creating and initializing a new Umbraco project](#page-485---creating-and-initializing-a-new-umbraco-project)
+- [Page 491 - Setting up languages, Page 495 - Adding a home page as content](#page-491---setting-up-languages-page-495---adding-a-home-page-as-content)
 
 
 # Page 15 - Central Package Management
@@ -609,3 +610,18 @@ And I had previously written a note box before Step 17, "The Umbraco backoffice 
 project, it is at the following link: https://localhost:5131/umbraco."
 
 In the next edition, I will remove one of these note boxes. I will also add a heading between steps 7 and 8 to break up this long task a bit more. 
+
+# Page 491 - Setting up languages, Page 495 - Adding a home page as content
+
+> Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on May 14, 2025](https://github.com/markjprice/web-dev-net9/issues/53) and discovering why and how to fix it.
+
+In this section, I tell the reader to configure three languages: US English, British English, and French. But this causes an issue later when the reader tries to publish because the `Title` property is mandatory and the French language does not have a fallback.
+
+On page 491, after Step 8, I will add some notes to highlight:
+- **English (United States)** is the default language.
+- **English (United Kingdom)** will fall back to using English (United States) if Umbraco cannot find a UK version of content.
+- **French** will NOT fall back to English (United States) so we MUST supply values for mandatory properties like Title or publishing will fail.
+
+On page 495, in Steps 4 and 5, I tell the reader to enter a `Title` and other properties for **English (United States)**. In Step 6 I tell the reader to save and publish, but it will give an error because I skipped a step to set a `Title` for the French variation of the page.
+
+In the next edition, I will add a step before Step 6 to tell the reader to click the language selector at the top of the page and change to French language, and then enter values for the `Title` in French. (These steps are in the book but later in page 498 in Steps 9 and 10 so I will move them earlier.)
