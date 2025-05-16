@@ -12,9 +12,11 @@ All errata and improvements will be included in the second edition, *Real-World 
 
 # Top Contributors
 
-1. [P9avel](https://github.com/P9avel): 11 errata, 4 improvements
-2. [Giuseppe Guerra](https://github.com/giuseppe-guerra): 5 errata
-3. [OpticOrange](https://github.com/OpticOrange): 1 errata, 1 improvement
-4. [lenara122](https://github.com/lenara122): 1 errata
-5. `automaton` on Discord: 1 improvement
-6. `CoericK` on Discord: 1 improvement
+Who|Errata|Improvements
+---|---|---
+[P9avel](https://github.com/P9avel)|24|8
+[Paul Marangoni](https://github.com/pmarangoni)|11|4
+[Moisés Sirvente](https://github.com/es-moises)|1|0
+[Rob](https://github.com/robyyo)|1|0
+[ghlouwho](https://github.com/ghlouwho)|0|1
+Others via email|1|4
