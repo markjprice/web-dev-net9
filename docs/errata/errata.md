@@ -1,4 +1,4 @@
-**Errata** (38 items)
+**Errata** (40 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -10,6 +10,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 81 - Implementing views](#page-81---implementing-views)
 - [Page 83 - How cache busting with Tag Helpers works](#page-83---how-cache-busting-with-tag-helpers-works)
 - [Page 97 - Temporarily storing data](#page-97---temporarily-storing-data)
+- [Page 110 - Model binders in detail](#page-110---model-binders-in-detail)
+- [Page 110 - Passing a route parameter, Page 111 - Passing a form parameter](#page-110---passing-a-route-parameter-page-111---passing-a-form-parameter)
 - [Page 117 - Displaying Northwind suppliers](#page-117---displaying-northwind-suppliers)
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 - [Page 129 - Querying a database and using display templates](#page-129---querying-a-database-and-using-display-templates)
@@ -138,6 +140,18 @@ script>
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 3, 2025](https://github.com/markjprice/web-dev-net9/issues/11).
 
 In Step 2, I wrote, "(You will learn more about middleware later in this chapter.)" But during final drafts of the book, I moved this section from Chapter 8 to Chapter 2, so this note is no longer true. In the next edition, I will delete the note, and I will add a new section briefly introducing middleware and other terminology to Chapter 1.
+
+# Page 110 - Model binders in detail
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on May 23, 2025](https://github.com/markjprice/web-dev-net9/issues/54).
+
+*Figure 3.2* should not show the `<input>` element containing the value `1` because that is added to the form later, and it should show the value `3` in the output for **Model.Thing.Id** because at this point, it is set from the query string: `?id=3`. 
+
+# Page 110 - Passing a route parameter, Page 111 - Passing a form parameter
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on May 23, 2025](https://github.com/markjprice/web-dev-net9/issues/55) and [this issue on May 23, 2025](https://github.com/markjprice/web-dev-net9/issues/56).
+
+In Step 3, I should have written "click **Model Binding**" not just "click **Binding**".
 
 # Page 117 - Displaying Northwind suppliers
 
