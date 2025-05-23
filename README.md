@@ -86,12 +86,7 @@ You can "clean" a solution between opening it in different code editors, either 
 
 # Online content
 
-The appendix and color figures are available to download as PDFs:
-
-- [Appendix, Answers to the Test Your Knowledge Questions](docs/B31470_Appendix.pdf).
-- Color images of the screenshots/diagrams used in this book (coming January 2025).
-
-More content to support the book: 
+Online content to support the book: 
 
 - [Common Mistakes, Improvements, and Errata aka list of corrections](docs/errata/README.md)
 - [Book support for .NET 10](docs/dotnet10.md)
