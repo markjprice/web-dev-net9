@@ -1,4 +1,4 @@
-**Errata** (40 items)
+**Errata** (41 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -13,6 +13,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 110 - Model binders in detail](#page-110---model-binders-in-detail)
 - [Page 110 - Passing a route parameter, Page 111 - Passing a form parameter](#page-110---passing-a-route-parameter-page-111---passing-a-form-parameter)
 - [Page 117 - Displaying Northwind suppliers](#page-117---displaying-northwind-suppliers)
+- [Page 117 - Displaying Northwind suppliers](#page-117---displaying-northwind-suppliers-1)
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 - [Page 129 - Querying a database and using display templates](#page-129---querying-a-database-and-using-display-templates)
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
@@ -181,6 +182,12 @@ I also forgot to add the markup for the **Add New Supplier** button that should 
 
 The markup was already correct in the code solution found here:
 https://github.com/markjprice/web-dev-net9/blob/main/code/MatureWeb/Northwind.Mvc/Views/Home/Suppliers.cshtml
+
+# Page 117 - Displaying Northwind suppliers
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on May 28, 2025](https://github.com/markjprice/web-dev-net9/issues/57).
+
+In Step 6, I wrote, "after the **Home** navigation menu item" when I should have written "after the **Model Binding** navigation menu item". The code for this step should also show the Model Binding menu item instead of the Home menu item.
 
 # Page 118 - Inserting, updating, and deleting suppliers
 
