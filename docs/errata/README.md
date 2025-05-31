@@ -17,6 +17,7 @@ Who|Errata|Improvements
 [P9avel](https://github.com/P9avel)|24|8
 [Paul Marangoni](https://github.com/pmarangoni)|11|4
 [Moisés Sirvente](https://github.com/es-moises)|4|0
+[Donald Maisey](https://github.com/donaldmaisey)|1|0
 [Rob](https://github.com/robyyo)|1|0
 [ghlouwho](https://github.com/ghlouwho)|0|1
 Others via email|1|4
