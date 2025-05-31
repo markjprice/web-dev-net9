@@ -1,4 +1,4 @@
-**Errata** (41 items)
+**Errata** (42 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -17,6 +17,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 - [Page 129 - Querying a database and using display templates](#page-129---querying-a-database-and-using-display-templates)
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
+- [Page 153 - Exploring the Environment Tag Helper](#page-153---exploring-the-environment-tag-helper)
 - [Page 154 - Exploring Forms-related Tag Helpers](#page-154---exploring-forms-related-tag-helpers)
 - [Page 158 - Localizing your user interface](#page-158---localizing-your-user-interface)
 - [Page 159 - If you are using Visual Studio](#page-159---if-you-are-using-visual-studio)
@@ -258,6 +259,28 @@ But the controller name is `Home`, not `Index`, so the markup should be:
 
 @Html.ActionLink(linkText: "View our privacy policy.",
   action: "Privacy", controller: "Home")
+```
+
+# Page 153 - Exploring the Environment Tag Helper
+
+> Thanks to [Donald Maisey](https://github.com/donaldmaisey) for raising [this issue on May 30, 2025](https://github.com/markjprice/web-dev-net9/issues/58).
+
+In Step 6, I tell the reader to "change the environment setting to `Production`". But we are using `MapStaticAssets` to compress stylesheets and other static files, and the system looks in different paths between Development and Production. Since we are actually still running the development build of the project, the paths do not match and you will lose all styling.
+
+To fix the issue, we need to manually tell the static asset system to read the current environment so it knows to use the `Production` paths even though we are not running the production build. (Or we could use `dotnet publish` and then run the build from the `publish` directory which is effectively what happens in the real-world: you run the production build with production configuration.)
+
+In the next edition, I will add a few steps:
+
+1. In `Program.cs`, import the namspace for manuallying configuring static assets, as shown in the following code:
+```cs
+// To use StaticWebAssetsLoader.
+using Microsoft.AspNetCore.Hosting.StaticWebAssets;
+```
+1. In `Program.cs`, configure static assets to read the current environment from configuration, as shown in the following code:
+```cs
+// Enable switching environments (Development, Production) during development.
+StaticWebAssetsLoader.UseStaticWebAssets(
+  builder.Environment, builder.Configuration); 
 ```
 
 # Page 154 - Exploring Forms-related Tag Helpers
