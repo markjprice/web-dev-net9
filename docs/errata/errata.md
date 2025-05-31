@@ -276,7 +276,7 @@ In the next edition, I will add a few steps:
 // To use StaticWebAssetsLoader.
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 ```
-1. In `Program.cs`, configure static assets to read the current environment from configuration, as shown in the following code:
+2. In `Program.cs`, after creating the `builder`, configure static assets to read the current environment from configuration, as shown in the following code:
 ```cs
 // Enable switching environments (Development, Production) during development.
 StaticWebAssetsLoader.UseStaticWebAssets(
