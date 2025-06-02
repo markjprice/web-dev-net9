@@ -1,10 +1,11 @@
-**Improvements** (19 items)
+**Improvements** (20 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 3 - History of ASP.NET Core](#page-3---history-of-aspnet-core)
 - [Page 24 - Running the Azure SQL Edge container image](#page-24---running-the-azure-sql-edge-container-image)
 - [Page 27 - Connecting to Azure SQL Edge in a Docker container](#page-27---connecting-to-azure-sql-edge-in-a-docker-container)
+- [Page 30 - Creating the Northwind database using a SQL script](#page-30---creating-the-northwind-database-using-a-sql-script)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Page 44 - Testing the class libraries using xUnit](#page-44---testing-the-class-libraries-using-xunit)
@@ -77,6 +78,14 @@ For readers who fail to connect, I will add a [troubleshooting guide](sql-contai
 I will also add a warning about making sure command lines are entered all in one line as shown in the following box:
 
 > **Warning!** The preceding command must be entered all on one line, or the container will not be started up correctly. All command lines used in this book can be found and copied from the following link: https://github.com/markjprice/web-dev-net9/blob/main/docs/command-lines.md
+
+# Page 30 - Creating the Northwind database using a SQL script
+
+> Thanks to **Mike_H**/`mike_h_16837` for raising asking a question on June 2, 2025 in the Discord channel for this book.
+
+In Step 2, I tell the reader to execute the SQL script to create the Northwind database. But when they see the **Connect** dialog box, some readers don't know what to do.
+
+In the next edition, I will explicitly say that the reader will be shown the **Connect** dialog box and they will need to use the same connection information as a couple of pages earlier to connect to their SQL Server. This is because although they previously connected to their SQL Server via the **Server Explorer** window, they have opened a separate file that does not know about that connection. If the reader were to use the **Server Explorer** to create a new query or other database object then it would already be connected.
 
 # Page 33 - Creating a class library for entity models
 
