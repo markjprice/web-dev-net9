@@ -271,7 +271,7 @@ To fix the issue, we need to manually tell the static asset system to read the c
 
 In the next edition, I will add a few steps:
 
-1. In `Program.cs`, import the namspace for manuallying configuring static assets, as shown in the following code:
+1. In `Program.cs`, import the namespace for manually configuring static assets, as shown in the following code:
 ```cs
 // To use StaticWebAssetsLoader.
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
