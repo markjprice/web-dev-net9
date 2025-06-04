@@ -1,4 +1,4 @@
-**Errata** (42 items)
+**Errata** (43 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,6 +16,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 117 - Displaying Northwind suppliers](#page-117---displaying-northwind-suppliers-1)
 - [Page 118 - Inserting, updating, and deleting suppliers](#page-118---inserting-updating-and-deleting-suppliers)
 - [Page 129 - Querying a database and using display templates](#page-129---querying-a-database-and-using-display-templates)
+- [Page 134 - Practice implementing MVC by implementing a category detail page](#page-134---practice-implementing-mvc-by-implementing-a-category-detail-page)
 - [Page 143 - Comparing HTML Helpers and Tag Helpers](#page-143---comparing-html-helpers-and-tag-helpers)
 - [Page 153 - Exploring the Environment Tag Helper](#page-153---exploring-the-environment-tag-helper)
 - [Page 154 - Exploring Forms-related Tag Helpers](#page-154---exploring-forms-related-tag-helpers)
@@ -239,6 +240,22 @@ Or you can use block style, as I use in the [code solution for this file](https:
         @Html.DisplayFor(modelItem => p.Supplier.CompanyName); 
       }
     </td>
+```
+
+# Page 134 - Practice implementing MVC by implementing a category detail page
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on June 4, 2025](https://github.com/markjprice/web-dev-net9/issues/59).
+
+In the view, the label for the category name says "Product Name", as shown in the following markup:
+```html
+<dt>Product Name</dt>
+<dd>@Model.CategoryName</dd>
+```
+
+It should be "Category Name", as shown in the following markup:
+```html
+<dt>Category Name</dt>
+<dd>@Model.CategoryName</dd>
 ```
 
 # Page 143 - Comparing HTML Helpers and Tag Helpers
