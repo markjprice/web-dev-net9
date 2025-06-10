@@ -1,7 +1,8 @@
-**Improvements** (20 items)
+**Improvements** (21 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 2 - Introducing Web Development Using Controllers](#page-2---introducing-web-development-using-controllers)
 - [Page 3 - History of ASP.NET Core](#page-3---history-of-aspnet-core)
 - [Page 24 - Running the Azure SQL Edge container image](#page-24---running-the-azure-sql-edge-container-image)
 - [Page 27 - Connecting to Azure SQL Edge in a Docker container](#page-27---connecting-to-azure-sql-edge-in-a-docker-container)
@@ -32,6 +33,21 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 463 - Installing the dev tunnel CLI](#page-463---installing-the-dev-tunnel-cli)
 - [Page 478 - Installing Umbraco CMS](#page-478---installing-umbraco-cms)
 - [Page 500 - Good media practices, Page 502 - Uploading images to Umbraco CMS](#page-500---good-media-practices-page-502---uploading-images-to-umbraco-cms)
+
+# Page 2 - Introducing Web Development Using Controllers
+
+> Thanks to [michaelt-94](https://github.com/michaelt-94) for raising [this issue on June 10, 2025](https://github.com/markjprice/web-dev-net9/issues/60).
+
+In the next edition, I plan to swap the order of sections 2 and 3 in Chapter 1:
+
+- Understanding ASP.NET Core
+- Structuring projects and managing packages
+- Making good use of the GitHub repository for this book
+- Building an entity model for use in the rest of the book
+
+This would put the section titled *Making good use of the GitHub repository for this book* immediately after the section titled *Understanding ASP.NET Core*. And I will add a note to tell the reader that the reason that I recommend downloading or cloning the GitHub repository so that they can refer to it while they create their own solution from scratch. That's why the downloaded solution and their own solution should go in different folders. The reader is not just cloning skeleton code that you add to as the book moves forward. Cloning the solution is optional. The book's tasks will walk you through creating all code solutions yourself.
+
+Then the *Structuring projects and managing packages* section would come immediately before the *Building an entity model for use in the rest of the book* section where the reader will create projects in the folder hierarchy. That should improve the flow and reduce confusion.
 
 # Page 3 - History of ASP.NET Core
 

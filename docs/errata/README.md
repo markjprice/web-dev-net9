@@ -4,7 +4,7 @@ If you find any mistakes in the first edition, *Real-World Web Development with 
 
 [**Errata** (43 items)](errata.md): Typos, tool user interface and behavior changes, or mistakes in code that would cause a compilation error that prevents a successful build.
 
-[**Improvements** (20 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
+[**Improvements** (21 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
 
 [**Common Mistakes**](https://github.com/markjprice/markjprice/blob/main/articles/common-mistakes.md): These are some of the most common mistakes that a reader might encounter when trying to get code in book tasks to work, or when trying to write your own code. (Links to the `markjprice` shared articles repository.)
 
@@ -20,5 +20,6 @@ Who|Errata|Improvements
 [Donald Maisey](https://github.com/donaldmaisey)|1|0
 [Rob](https://github.com/robyyo)|1|0
 [ghlouwho](https://github.com/ghlouwho)|0|1
+[michaelt-94](https://github.com/michaelt-94)|0|1
 `Mike_H` on Discord|0|1
 Others via email|1|4
