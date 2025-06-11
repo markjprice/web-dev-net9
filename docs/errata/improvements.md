@@ -1,4 +1,4 @@
-**Improvements** (21 items)
+**Improvements** (22 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 27 - Connecting to Azure SQL Edge in a Docker container](#page-27---connecting-to-azure-sql-edge-in-a-docker-container)
 - [Page 30 - Creating the Northwind database using a SQL script](#page-30---creating-the-northwind-database-using-a-sql-script)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
+- [Page 34 - Creating a class library for entity models](#page-34---creating-a-class-library-for-entity-models)
 - [Page 36 - Creating a class library for a database context](#page-36---creating-a-class-library-for-a-database-context)
 - [Page 44 - Testing the class libraries using xUnit](#page-44---testing-the-class-libraries-using-xunit)
 - [Page 49 - Setting up an ASP.NET Core MVC website, Page 69 - Controllers and actions](#page-49---setting-up-an-aspnet-core-mvc-website-page-69---controllers-and-actions)
@@ -110,6 +111,19 @@ In the next edition, I will explicitly say that the reader will be shown the **C
 At the end of Step 1, there is a note that says, "You can target either .NET 8 (LTS) or .NET 9 (STS) for all the projects in this book but you should be consistent. If you choose .NET 9 for the class libraries, then choose .NET 9 for later MVC and Web API projects."
 
 This does not mean that you can download or clone the solution projects and then only change the target framework from `net9.0` to `net8.0` and it will work. What I meant is that you can choose to target .NET 8 when you create all the projects. Some of the project templates have changed between .NET 8 and .NET 9, especially the Aspire templates. Just changing the target version after project creation won't be enough. In the next edition, I will remove this note since every reader should want to target `net10.0` anyway.
+
+# Page 34 - Creating a class library for entity models
+
+> Thanks to [michaelt-94](https://github.com/michaelt-94) for raising [this issue on June 10, 2025](https://github.com/markjprice/web-dev-net9/issues/61).
+
+In Step 6, I wrote, "generate entity class models for all tables, as shown in the following command:"
+```
+dotnet ef dbcontext scaffold "Data Source=tcp:127.0.0.1,1433;Initial Catalog=Northwind;User Id=sa;Password=s3cret-Ninja;TrustServerCertificate=true;" Microsoft.EntityFrameworkCore.SqlServer --namespace Northwind.EntityModels --data-annotations
+```
+
+A reader tried this step, but it "did not create any files (maybe this is here the issue is), but there were no errors."
+
+In the next edition, I will add a warning after this step to say that if your database has no user tables, EF Core will silently succeed and generate nothing. I have created an EF Core CLI troubleshooting checklist with suggested fixes here: https://github.com/markjprice/markjprice/blob/main/articles/efcore-cli.md
 
 # Page 36 - Creating a class library for a database context
 
