@@ -369,6 +369,8 @@ public partial class Shipper
 }
 ```
 
+This fix also affects Step 5, when the reader must **View page source** and review the generated HTML. For example, in the book, the first label renders as `<label class="form-label" for="ShipperId" />`, but after applying the fix, it will render as `<label class="form-label" for="ShipperId">Shipper ID</label>`.
+
 # Page 158 - Localizing your user interface
 
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 5, 2025](https://github.com/markjprice/web-dev-net9/issues/15).
