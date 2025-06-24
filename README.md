@@ -69,7 +69,7 @@ My author page on Goodreads: https://www.goodreads.com/author/show/14224500.Mark
 - Chapter 14 Customizing and Extending Umbraco
 
 **Appendix**
-- [Appendix, Answers to the Test Your Knowledge Questions](docs/B31470_Appendix.pdf).
+- Appendix, Answers to the Test Your Knowledge Questions, is included in the free PDF bundle: https://packt.link/supplementary-content-9781835880388.
 
 # Code solutions for Visual Studio, VS Code, and Rider
 
