@@ -12,10 +12,11 @@ Repository for the Packt Publishing book titled "Real-World Web Development with
 - [Chapters and code projects](#chapters-and-code-projects)
 - [Code solutions for Visual Studio, VS Code, and Rider](#code-solutions-for-visual-studio-vs-code-and-rider)
 - [Online content](#online-content)
-- [Microsoft Certifications](#microsoft-certifications)
-- [Microsoft .NET community support](#microsoft-net-community-support)
-- [Interviews with me](#interviews-with-me)
-- [Book Cover](#book-cover)
+- [Miscellaneous](#miscellaneous)
+  - [Microsoft Certifications](#microsoft-certifications)
+  - [Microsoft .NET community support](#microsoft-net-community-support)
+  - [Interviews with me](#interviews-with-me)
+  - [Book Cover](#book-cover)
 
 
 # Free PDF of the book and how to contact the publisher Packt
@@ -93,14 +94,16 @@ Online content to support the book:
 - [Command-Lines](docs/command-lines.md) page lists all commands as a single line that can be copied and pasted to make it easier to enter commands at the prompt.
 - [Book Links](docs/book-links.md)
 
-# Microsoft Certifications
+# Miscellaneous
+
+## Microsoft Certifications
 
 Announcing the New Foundational C# Certification with freeCodeCamp:
 https://devblogs.microsoft.com/dotnet/announcing-foundational-csharp-certification/
 
 Microsoft used to have professional exams and certifications for developers that covered skills like C# and ASP.NET. Sadly, they have retired them all. These days, the only developer-adjacent exams and certifications are for Azure or Power Platform, as you can see from the certification poster: https://aka.ms/traincertposter
 
-# Microsoft .NET community support
+## Microsoft .NET community support
 
 - [.NET Developer Community](https://dotnet.microsoft.com/platform/community)
 - [.NET Tech Community Forums for topic discussions](https://techcommunity.microsoft.com/t5/net/ct-p/dotnet)
@@ -108,7 +111,7 @@ Microsoft used to have professional exams and certifications for developers that
 - [Technical questions about the C# programming language](https://learn.microsoft.com/en-us/answers/topics/dotnet-csharp.html)
 - [If you'd like to apply to be a reviewer](https://authors.packtpub.com/reviewers/)
 
-# Interviews with me
+## Interviews with me
 
 Podcast interviews with me:
 
@@ -125,6 +128,6 @@ Written interviews with me:
 - [C# 9 and .NET 5: Book Review and Q&A](https://www.infoq.com/articles/book-interview-mark-price/?itm_source=infoq&itm_campaign=user_page&itm_medium=link)
 - [Q&A with Episerver's Mark J. Price, author of C# 9 and .NET 5 - Modern Cross-Platform Development](https://www.episerver.com/articles/q-and-a-with-mark-price)
 
-# Book Cover
+## Book Cover
 
 ![Book Cover](docs/assets/B31470_Cover.png)
