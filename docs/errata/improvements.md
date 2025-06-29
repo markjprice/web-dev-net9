@@ -1,4 +1,4 @@
-**Improvements** (22 items)
+**Improvements** (23 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -32,6 +32,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
 - [Page 458 - Using NSubstitute to create test doubles](#page-458---using-nsubstitute-to-create-test-doubles)
 - [Page 463 - Installing the dev tunnel CLI](#page-463---installing-the-dev-tunnel-cli)
+- [Page 463 - Exploring a dev tunnel with the CLI and an echo service](#page-463---exploring-a-dev-tunnel-with-the-cli-and-an-echo-service)
 - [Page 478 - Installing Umbraco CMS](#page-478---installing-umbraco-cms)
 - [Page 500 - Good media practices, Page 502 - Uploading images to Umbraco CMS](#page-500---good-media-practices-page-502---uploading-images-to-umbraco-cms)
 
@@ -554,6 +555,12 @@ substitute.When(x => x.SomeMethod(Arg.Any<int>()))
 In the next edition, if the CLI is still in preview, then I will add a warning:
 
 > **Warning!** This feature is currently in public preview. The CLI might have bugs that are introduced and fixed over time. Command names and options may change in future releases. The preview version is provided without a service-level agreement, and it's not recommended for production workloads. Certain features might not be supported or might have constrained capabilities. Read the latest about the CLI at the following link: https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/cli-commands
+
+# Page 463 - Exploring a dev tunnel with the CLI and an echo service
+
+After Step 2, I will add a note:
+
+> If you get error, `Missing wamcompat_id_token in WAM case`, then try using device flow to login instead, as shown in the following command: `devtunnel login -d`
 
 # Page 478 - Installing Umbraco CMS
 
