@@ -1,4 +1,4 @@
-**Errata** (43 items)
+**Errata** (44 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -45,6 +45,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
 - [Page 485 - Creating and initializing a new Umbraco project](#page-485---creating-and-initializing-a-new-umbraco-project)
 - [Page 491 - Setting up languages, Page 495 - Adding a home page as content](#page-491---setting-up-languages-page-495---adding-a-home-page-as-content)
+- [Page 513 - Global settings](#page-513---global-settings)
 
 
 # Page 15 - Central Package Management
@@ -688,3 +689,11 @@ On page 491, after Step 8, I will add some notes to highlight:
 On page 495, in Steps 4 and 5, I tell the reader to enter a `Title` and other properties for **English (United States)**. In Step 6 I tell the reader to save and publish, but it will give an error because I skipped a step to set a `Title` for the French variation of the page.
 
 In the next edition, I will add a step before Step 6 to tell the reader to click the language selector at the top of the page and change to French language, and then enter values for the `Title` in French. (These steps are in the book but later in page 498 in Steps 9 and 10 so I will move them earlier.)
+
+# Page 513 - Global settings
+
+> Thanks to [Donald Maisey](https://github.com/donaldmaisey) for raising [this issue on July 3, 2025](https://github.com/markjprice/web-dev-net9/issues/64).
+
+The first sentence says, "The options in the security section..."
+
+This should have said, "The options in the global section..."
