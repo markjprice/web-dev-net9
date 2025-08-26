@@ -1,4 +1,4 @@
-**Errata** (44 items)
+**Errata** (45 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -29,6 +29,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 167 - Understanding the Accept-Language header](#page-167---understanding-the-accept-language-header)
 - [Page 208 - Exploring in-memory object caching](#page-208---exploring-in-memory-object-caching)
 - [Page 211 - Caching objects using distributed caching](#page-211---caching-objects-using-distributed-caching)
+- [Page 213 - Caching objects using distributed caching](#page-213---caching-objects-using-distributed-caching)
 - [Page 267 - When you cannot use constructor injection](#page-267---when-you-cannot-use-constructor-injection)
 - [Page 295 - Configuration validation](#page-295---configuration-validation)
 - [Page 307 - Adding Aspire to an existing solution](#page-307---adding-aspire-to-an-existing-solution)
@@ -453,6 +454,12 @@ It should be a constructor named `HomeController` with a `logger` parameter of t
 ```cs
 public HomeController(ILogger<HomeController> logger,
 ```
+
+# Page 213 - Caching objects using distributed caching
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on August 26, 2025](https://github.com/markjprice/web-dev-net9/issues/65).
+
+In Step 8, I wrote "Click **Reload this page** within five seconds," when I should have written "Click **Reload this page** within one minute".
 
 # Page 267 - When you cannot use constructor injection
 
