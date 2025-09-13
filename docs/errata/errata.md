@@ -1,8 +1,9 @@
-**Errata** (45 items)
+**Errata** (46 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 15 - Central Package Management](#page-15---central-package-management)
+- [Page 19 - Making good use of the GitHub repository for this book](#page-19---making-good-use-of-the-github-repository-for-this-book)
 - [Page 23 - Installing Docker and the Azure SQL Edge container image](#page-23---installing-docker-and-the-azure-sql-edge-container-image)
 - [Page 33 - Creating a class library for entity models](#page-33---creating-a-class-library-for-entity-models)
 - [Page 67 - What does UseMigrationsEndPoint do?](#page-67---what-does-usemigrationsendpoint-do)
@@ -79,6 +80,12 @@ But in the final published editions they are as shown in the following markup:
 ```
 
 And remember to check if a newer package version has been released. For example, the `Microsoft.NET.Test.Sdk` package is already now `17.12.0`, so I updated the solution code in the book's GitHub repository. 
+
+# Page 19 - Making good use of the GitHub repository for this book
+
+> Thanks to [JohnMaz1031](https://github.com/JohnMaz1031) for raising [this issue on September 13, 2025](https://github.com/markjprice/web-dev-net9/issues/66).
+
+The **Good Practice** box has an invalid link that ends with a double file extension `.md.md`: https://github.com/markjprice/web-dev-net9/blob/main/docs/errata/README.md.md. It should be: https://github.com/markjprice/web-dev-net9/blob/main/docs/errata/README.md
 
 # Page 23 - Installing Docker and the Azure SQL Edge container image
 
