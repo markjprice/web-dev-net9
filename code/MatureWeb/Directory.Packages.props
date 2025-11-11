@@ -1,14 +1,14 @@
 <Project>
 
-  <!--Last updated package versions: July 8, 2025.-->
+  <!--Last updated package versions: November 11, 2025.-->
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     
     <!--Define a custom property for the common version number.-->
-    <MicrosoftPackageVersion>9.0.7</MicrosoftPackageVersion>
-    <Aspire>9.3.1</Aspire>
-    <OpenTelemetry>1.12.0</OpenTelemetry>
+    <MicrosoftPackageVersion>9.0.11</MicrosoftPackageVersion>
+    <Aspire>9.5.2</Aspire>
+    <OpenTelemetry>1.13.0</OpenTelemetry>
   </PropertyGroup>
   
   <ItemGroup Label="For EF Core.">
@@ -20,10 +20,10 @@
   
   <ItemGroup Label="For testing.">
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="xunit" Version="2.9.3" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.1" />
-    <PackageVersion Include="Microsoft.Playwright" Version="1.53.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="Microsoft.Playwright" Version="1.56.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(MicrosoftPackageVersion)" />
   </ItemGroup>
   
@@ -39,7 +39,7 @@
 
   <ItemGroup Label="For .NET Aspire.">
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(Aspire)" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.7.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.0.0" />
     <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="$(Aspire)" />
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="$(OpenTelemetry)" />
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="$(OpenTelemetry)" />
@@ -49,14 +49,14 @@
   </ItemGroup>
 
   <ItemGroup Label="For caching.">
-    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="9.6.0" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="10.0.0" />
   </ItemGroup>
 
   <ItemGroup Label="For ASP.NET Core web services.">
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(MicrosoftPackageVersion)" />
-    <PackageVersion Include="NSwag.MSBuild" Version="14.4.0" />
+    <PackageVersion Include="NSwag.MSBuild" Version="14.6.2" />
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftPackageVersion)" />
-    <PackageVersion Include="Microsoft.AspNetCore.OData" Version="9.3.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.OData" Version="9.4.1" />
   </ItemGroup>
   
   <ItemGroup Label="For FastEndpoints web services.">
