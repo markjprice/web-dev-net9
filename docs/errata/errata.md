@@ -1,4 +1,4 @@
-**Errata** (46 items)
+**Errata** (47 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -36,6 +36,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 213 - Caching objects using distributed caching](#page-213---caching-objects-using-distributed-caching)
 - [Page 267 - When you cannot use constructor injection](#page-267---when-you-cannot-use-constructor-injection)
 - [Page 295 - Configuration validation](#page-295---configuration-validation)
+- [Page 304 - Adding Aspire to an existing solution](#page-304---adding-aspire-to-an-existing-solution)
 - [Page 307 - Adding Aspire to an existing solution](#page-307---adding-aspire-to-an-existing-solution)
 - [Page 308 - Adding Aspire to an existing solution](#page-308---adding-aspire-to-an-existing-solution)
 - [Page 337 - Configuring the customer repository and Web API controller](#page-337---configuring-the-customer-repository-and-web-api-controller)
@@ -498,6 +499,12 @@ builder.Services
   .Validate(settings => settings.PagerSize > 0,
   "PagerSize must be greater than zero.");
 ```
+
+# Page 304 - Adding Aspire to an existing solution
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on November 26, 2025](https://github.com/markjprice/web-dev-net9/issues/67).
+
+In Steps 8 and 10, I wrote, "In the `Northwind.Mvc.csproj` project file, in `Program.cs`, ..." when I should have written, In the `Northwind.Mvc` project, in `Program.cs`, ...
 
 # Page 307 - Adding Aspire to an existing solution
 
