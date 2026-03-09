@@ -1,4 +1,4 @@
-**Errata** (47 items)
+**Errata** (48 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -44,6 +44,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 350 - Caching HTTP responses for web services](#page-350---caching-http-responses-for-web-services)
 - [Page 366 - Configuring HTTP logging for the web service](#page-366---configuring-http-logging-for-the-web-service)
 - [Page 367 - Configuring HTTP logging for the web service](#page-367---configuring-http-logging-for-the-web-service)
+- [Page 381 - Summary](#page-381---summary)
 - [Page 399 - Creating an HTTP file for making requests](#page-399---creating-an-http-file-for-making-requests)
 - [Page 410 - Enabling entity inserts, updates, and deletes](#page-410---enabling-entity-inserts-updates-and-deletes)
 - [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
@@ -590,6 +591,12 @@ function getCustomersButton_click() {
   xhr.send(); 
 }
 ```
+
+# Page 381 - Summary
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on March 9, 2026](https://github.com/markjprice/web-dev-net9/issues/69).
+
+The second bullet says "Swagger" when it should say "OpenAPI". This has already been fixed in the 2nd edition.
 
 # Page 399 - Creating an HTTP file for making requests
 
