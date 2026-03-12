@@ -1,4 +1,4 @@
-**Improvements** (23 items)
+**Improvements** (24 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -22,6 +22,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 155 - Exploring Forms-related Tag Helpers](#page-155---exploring-forms-related-tag-helpers)
 - [Page 243 - Page navigation and title verification](#page-243---page-navigation-and-title-verification)
 - [Page 323 - Creating an ASP.NET Core Web API with controllers project](#page-323---creating-an-aspnet-core-web-api-with-controllers-project)
+- [Page 377 - Authenticating service clients using JWT bearer authentication](#page-377---authenticating-service-clients-using-jwt-bearer-authentication)
 - [Page 381 - Summary](#page-381---summary)
 - [Page 410 - Enabling entity inserts, updates, and deletes](#page-410---enabling-entity-inserts-updates-and-deletes)
   - [Matching HTTP requests to controller action methods](#matching-http-requests-to-controller-action-methods)
@@ -385,6 +386,18 @@ namespace Northwind.WebApi.Controllers
 > **Note**: You can decorate the parameter(s) with `[FromServices]` to explicitly indicate where those parameters will be set from, as shown in the following code: `[FromServices] ILogger<WeatherForecastController> _logger`, but this is optional.
 
 In the next edition, I will add the preceding information. I will also tell the reader to add some calls to `_logger` so that it is actually used in the controller!
+
+# Page 377 - Authenticating service clients using JWT bearer authentication
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on March 11, 2026](https://github.com/markjprice/web-dev-net9/issues/70).
+
+In Step 10, I tell the reader to navigate to https://jwt.io/ to view their JWT token. But the user interface has changed so in the 10th edition, I decided to switch to https://jwt.ms/ which is easier to use, as shown in the following figure:
+
+![Decoding a JWT](B31469_10_06.png)
+
+You can then click the **Claims** tab and note the claims like `sub` (subject) and `exp` (expiration time), as shown in the following figure:
+
+![Descriptions of the JWT claims](B31469_10_07.png)
 
 # Page 381 - Summary
 
