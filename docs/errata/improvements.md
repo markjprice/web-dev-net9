@@ -391,7 +391,7 @@ In the next edition, I will add the preceding information. I will also tell the 
 
 > Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on March 11, 2026](https://github.com/markjprice/web-dev-net9/issues/70).
 
-In Step 10, I tell the reader to navigate to https://jwt.io/ to view their JWT token. But the user interface has changed so in the 10th edition, I decided to switch to https://jwt.ms/ which is easier to use, as shown in the following figure:
+In Step 10, I tell the reader to navigate to https://jwt.io/ to view their JWT token. But the user interface has changed so in the 2nd edition, I decided to switch to https://jwt.ms/ which is easier to use, as shown in the following figure:
 
 ![Decoding a JWT](B31469_10_06.png)
 
