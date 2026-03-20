@@ -1,4 +1,4 @@
-**Errata** (48 items)
+**Errata** (49 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -52,6 +52,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
 - [Page 485 - Creating and initializing a new Umbraco project](#page-485---creating-and-initializing-a-new-umbraco-project)
 - [Page 491 - Setting up languages, Page 495 - Adding a home page as content](#page-491---setting-up-languages-page-495---adding-a-home-page-as-content)
+- [Page 497 - Configuring the French variant home page](#page-497---configuring-the-french-variant-home-page)
 - [Page 513 - Global settings](#page-513---global-settings)
 
 
@@ -720,6 +721,15 @@ On page 491, after Step 8, I will add some notes to highlight:
 On page 495, in Steps 4 and 5, I tell the reader to enter a `Title` and other properties for **English (United States)**. In Step 6 I tell the reader to save and publish, but it will give an error because I skipped a step to set a `Title` for the French variation of the page.
 
 In the next edition, I will add a step before Step 6 to tell the reader to click the language selector at the top of the page and change to French language, and then enter values for the `Title` in French. (These steps are in the book but later in page 498 in Steps 9 and 10 so I will move them earlier.)
+
+# Page 497 - Configuring the French variant home page
+
+> Thanks to [zkazz](https://github.com/zkazz) for raising [this issue on March 20, 2026](https://github.com/markjprice/web-dev-net9/issues/71).
+
+The user interface labelling has changed. In Steps 3 and 5, I wrote, "In the **Domains** section, click **Add new domain**." 
+
+This should now be, "In the **Hostnames** section, click **Add new hostname**.", as shown in the following figure:
+![Configuring hostnames](hostnames.png)
 
 # Page 513 - Global settings
 
