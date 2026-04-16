@@ -1,4 +1,4 @@
-**Improvements** (24 items)
+**Improvements** (25 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -31,6 +31,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
     - [**Delta and partial updates**](#delta-and-partial-updates)
     - [**Overriding OData routing convention with attribute routing**](#overriding-odata-routing-convention-with-attribute-routing)
 - [Page 413 - Calling services in the Northwind MVC website](#page-413---calling-services-in-the-northwind-mvc-website)
+- [Page 455 - Enabling an ASP.NET Core project to be tested](#page-455---enabling-an-aspnet-core-project-to-be-tested)
 - [Page 458 - Using NSubstitute to create test doubles](#page-458---using-nsubstitute-to-create-test-doubles)
 - [Page 463 - Installing the dev tunnel CLI](#page-463---installing-the-dev-tunnel-cli)
 - [Page 463 - Exploring a dev tunnel with the CLI and an echo service](#page-463---exploring-a-dev-tunnel-with-the-cli-and-an-echo-service)
@@ -537,6 +538,14 @@ In Step 7, I wrote, "Optionally, start the `Northwind.WebApi` project using the 
 If the reader only clicks the **OData** menu item to try it out, and not any of the features that call the `Northwind.WebApi` web service, then they do not need that project running. 
 
 In the next edition, I will either delete that step, or explain why I've put it in and list the features that require it, or if I encourage the use of Aspire from the very beginning of the book as I plan to do, then all projects will start automatically without needing to have a manual step. 
+
+# Page 455 - Enabling an ASP.NET Core project to be tested
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on April 15, 2026](https://github.com/markjprice/web-dev-net9/issues/72).
+
+In Step 6, I wrote, "Run the tests in the `WebServiceTests` project..."
+
+In the next edition I will add a note to remind the reader that it´s necessary to have the environment variables `MYSQL_USER` and `MYSQL_PWD` set because the `launchSettings.json` does not work in the test project.
 
 # Page 458 - Using NSubstitute to create test doubles
 
