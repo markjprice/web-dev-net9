@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35201.85
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11716.218 insiders
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.EntityModels", "Northwind.EntityModels\Northwind.EntityModels.csproj", "{D73E9647-4C07-475B-9978-EFA5B6F8D674}"
 EndProject
@@ -28,6 +28,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatureWeb.AppHost", "MatureWeb.AppHost\MatureWeb.AppHost.csproj", "{D0B27131-6BD5-4316-8D77-3AAED1B9E460}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatureWeb.ServiceDefaults", "MatureWeb.ServiceDefaults\MatureWeb.ServiceDefaults.csproj", "{A11021DB-66E4-46D6-80E4-35E47FC7167F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mocking.BusinessLogic", "Mocking.BusinessLogic\Mocking.BusinessLogic.csproj", "{64E112D8-30E2-D6C9-280A-A0695C7BF7B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mocking.BusinessLogicUnitTests", "Mocking.BusinessLogicUnitTests\Mocking.BusinessLogicUnitTests.csproj", "{C4425BC5-6337-AF5A-8A22-EB9B4170DB20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,14 @@ Global
 		{A11021DB-66E4-46D6-80E4-35E47FC7167F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A11021DB-66E4-46D6-80E4-35E47FC7167F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A11021DB-66E4-46D6-80E4-35E47FC7167F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E112D8-30E2-D6C9-280A-A0695C7BF7B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E112D8-30E2-D6C9-280A-A0695C7BF7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E112D8-30E2-D6C9-280A-A0695C7BF7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E112D8-30E2-D6C9-280A-A0695C7BF7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4425BC5-6337-AF5A-8A22-EB9B4170DB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4425BC5-6337-AF5A-8A22-EB9B4170DB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4425BC5-6337-AF5A-8A22-EB9B4170DB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4425BC5-6337-AF5A-8A22-EB9B4170DB20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

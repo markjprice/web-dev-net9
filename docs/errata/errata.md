@@ -1,4 +1,4 @@
-**Errata** (49 items)
+**Errata** (50 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/web-dev-net9/issues) or email me at markjprice (at) gmail.com.
 
@@ -50,6 +50,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 411 - Calling services in the Northwind MVC website](#page-411---calling-services-in-the-northwind-mvc-website)
 - [Page 458 - Mocking with NSubstitute example](#page-458---mocking-with-nsubstitute-example)
 - [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example)
+- [Page 460 - Mocking with NSubstitute example](#page-460---mocking-with-nsubstitute-example-1)
 - [Page 485 - Creating and initializing a new Umbraco project](#page-485---creating-and-initializing-a-new-umbraco-project)
 - [Page 491 - Setting up languages, Page 495 - Adding a home page as content](#page-491---setting-up-languages-page-495---adding-a-home-page-as-content)
 - [Page 497 - Configuring the French variant home page](#page-497---configuring-the-french-variant-home-page)
@@ -679,6 +680,12 @@ I should have written, "add a navigation menu item to go to a `ODataClient` cont
 > Thanks to [Paul Marangoni](https://github.com/pmarangoni) for raising [this issue on May 7, 2025](https://github.com/markjprice/web-dev-net9/issues/50).
 
 In Step 2, I wrote "treat errors as errors" when I should have written "treat warnings as errors".
+
+# Page 460 - Mocking with NSubstitute example
+
+> Thanks to [Moisés Sirvente](https://github.com/es-moises) for raising [this issue on April 21, 2026](https://github.com/markjprice/web-dev-net9/issues/74).
+
+In Step 8, I wrote, "in the `Chapter11` folder", when I should have written, "in the `MatureWeb` folder".
 
 # Page 460 - Mocking with NSubstitute example
 
