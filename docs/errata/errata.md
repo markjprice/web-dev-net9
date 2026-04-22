@@ -694,6 +694,11 @@ Before Step 10, there should be an extra step to remove the version numbers from
 <PackageReference Include="xunit.runner.visualstudio" />
 ```
 
+Before Step 11, we need to define the NSubstitute package version in the file `Directory.Packages.props`:
+```xml
+<PackageVersion Include="NSubstitute" Version="5.3.0" />
+```
+
 > Thanks to [P9avel](https://github.com/P9avel) for raising [this issue on January 13, 2025](https://github.com/markjprice/web-dev-net9/issues/31).
 
 In Step 11, I wrote, "In the `BusinessLogicUnitTests` project, add a package reference for `NSubstitute`, as shown in the following markup:
